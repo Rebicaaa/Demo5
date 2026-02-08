@@ -1,0 +1,1772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8" />
+    
+
+  <title>Your Handyman Duties – Quality You Can Trust</title>
+ <!-- Favicon -->
+<link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
+<link rel="manifest" href="assets/favicon/site.webmanifest">
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+
+
+  <!-- AOS Animation Library -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+ <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <style>
+    /* Global */
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      scroll-behavior: smooth;
+      background: #ffffff;
+    }
+
+    /* Fade-Up Animation (used alongside AOS for small elements) */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeUp { animation: fadeUp 1s ease-out forwards; opacity: 0; }
+    .delay-200 { animation-delay: .2s; }
+    .delay-400 { animation-delay: .4s; }
+    .delay-600 { animation-delay: .6s; }
+
+    /* Small visual helpers for hero frame */
+    /* Ensure hero frame has the white border look when on dark environments */
+    .hero-frame {
+      box-shadow: 0 8px 30px rgba(0,0,0,0.45);
+      border: 12px solid rgba(255,255,255,0.92);
+    }
+
+    
+ /* Desktop nav ONLY above 1176px */
+@media (min-width: 1177px) {
+  #menuBtn {
+    display: none;
+  }
+
+  #desktopNav {
+    display: flex;
+  }
+}
+
+/* Mobile nav up to 1176px */
+@media (max-width: 1176px) {
+  #desktopNav {
+    display: none;
+  }
+
+  #menuBtn {
+    display: block;
+  }
+}
+
+
+/* Mobile Menu Animations */
+#mobileMenu {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#mobileMenu:not(.hidden) {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobile-link {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease, color 0.2s ease;
+}
+
+#mobileMenu:not(.hidden) .mobile-link {
+  animation: slideInLeft 0.4s ease forwards;
+}
+
+#mobileMenu:not(.hidden) .mobile-link:nth-child(1) { animation-delay: 0.1s; }
+#mobileMenu:not(.hidden) .mobile-link:nth-child(2) { animation-delay: 0.15s; }
+#mobileMenu:not(.hidden) .mobile-link:nth-child(3) { animation-delay: 0.2s; }
+#mobileMenu:not(.hidden) .mobile-link:nth-child(4) { animation-delay: 0.25s; }
+#mobileMenu:not(.hidden) .mobile-link:nth-child(5) { animation-delay: 0.3s; }
+
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Hamburger Icon Animation */
+#hamburgerIcon {
+  display: block;
+}
+
+#closeIcon {
+  display: none;
+}
+
+#menuBtn.active #hamburgerIcon {
+  display: none;
+}
+
+#menuBtn.active #closeIcon {
+  display: block;
+}
+
+/* Swiper Navigation Buttons */
+.hero-nav-next,
+.hero-nav-prev {
+  color: var(--gold-main) !important;
+  width: 50px !important;
+  height: 50px !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-radius: 50% !important;
+  border: none !important;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  z-index: 50 !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  margin-top: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  outline: none !important;
+}
+
+.hero-nav-next:hover,
+.hero-nav-prev:hover {
+   background: rgba(255, 255, 255, 0.85) !important;
+  transform: translateY(-50%) scale(1.1) !important;
+}
+
+.hero-nav-next {
+  right: 20px !important;
+  left: auto !important;
+}
+
+.hero-nav-prev {
+  left: 20px !important;
+  right: auto !important;
+}
+
+.hero-nav-next::after,
+.hero-nav-prev::after {
+  font-size: 28px !important;
+  font-weight: bold !important;
+  font-family: Arial, sans-serif !important;
+}
+
+.hero-nav-next::after {
+  content: '›' !important;
+}
+
+.hero-nav-prev::after {
+  content: '‹' !important;
+}
+
+/* Override any Swiper default styles */
+.heroSwiper .swiper-button-disabled {
+  opacity: 0.35 !important;
+  cursor: auto !important;
+  pointer-events: none !important;
+}
+
+
+/* Hide hero nav buttons on small screens */
+@media (max-width: 768px) {
+  .hero-nav-next,
+  .hero-nav-prev {
+    display: none !important;
+  }
+}
+
+
+/* =========================
+   BULLET ROW LAYOUT
+========================= */
+.bullets-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.bullet-container {
+  display: inline-block;
+}
+
+.bullet-svg {
+  display: block;
+  overflow: visible;
+}
+
+ul li, ol li {
+  color: #ffffff ;         /* Pure black text */
+  font-weight: bold;
+  text-shadow: none;              /* Remove any transparency or shadow */
+  opacity: 1 !important;          /* Fully opaque */
+}
+
+/* =========================
+   ENGRAVED TEXT – INSIDE CIRCLE
+========================= */
+.engraved-text {
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+
+  fill: var(--gold-main);        /* PURE BLACK */
+  stroke: #000000;      /* PURE BLACK */
+  stroke: #000;
+
+  paint-order: stroke fill;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  text-rendering: geometricPrecision;
+
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(0.90) translateY(3px);
+}
+
+
+/* EXTRA SAFETY FOR LONG WORDS */
+.engraved-text textPath {
+  dominant-baseline: middle;
+}
+
+/* =========================
+   SIZE-SPECIFIC TUNING
+========================= */
+
+/* Large bullets (SIX, SHOOTER) */
+.size-lg .engraved-text {
+  font-size: 20px;
+  letter-spacing: 0.6px;
+  transform: scale(0.88) translateY(3px);
+}
+
+/* Medium bullets (BOY, CONDUCT) */
+.size-md .engraved-text {
+  font-size: 19px;
+  letter-spacing: 0.6px;
+  transform: scale(0.87) translateY(3px);
+}
+
+/* Small bullets (CODE) */
+.size-sm .engraved-text {
+  font-size: 19px;
+  letter-spacing: 0.5px;
+  transform: scale(0.86) translateY(3px);
+}
+
+/* Extra small (OF) */
+.size-xs .engraved-text {
+  font-size: 19px;
+  letter-spacing: 0.4px;
+  transform: scale(0.85) translateY(3px);
+}
+
+/* =========================
+   SVG SIZE CONTROL
+========================= */
+.size-lg svg { width: 120px; height: 120px; }
+.size-md svg { width: 100px; height: 100px; }
+.size-sm svg { width: 90px;  height: 90px; }
+.size-xs svg { width: 80px;  height: 80px; }
+
+
+li, li * {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+  background: transparent !important;
+  -webkit-text-stroke: 0.7px #000 !important;
+}
+
+li, li * hover {
+  color: #d8b30e !important;
+  text-shadow: none !important;
+  background: transparent !important;
+  -webkit-text-stroke: 0.7px #000 !important;
+
+}
+
+
+
+/* =========================
+   MOBILE HERO TEXT FIX
+========================= */
+@media (max-width: 768px) {
+
+  /* Center hero text vertically */
+  .heroSwiper .swiper-slide > div.absolute {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    height: 100%;
+  }
+
+  .heroSwiper h1 {
+    margin-bottom: 16px;
+  }
+
+  .heroSwiper p {
+    margin-top: 12px;
+  }
+}
+
+
+
+/* =========================
+   MOBILE HERO IMAGE SCALE UP
+========================= */
+@media (max-width: 768px) {
+
+  /* Make slides slightly taller */
+  .heroSwiper,
+  .heroSwiper .swiper-wrapper,
+  .heroSwiper .swiper-slide {
+    min-height: 105vh !important;
+  }
+
+  /* Scale images vertically */
+  .heroSwiper img,
+  .hero-image {
+    height: 100% !important;
+    width: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+}
+
+
+
+
+
+.footer-links li,
+.footer-links li a {
+  color: #ffffff !important;
+  -webkit-text-stroke: 0 !important;
+  font-weight: 500 !important;
+  color: #0B3C5DBF !important;
+  color: #fff;
+    transition: color 0.2s;
+}
+
+.hero-title {
+  font-family: 'Rye', serif;
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background-color: #0B3C5DBF; /* yellow */
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+
+
+
+.horse-bg {
+  position: relative;
+  background-color: #0B3C5DBF;
+  overflow: hidden;
+}
+
+/* Animated horse layer */
+.horse-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url("assets/images/horse.png");
+  background-repeat: repeat;
+  background-size: 300px auto;
+
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+
+  /* animations */
+  animation:
+    horseFadeIn 1.4s ease-out forwards,
+    horseWalk 60s linear infinite;
+}
+
+/* Keep content above horses */
+.horse-bg > div {
+  position: relative;
+  z-index: 1;
+}
+
+/* fade-in on page load */
+@keyframes horseFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.06;
+  }
+}
+
+/* slow walking motion */
+@keyframes horseWalk {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: +1200px 0;
+  }
+}
+
+
+.services-header {
+    display: flex;
+    align-items: center;   /* THIS fixes the level */
+    justify-content: space-between;
+    cursor: pointer;
+}
+.services-header i,
+.services-header svg {
+    vertical-align: middle;
+}
+.services-header i {
+    position: relative;
+    top: 1px;   /* try 1–2px if needed */
+}
+
+
+
+
+  </style>
+</head>
+
+<body class="overflow-x-hidden">
+
+ <!-- HERO + NAV HEADER -->
+<header id="hero" class="w-full">
+
+
+  <!-- HERO card -->
+<!-- HERO card -->
+<div class="relative overflow-hidden bg-black w-full h-[95vh] sm:h-[90vh] md:h-screen">
+
+
+    <!-- background image -->
+    <!-- HERO BACKGROUND SLIDER -->
+<div class="absolute inset-0">
+  <div class="swiper heroSwiper h-full w-full">
+    <div class="swiper-wrapper">
+
+      <!-- Slide 1 -->
+      <div class="swiper-slide">
+     <img src="assets/images/b2.jpg" class="w-full h-full object-cover object-center sm:object-top">
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6 z-20 pt-24 sm:pt-28 md:pt-32">
+
+          <h1 class="hero-title text-white font-normal text-4xl sm:text-5xl lg:text-6xl mb-4 drop-shadow-lg"
+
+              ><br>Your Handyman Duties</h1>
+          <p class="text-white/90 max-w-2xl text-lg sm:text-xl"
+               data-aos-delay="200">
+            Reliable, Skilled, and Professional Home Services You Can Trust
+          </p>
+          <a href="#services"
+            class="scroll-link mt-8 border border-white text-white bg-transparent px-7 py-3 rounded-full font-semibold hover:bg-white hover:text-black transition"
+             data-aos-delay="500">
+            View Our Services
+          </a>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="swiper-slide">
+        <img src="assets/images/shanibanner1.jpeg" class="w-full h-full object-cover object-center sm:object-top">
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6 z-20 pt-24 sm:pt-28 md:pt-32">
+<br><br><br>
+          <h1 class="hero-title text-white font-normal text-4xl sm:text-5xl lg:text-6xl mb-4 drop-shadow-lg"
+
+              >Complete Plumbing Solutions</h1>
+          <p class="text-white/90 max-w-4xl text-lg sm:text-xl py-3"
+               data-aos-delay="200">
+           From appliance installation and plumbing to electrical work and home repairs, Your Handyman Dutiesdelivers dependable service with expert craftsmanship for every job—big or small.
+          </p>
+          
+         
+          <a href="#services"
+            class="scroll-link mt-8 border border-white text-white bg-transparent px-7 py-3 rounded-full font-semibold hover:bg-white hover:text-black transition"
+             data-aos-delay="500">
+            Our Services
+          </a>
+        </div>
+      </div>
+
+    <!-- Slide 3 -->
+<div class="swiper-slide relative">
+          <img src="assets/images/121212.jpeg" class="w-full h-full object-cover">
+
+  <div class="absolute inset-0 bg-black opacity-10"></div>
+
+  <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6 z-20 pt-24 sm:pt-28 md:pt-32">
+<br><br><br>
+    <h1 class="hero-title text-white font-normal text-4xl sm:text-5xl lg:text-6xl mb-4 drop-shadow-lg"
+
+        >Professional Repairs Done Right</h1>
+    <p class="text-white/90 max-w-4xl text-lg sm:text-xl py-3"
+         data-aos-delay="200">
+      We take pride in clean work, clear communication, and results that last. When you call Your Handyman Duties, your home is in skilled hands.
+    </p>
+    <a href="#contact"
+       class="scroll-link mt-8 border border-white text-white bg-transparent px-7 py-3 rounded-full font-semibold hover:bg-white hover:text-black transition"
+        data-aos-delay="500">
+     Get a Free Quote
+    </a>
+  </div>
+</div>
+
+      <!-- Slide 4 -->
+      <div class="swiper-slide">
+        <img src="assets/images/o1.jpeg" class="w-full h-full object-cover sm:object-top">
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6 z-20 pt-24 sm:pt-28 md:pt-32">
+
+          <h1 class="hero-title text-white font-normal text-4xl sm:text-5xl lg:text-6xl mb-4 drop-shadow-lg"
+
+              ><br>Expert Lighting Installation & Repair</h1>
+          <p class="text-white/90 max-w-2xl text-lg sm:text-xl"
+               data-aos-delay="200">
+            Brighten your space with expert lighting services. From installing modern fixtures to fixing electrical issues, we deliver safe, efficient, and reliable solutions that enhance both comfort and style.
+          </p>
+          <a href="#contact"
+            class="scroll-link mt-8 border border-white text-white bg-transparent px-7 py-3 rounded-full font-semibold hover:bg-white hover:text-black transition"
+             data-aos-delay="500">
+            Contact Us
+          </a>
+        </div>
+      </div>
+
+
+      
+
+    </div>
+
+  </div>
+
+  <!-- Talk With Us Button -->
+<a href="#contact" 
+   class="absolute bottom-6 right-6
+          bg-[#0B3C5DBF] text-white
+          px-6 py-3 rounded-full
+          flex items-center gap-2
+          shadow-lg
+          hover:bg-[#0B3C5D]
+          transition z-30">
+  <i class="fa-solid fa-headset"></i>
+  Talk with Us
+</a>
+
+
+  <!-- Navigation buttons (outside swiper, above overlay) -->
+  <button class="swiper-button-next hero-nav-next" type="button" aria-label="Next slide"></button>
+  <button class="swiper-button-prev hero-nav-prev" type="button" aria-label="Previous slide"></button>
+
+  <!-- Gradient Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/60 pointer-events-none z-0"></div>
+</div>
+
+
+   <!-- TOP INFO BAR -->
+<div class="w-full bg-[#082F49] text-white text-sm relative z-20">
+
+
+  <div class="max-w-7xl mx-auto px-6 py-2 flex flex-wrap items-center justify-between gap-3">
+
+    <!-- LEFT INFO -->
+    <div class="flex items-center gap-6 flex-wrap">
+      <span class="flex items-center gap-2">
+        ☎  (601) 401-4430 
+      </span>
+      <span class="flex items-center gap-2">
+        ✉ yourhandymanduties@gmailcom
+      </span>
+    </div>
+
+    <!-- RIGHT SOCIAL -->
+    <div class="flex items-center gap-4 text-base">
+  <a href="#" class="text-[#EEF3F7] hover:text-gray-400 transition-colors duration-200">
+    <i class="fa-brands fa-facebook-f"></i>
+  </a>
+  <a href="#" class="text-[#EEF3F7] hover:text-gray-400 transition-colors duration-200">
+    <i class="fa-brands fa-twitter"></i>
+  </a>
+  <a href="#" class="text-[#EEF3F7] hover:text-gray-400 transition-colors duration-200">
+    <i class="fa-brands fa-instagram"></i>
+  </a>
+  <a href="#" class="text-[#EEF3F7] hover:text-gray-400 transition-colors duration-200">
+    <i class="fa-brands fa-linkedin-in"></i>
+  </a>
+  <a href="#" class="text-[#EEF3F7] hover:text-gray-400 transition-colors duration-200">
+    <i class="fa-brands fa-youtube"></i>
+  </a>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- MAIN NAV BAR -->
+<div class="w-full bg-white shadow-md relative z-20">
+  <div class="max-w-7xl mx-auto px-6 py-1.5 flex items-center justify-between">
+
+    <!-- LOGO -->
+    <div class="flex items-center gap-4">
+      <!-- <img
+        src="assets/images/abt - Copy.jpeg"
+        alt="HVAC Cowboys Logo"
+        class="w-20 h-20 object-cover"
+      /> -->
+
+      <img src="assets/images/abt - Copy.jpeg" alt="HVAC Cowboys Logo" class="w-24 mx-auto md:mx-0 mb-0 rounded-full border-2 border-white/50">
+      <div>
+        <div class="text-xl font-bold text-gray-900">Your Handyman Duties</div>
+        <div class="text-sm text-gray-500">Quality You Can Trust</div>
+      </div>
+    </div>
+
+    <!-- DESKTOP NAV -->
+    <nav id="desktopNav" class="hidden lg:flex items-center gap-8 font-semibold text-gray-700">
+      <a href="index.html"
+   class="nav-link transition hover:text-[#0B3C5DBF]">
+   Home
+</a>
+
+<a href="aboutus.html"
+   class="nav-link transition hover:text-[#0B3C5DBF]">
+   About Us
+</a>
+
+      <div class="relative" >
+  <button id="servicesBtn" class="nav-link transition hover:text-[#0B3C5DBF]">
+    Services
+  
+    <i class="fa-solid fa-chevron-down text-xs mt-1 transition-transform duration-300" id="servicesArrow"></i>
+  </button>
+
+  <!-- Dropdown Menu -->
+   <div id="servicesMenu" class="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-md opacity-0 invisible transition-opacity duration-300 z-50">
+    <a href="appliance.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">Garage Doors Installation</a>
+    <a href="electrical.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">Remodels</a>
+    <a href="plumbing.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">Doors & Windows</a>
+    <a href="tv-mounting.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">Bathroom Remodeling</a>
+    <a href="furniture.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">Kitchen Remodeling</a> 
+     
+  </div>
+</div>
+
+
+      <a href="gallery.html" class="nav-link transition hover:text-[#0B3C5DBF]">Gallery</a>
+      <a href="#contact" class="nav-link transition hover:text-[#0B3C5DBF]">Contact</a>
+    </nav>
+    
+
+    <!-- PHONE BUTTON -->
+    <a
+      href="tel:8168088157"
+      
+  class="hidden lg:flex items-center gap-2
+         border border-[#0B3C5DBF]
+         text-[#0B3C5DBF]
+         px-5 py-2 rounded-full font-semibold
+         hover:bg-[#0B3C5DBF] hover:text-white
+         transition"
+>
+  📞 (601) 401-4430 
+</a>
+
+
+    <!-- MOBILE MENU BUTTON (USES YOUR EXISTING JS) -->
+    <button
+      id="menuBtn"
+      class="lg:hidden text-gray-900 text-2xl p-2 hover:bg-gray-100 rounded-lg transition"
+      aria-label="Toggle menu"
+    >
+      ☰
+    </button>
+
+  </div>
+</div>
+
+
+    <!-- Mobile Menu Button -->
+   <button id="menuBtn" class="block lg:hidden text-white text-2xl relative z-50 p-2 hover:bg-white/10 rounded-lg transition-colors" aria-label="Toggle menu">
+     <!-- <svg id="hamburgerIcon" class="w-8 h-8 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+     </svg> -->
+     <svg id="closeIcon" class="w-8 h-8 transition-transform hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+     </svg>
+   </button>
+
+  </div>
+</div>
+
+
+      <!-- Mobile Menu (fixed overlay) -->
+<div id="mobileMenu" class="hidden fixed inset-0 bg-black/95 backdrop-blur-md text-white flex flex-col z-50">
+  <!-- Mobile Menu Header -->
+  <div class="flex items-center justify-between px-6 py-6 border-b border-white/10">
+    <div class="flex items-center gap-3">
+      <img src="assets/images/abt.jpeg" alt="HVAC Cowboys Logo" class="w-12 h-12 rounded-full object-cover border-2 border-white/50" />
+      <div>
+        <div class="text-white font-semibold text-lg">Your Handyman Duties</div>
+        <div class="text-white text-xs">Quality you can trust </div>
+      </div>
+    </div>
+    <button id="closeMenuBtn" class="p-2 hover:bg-white/10 rounded-lg transition-colors" aria-label="Close menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu Content -->
+  <div class="flex-1 flex flex-col justify-center px-6 py-10 space-y-6">
+    <a href="#hero" class="mobile-link flex items-center gap-4 text-xl font-semibold hover:text-[#0B3C5DBF] transition-colors py-3 border-b border-white/10">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+      </svg>
+      Home
+    </a>
+    <a href="#services" class="mobile-link flex items-center gap-4 text-xl font-semibold hover:text-[#0B3C5DBF] transition-colors py-3 border-b border-white/10">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+      </svg>
+      Services
+    </a>
+    <a href="aboutus.html" class="mobile-link flex items-center gap-4 text-xl font-semibold hover:text-[#0B3C5DBF] transition-colors py-3 border-b border-white/10">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+      About Us
+    </a>
+
+     <a href="gallery.html"
+  class="mobile-link flex items-center gap-4 text-xl font-semibold hover:text-[#0B3C5DBF] transition-colors py-3 border-b border-white/10">
+
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+      Gallery
+    </a>
+
+    <a href="#faq" class="mobile-link flex items-center gap-4 text-xl font-semibold hover:text-[#0B3C5DBF] transition-colors py-3 border-b border-white/10">
+
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+      FAQ
+    </a>
+    <a  href="#contact" class="mobile-link flex items-center gap-4 text-xl font-semibold hover:text-[#0B3C5DBF] transition-colors py-3 border-b border-white/10">
+
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+      </svg>
+      Contact
+    </a>
+  </div>
+
+  <!-- Mobile Menu Footer -->
+  <div class="px-6 py-6 border-t border-white/10 space-y-4">
+    <div class="flex items-center gap-3 text-[#0B3C5DBF]">
+
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+      </svg>
+      <span class="font-semibold"> (601) 401-4430 </span>
+    </div>
+    <button 
+      class="w-full bg-[#0B3C5D] text-white font-semibold px-6 py-3 rounded-full hover:bg-[#0B3C5DBF] transition-colors shadow-lg"
+
+      onclick="smoothScroll('contact')"
+    >
+      Get Free Quote
+    </button>
+  </div>
+</div>
+
+
+  
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about" class="bg-[#EEF3F7] py-28 w-full">
+
+  <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-12">
+
+    <!-- LEFT: Text -->
+    <div class="w-full lg:w-1/2"  data-aos-delay="100">
+      <h2 class="hero-title text-4xl font-bold text-[#0B3C5D] mb-6 tracking-wide">
+
+         About Your Handyman Duties
+      </h2>
+
+      <p class="text-gray-700 text-base sm:text-lg leading-relaxed opacity-90">
+        Your Handyman Dutiesis a trusted home services provider dedicated to delivering reliable, skilled, and professional workmanship for homeowners and businesses. We specialize in a wide range of handyman services designed to keep your home functional, safe, and well-maintained.
+
+ 
+
+
+        <br><br>
+       Our team approaches every job with precision, integrity, and respect for your time and property. Whether it’s a simple repair or a more involved installation, we focus on doing the job right the first time—without shortcuts.
+        <br><br>
+        With a commitment to quality craftsmanship and clear communication, Your Handyman Duties is the dependable partner you can count on for all your home service needs.
+    </div>
+
+    <!-- RIGHT: Images (no overlap on mobile) -->
+    <div class="w-full lg:w-1/2 flex items-start lg:items-center" >
+      <div class="grid grid-cols-2 gap-8 w-full">
+
+        <!-- LEFT image (lower only on lg screens) -->
+        <img
+          src="assets/images/1.jpeg"
+          class="rounded-2xl object-cover h-64 sm:h-80 w-full 
+                 mt-4 lg:mt-14 
+                 shadow-xl hover:scale-105 transition duration-500"
+        />
+
+        <!-- RIGHT image (higher only on lg screens) -->
+        <img
+          src="assets/images/4.jpeg"
+          class="rounded-2xl object-cover h-64 sm:h-80 w-full 
+                 -mt-2 lg:-mt-14 
+                 shadow-xl hover:scale-105 transition duration-500"
+        />
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+ <!-- SERVICES (hover effect, no dark overlay) -->
+
+ 
+<section id="services" class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- DROPDOWN TITLE -->
+    <div class="flex items-center justify-center gap-3 cursor-pointer select-none"
+         onclick="toggleServices()">
+      <h2 class="hero-title text-4xl font-bold text-center text-[#0B3C5D] leading-none">
+
+        Our  Services
+      </h2>
+      <br> <br>
+      <br><br>
+      <!-- <span id="servicesArrow"
+            class="text-blue-800 text-2xl transition-transform duration-300">
+        ▼
+      </span> -->
+    </div>
+
+    <p class="text-gray-600 leading-relaxed text-base sm:text-lg font-semibold text-center mb-12 max-w-2xl mx-auto"
+        data-aos-delay="150">
+      Professional installation and repair of all major household appliances. We ensure safe setup, proper functionality, and dependable performance across all major brands.
+    </p>
+
+    <!-- DROPDOWN CONTENT -->
+    <div id="servicesContent" class="overflow-hidden transition-all duration-500">
+
+
+
+      <!-- ⬇️ YOUR GRID (UNCHANGED) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-12">
+
+      <!-- Card 1 -->
+      
+  <div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1">
+    
+    <div class="relative overflow-hidden">
+      <img src="assets/images/door.jpg" alt="HVAC"
+           class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
+    </div>
+
+    <div class="p-6 transition-all duration-500 group-hover:translate-y-1">
+      <h3 class="text-xl font-semibold text-[#0B3C5D] mb-2 group-hover:text-[#0B3C5DBF] transition">
+        Garage Doors Installation
+      </h3>
+
+      <p class="text-gray-600 text-sm mb-4 opacity-80">
+        Professional installation and repair of all major household appliances. We ensure safe setup, proper functionality, and dependable performance across all major brands.
+      </p>
+
+      <span class="inline-block bg-[#0B3C5D] text-white px-5 py-2 rounded-full hover:bg-[#0B3C5DBF] transition">
+        Read More
+      </span>
+    </div>
+
+  </div>
+</a>
+
+
+      <!-- Card 2 -->
+      
+  <div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1" data-aos-delay="150">
+    <div class="relative overflow-hidden">
+      <img src="assets/images/elec.jpg" alt="Electrical Services"
+           class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
+    </div>
+    <div class="p-6">
+      <h3 class="text-xl font-semibold text-[#0B3C5D] mb-2 group-hover:text-[#0B3C5DBF] transition">
+
+       Remodels
+
+      </h3>
+      <p class="text-gray-600 text-sm mb-4 opacity-80">
+        Expert assembly of furniture from all brands and styles—fast, precise, and hassle-free.
+      </p>
+      <span class="inline-block bg-[#0B3C5D] text-white px-5 py-2 rounded-full hover:bg-[#0B3C5DBF] transition">
+  Read More
+</span>
+    </div>
+  </div>
+</a>
+
+      <!-- Card 3 -->
+      
+  <div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1" data-aos-delay="300">
+    <div class="relative overflow-hidden">
+      <img src="assets/images/window.jpg" alt="Plumbing Services"
+           class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
+    </div>
+    <div class="p-6">
+      <h3 class="text-xl font-semibold text-[#0B3C5D] mb-2 group-hover:text-[#0B3C5DBF] transition">
+
+        Doors & Windows 
+      </h3>
+      <p class="text-gray-600 text-sm mb-4 opacity-80">
+        Expert assembly of furniture from all brands and styles—fast, precise, and hassle-free.
+      </p>
+      <span class="inline-block bg-[#0B3C5D] text-white px-5 py-2 rounded-full hover:bg-[#0B3C5DBF] transition">
+  Read More
+</span>
+    </div>
+  </div>
+</a>
+
+
+      <!-- Card 4 -->
+
+  <div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1" data-aos-delay="450">
+    <div class="relative overflow-hidden">
+      <img src="assets/images/bathroom.jpg" alt="TV Wall Mounting"
+           class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
+    </div>
+    <div class="p-6">
+      <h3 class="text-xl font-semibold text-[#0B3C5D] mb-2 group-hover:text-[#0B3C5DBF] transition">
+
+        Bathroom remodeling
+
+      </h3>
+      <p class="text-gray-600 text-sm mb-4 opacity-80">
+        Expert assembly of furniture from all brands and styles—fast, precise, and hassle-free.
+      </p>
+      <span class="inline-block bg-[#0B3C5D] text-white px-5 py-2 rounded-full hover:bg-[#0B3C5DBF] transition">
+  Read More
+</span>
+    </div>
+  </div>
+</a>
+
+
+<!-- Card 5 -->
+
+  <div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1" data-aos-delay="600">
+    <div class="relative overflow-hidden">
+      <img src="assets/images/kitchen.jpg" alt="Furniture Assembly"
+           class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
+    </div>
+    <div class="p-6">
+      <h3 class="text-xl font-semibold text-[#0B3C5D] mb-2 group-hover:text-[#0B3C5DBF] transition">
+
+        Kitchen remodeling   
+      </h3>
+      <p class="text-gray-600 text-sm mb-4 opacity-80">
+        Expert assembly of furniture from all brands and styles—fast, precise, and hassle-free.
+      </p>
+      <span class="inline-block bg-[#0B3C5D] text-white px-5 py-2 rounded-full hover:bg-[#0B3C5DBF] transition">
+  Read More
+</span>
+
+    </div>
+  </div>
+</a>
+
+
+<!-- Card 6 -->
+<!-- <a href="handyman.html" class="block">
+  <div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1" data-aos-delay="750">
+    <div class="relative overflow-hidden">
+      <img src="assets/images/88.jpeg" alt="General Handyman Services"
+           class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
+    </div>
+    <div class="p-6">
+      <h3 class="text-xl font-semibold text-blue-800 mb-2 group-hover:text-yellow-500 transition">
+        General Handyman Services
+      </h3>
+      <p class="text-gray-600 text-sm mb-4 opacity-80">
+        Comprehensive home repairs and improvements—from small fixes to full maintenance.
+      </p>
+      <span class="inline-block bg-red-700 text-white px-5 py-2 rounded-full hover:bg-yellow-700 transition">
+        Read More
+      </span>
+    </div>
+  </div>
+</a> -->
+
+
+
+</div>
+    </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- WHY CHOOSE US SECTION -->
+<section id="why-us" class="bg-[#EEF3F7] py-16">
+
+<div class="max-w-screen-2xl mx-auto px-6 lg:px-12 text-center">
+
+
+    <!-- Section Title -->
+    <h2 class="hero-title text-4xl font-bold text-[#0B3C5D] mb-6" >
+      Why Choose Your Handyman Duties
+    </h2>
+
+    <!-- Intro Text -->
+    <p class="text-gray-700 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto mb-12 opacity-90"  data-aos-delay="100">
+      Maintaining a home requires dependable service and skilled workmanship. Your Handyman Duties delivers both—consistently and professionally.
+
+    </p>
+
+    <!-- Key Points Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <!-- Point 1: Expertise -->
+      <div class="flex flex-col items-center border-2 border-[#0B3C5DBF] rounded-xl p-6 bg-white shadow-md transform transition-transform duration-300 hover:scale-105 hover:shadow-xl"  data-aos-delay="150">
+        <div class="w-16 h-16 flex items-center justify-center rounded-full bg-[#0B3C5D] text-white mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-blue-900 mb-2">Skilled Professionals</h3>
+        <p class="text-gray-700 text-sm">Our technicians bring hands-on experience and attention to detail to every project.</p>
+      </div>
+
+      <!-- Point 2: Customer Comfort -->
+      <div class="flex flex-col items-center border-2 border-[#0B3C5DBF] rounded-xl p-6 bg-white shadow-md transform transition-transform duration-300 hover:scale-105 hover:shadow-xl"  data-aos-delay="250">
+        <div class="w-16 h-16 flex items-center justify-center rounded-full bg-[#0B3C5D] text-white mb-4">
+
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-3 0-5 3-5 5s2 5 5 5 5-2 5-5-2-5-5-5z" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-blue-900 mb-2">Reliable & Honest Service</h3>
+        <p class="text-gray-700 text-sm">We believe in transparent pricing, clear communication, and delivering exactly what we promise.</p>
+      </div>
+
+      <!-- Point 3: Reliable Service -->
+      <div class="flex flex-col items-center border-2 border-[#0B3C5DBF] rounded-xl p-6 bg-white shadow-md transform transition-transform duration-300 hover:scale-105 hover:shadow-xl"  data-aos-delay="350">
+        <div class="w-16 h-16 flex items-center justify-center rounded-full bg-[#0B3C5D] text-white mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-blue-900 mb-2">Respect for Your Home</h3>
+        <p class="text-gray-700 text-sm">We work cleanly, efficiently, and with full respect for your property and schedule.</p>
+      </div>
+
+      <!-- Point 4: Comprehensive Solutions -->
+      <div class="flex flex-col items-center border-2 border-[#0B3C5DBF] rounded-xl p-6 bg-white shadow-md transform transition-transform duration-300 hover:scale-105 hover:shadow-xl"  data-aos-delay="450">
+        <div class="w-16 h-16 flex items-center justify-center rounded-full bg-[#0B3C5D] text-white mb-4">
+
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-blue-900 mb-2">Comprehensive Solutions</h3>
+        <p class="text-gray-700 text-sm">One trusted provider for multiple home services—saving you time and hassle.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+      
+
+    
+
+
+
+
+<!-- OUR COMMITMENT SECTION -->
+<section id="about" class="py-20 bg-white" >
+
+  <div class="pt-6"></div>
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+    <!-- LEFT SIDE TEXT -->
+    <div>
+      <h2 class="hero-title text-4xl md:text-4xl font-bold text-[#0B3C5D] mb-10" >
+        Our Commitment to You
+      </h2>
+
+      <!-- Item 1 -->
+      <div class="flex items-start gap-4 mb-10"  data-aos-delay="100">
+        <div class="w-12 h-12 rounded-xl bg-[#7B1D10] flex items-center justify-center flex-shrink-0">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 1.657-1.343 3-3 3S6 12.657 6 11s1.343-3 3-3 3 1.343 3 3zm0 0v4m6-4a6 6 0 11-12 0 6 6 0 0112 0z" />
+          </svg>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-semibold text-[#0B3C5D]">Quality Workmanship</h3>
+          <p class="text-gray-700 mt-1">
+           Every service we provide is performed with care, precision, and pride.
+          </p>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="flex items-start gap-4 mb-10"  data-aos-delay="200">
+        <div class="w-12 h-12 rounded-xl bg-[#B36A2E] flex items-center justify-center flex-shrink-0">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+          </svg>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-semibold text-[#0B3C5D]">Professional Standards</h3>
+          <p class="text-gray-700 mt-1">
+            We arrive on time, communicate clearly, and complete each job responsibly.
+            </p>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="flex items-start gap-4 mb-10"  data-aos-delay="300">
+        <div class="w-12 h-12 rounded-xl bg-[#E0B800] flex items-center justify-center flex-shrink-0">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A4 4 0 018 16h8a4 4 0 012.879 1.804M12 12a4 4 0 100-8 4 4 0 000 8z" />
+          </svg>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-semibold text-[#0B3C5D]">Customer Satisfaction</h3>
+          <p class="text-gray-700 mt-1">
+           Your trust matters to us. We stand behind our work and aim to exceed expectations on every visit.
+           </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE IMAGE -->
+    <div class="relative"  data-aos-delay="400">
+      <img 
+        src="assets/images/commitment.jpg"
+        class="rounded-3xl shadow-lg w-full object-cover"
+        alt="Tools and cowboy hat"
+      />
+
+      <!-- Experience Badge (far right outside image) -->
+      <!-- <div class="absolute -bottom-6 right-0 translate-x-6 bg-[#7B1D10] text-white px-6 py-3 rounded-xl text-center shadow-lg">
+        <span class="text-lg font-bold">18+</span>
+        <div class="text-xs">Years Experience</div>
+      </div> -->
+    </div>
+
+  </div>
+</section>
+
+ 
+
+
+ <!-- TESTIMONIALS SECTION -->
+<section id="testimonials" class="bg-[#EEF3F7] py-16">
+  
+  <div class="max-w-7xl mx-auto px-6 text-center">
+
+    <!-- Section Title -->
+    <h2 class="hero-title text-4xl font-bold text-[#0B3C5D] mb-6" >
+      What Our Customers Say
+    </h2>
+
+    <!-- Intro Text -->
+    <p class="text-gray-700 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto mb-12 opacity-90"
+        data-aos-delay="100">
+      Homeowners trust Your Handyman Duties for reliable service and quality results. Here’s what they have to say.
+    </p>
+
+    <!-- Slider Wrapper -->
+    <div class="relative">
+
+      <!-- Testimonials Slider -->
+      <div class="swiper testimonialsSwiper px-14 md:px-20">
+
+        <div class="swiper-wrapper">
+
+          <!-- Slide 1 -->
+          <div class="swiper-slide">
+            <div class="bg-white p-6 rounded-2xl shadow-md border-l-4 border-red-800">
+              <p class="text-gray-700 mb-4">
+                "Mohammed was great he worked with me. He was very friendly and kind . He did a great job with the installation. He also told me about venting my appliances."
+              </p>
+
+              <!-- Stars -->
+<div class="flex text-yellow-400 mb-4">
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star-half-stroke"></i>
+
+  
+</div>
+
+              <div class="flex items-center gap-4">
+                <img src="assets/images/pp1.webp"
+                     class="w-12 h-12 rounded-full object-cover border-2 border-red-800">
+                <div class="text-left">
+                  <h4 class="font-bold text-blue-800">Randolph P.</h4>
+                  <!-- <p class="text-sm text-gray-500">Bloomington, IL</p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="swiper-slide">
+            <div class="bg-white p-6 rounded-2xl shadow-md border-l-4 border-red-800">
+              <p class="text-gray-700 mb-4">
+                “My laundry machine stopped working unexpectedly — within the same day I was able to get Your Handyman Duties to come out and inspect the appliance. He was super thorough and even detected an additional problem.”
+              </p>
+
+              <!-- Stars -->
+<div class="flex text-yellow-400 mb-4">
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+
+  
+</div>
+
+
+              <div class="flex items-center gap-4">
+                <img src="assets/images/person1.jpg"
+                     class="w-12 h-12 rounded-full object-cover border-2 border-red-800">
+                <div class="text-left">
+                  <h4 class="font-bold text-blue-800">Claire W.</h4>
+                  <!-- <p class="text-sm text-gray-500">Normal, IL</p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="swiper-slide">
+            <div class="bg-white p-6 rounded-2xl shadow-md border-l-4 border-red-800">
+              <p class="text-gray-700 mb-4">
+                “My experience with Your Handyman DutiesServices was excellent. I asked Mohammad to see if he could level my brand new dishwasher after the Best Buy technician who installed it indicated that he was not able to do so. He arrived on time despite crazy weather, quickly diagnosed the problem and explained it to me, was super efficient, and charged me a very reasonable rate. I feel very confident in recommending his services.”
+              </p>
+
+              <!-- Stars -->
+<div class="flex text-yellow-400 mb-4">
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+ <i class="fa-solid fa-star"></i>
+
+  
+</div>
+
+
+              <div class="flex items-center gap-4">
+                <img src="assets/images/person3.jpg"
+                     class="w-12 h-12 rounded-full object-cover border-2 border-red-800">
+                <div class="text-left">
+                  <h4 class="font-bold text-blue-800">Amy K.</h4>
+                  <!-- <p class="text-sm text-gray-500">Bloomington, IL</p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="swiper-slide">
+            <div class="bg-white p-6 rounded-2xl shadow-md border-l-4 border-red-800">
+              <p class="text-gray-700 mb-4">
+                “Have used Your Handyman Duties  multiple times for random tasks around the house. Always a good service. Will use them again.”
+              </p>
+
+              <!-- Stars -->
+<div class="flex text-yellow-400 mb-4">
+ <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+
+  
+</div>
+
+
+              <div class="flex items-center gap-4">
+                <img src="assets/images/pp1.webp"
+                     class="w-12 h-12 rounded-full object-cover border-2 border-red-800">
+                <div class="text-left">
+                  <h4 class="font-bold text-blue-800">Matthew S.</h4>
+                  <!-- <p class="text-sm text-gray-500">Bloomington, IL</p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Slide 3 -->
+          <div class="swiper-slide">
+            <div class="bg-white p-6 rounded-2xl shadow-md border-l-4 border-red-800">
+              <p class="text-gray-700 mb-4">
+                “Reliable and skilled service. Everything was done right the first time.”
+              </p>
+
+              <!-- Stars -->
+<div class="flex text-yellow-400 mb-4">
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star-half-stroke"></i>
+
+  
+</div>
+
+
+              <div class="flex items-center gap-4">
+                <img src="assets/images/pp2.webp"
+                     class="w-12 h-12 rounded-full object-cover border-2 border-red-800">
+                <div class="text-left">
+                  <h4 class="font-bold text-blue-800">Emily R.</h4>
+                  <p class="text-sm text-gray-500">Bloomington, IL</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Slide 5 -->
+          <div class="swiper-slide">
+            <div class="bg-white p-6 rounded-2xl shadow-md border-l-4 border-red-800">
+              <p class="text-gray-700 mb-4">
+                “I can’t say enough good things about this experience. From start to finish, they were incredibly honest and transparent, explaining everything clearly and making me feel completely comfortable with the entire process. No pressure, no upselling — just real integrity and professionalism. On top of that, they were super kind, respectful, and worked efficiently without cutting corners. My dryer is running perfectly now, and I genuinely felt taken care of as a customer. If you’re looking for someone you can trust who does excellent work, this is your person. Highly recommend!”
+              </p>
+
+              <!-- Stars -->
+<div class="flex text-yellow-400 mb-4">
+ <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+
+  
+</div>
+
+
+              <div class="flex items-center gap-4">
+                <img src="assets/images/pp1.webp"
+                     class="w-12 h-12 rounded-full object-cover border-2 border-red-800">
+                <div class="text-left">
+                  <h4 class="font-bold text-blue-800">John D.</h4>
+                  <!-- <p class="text-sm text-gray-500">Bloomington, IL</p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+     <button class="testimonials-prev swiper-button-prev
+  !-left-10 md:!-left-16
+  !top-1/2 !-translate-y-1/2
+  !text-blue-800">
+</button>
+
+<button class="testimonials-next swiper-button-next
+  !-right-10 md:!-right-16
+  !top-1/2 !-translate-y-1/2
+  !text-blue-800">
+</button>
+
+
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- GALLERY -->
+<section id="gallery" class="max-w-7xl mx-auto px-6 py-16">
+  
+  
+
+  <!-- Section Title -->
+  <h2 class="hero-title text-4xl font-bold text-[#0B3C5D] mb-6 text-center" data-aos="fade-up">
+    Gallery
+  </h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+    <!-- Large Featured Image (already correct) -->
+    <div
+      class="md:col-span-2 md:row-span-2 overflow-hidden rounded-xl
+             max-h-[360px] md:max-h-[460px]
+
+             transition duration-500 hover:shadow-xl"
+      data-aos="fade-up"
+    >
+
+      <a href="gallery.html" target="_blank">
+      <img
+        src="assets/images/1.jpeg"
+        class="w-full h-full object-cover rounded-xl
+               transition duration-500 hover:scale-105
+               transform-gpu will-change-transform"
+        alt=""
+      >
+      </a>
+    </div>
+
+    <!-- Single Image (FIXED) -->
+    <div
+      class="overflow-hidden rounded-xl h-64
+             transition duration-500 hover:shadow-xl"
+      data-aos="fade-up"
+      data-aos-delay="150"
+    >
+      <a href="gallery.html" target="_blank">
+      <img
+        src="assets/images/gallery1.jpg"
+        class="w-full h-full object-cover rounded-xl
+               transition duration-500 hover:scale-105
+               transform-gpu will-change-transform"
+        alt=""
+      >
+      </a>
+    </div>
+
+    <!-- Two Small Images -->
+    <div class="grid grid-cols-2 gap-4">
+
+      <div
+        class="overflow-hidden rounded-xl h-48
+               transition duration-500 hover:shadow-xl"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
+        <a href="gallery.html" target="_blank">
+        <img
+          src="assets/images/gallery2.jpg"
+          class="w-full h-full object-cover rounded-xl
+                 transition duration-500 hover:scale-105
+                 transform-gpu will-change-transform"
+          alt=""
+        >
+        </a>
+      </div>
+
+      <div
+        class="overflow-hidden rounded-xl h-48
+               transition duration-500 hover:shadow-xl"
+        data-aos="fade-up"
+        data-aos-delay="450"
+      >
+        <a href="gallery.html" target="_blank">
+        <img
+          src="assets/images/gallery3.jpg"
+          class="w-full h-full object-cover rounded-xl
+                 transition duration-500 hover:scale-105
+                 transform-gpu will-change-transform"
+          alt=""
+        >
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+ 
+
+<!-- FAQ SECTION -->
+<section id="faq" class="bg-[#EEF3F7] py-20" >
+
+  <div class="pt-10"></div>
+  <div class="max-w-3xl mx-auto px-4 text-center">
+
+    <!-- Title -->
+    <h2 class="hero-title text-3xl md:text-4xl font-bold text-[#0B3C5D]" >
+      Frequently Asked Questions
+    </h2>
+
+    <!-- Subtitle -->
+    <p class="text-gray-700 mt-3"  data-aos-delay="100">
+      Got questions? We've got answers! Here are the most common questions our customers ask.
+    </p>
+
+    <!-- FAQ List -->
+    <div class="mt-10 space-y-4">
+
+      <!-- FAQ Item 1 -->
+      <div class="faq-item flex flex-col bg-white border border-#0B3C5DBF-800 rounded-2xl px-6 py-4 cursor-pointer hover:border-[#0B3C5DBF] hover:shadow-lg transition-all duration-300"  data-aos-delay="200">
+        <div class="flex justify-between items-center w-full">
+          <span class="text-gray-800 font-medium text-base sm:text-lg">What types of services do you offer?</span>
+          <span class="text-xl text-gray-600 ml-4 transition-transform duration-300">+</span>
+        </div>
+        <div class="faq-answer mt-3 text-gray-700 text-sm sm:text-base leading-relaxed text-left hidden">
+          Your Handyman Duties Services offers a wide range of home services including appliance installation and repair, plumbing services, electrical work, TV wall mounting, furniture assembly, and general handyman repairs and improvements.
+          </div>
+      </div>
+
+      <!-- FAQ Item 2 -->
+      <div class="faq-item flex flex-col bg-white border border-#0B3C5DBF-800 rounded-2xl px-6 py-4 cursor-pointer hover:border-[#0B3C5DBF] hover:shadow-lg transition-all duration-300"  data-aos-delay="300">
+        <div class="flex justify-between items-center w-full">
+          <span class="text-gray-800 font-medium text-base sm:text-lg">Do you have a minimum service charge?</span>
+          <span class="text-xl text-gray-600 ml-4 transition-transform duration-300">+</span>
+        </div>
+        <div class="faq-answer mt-3 text-gray-700 text-sm sm:text-base leading-relaxed text-left hidden">
+          Yes. A 2-hour minimum service call applies to each visit. This ensures our technicians have adequate time to complete work properly and to our quality standards.
+
+        </div>
+      </div>
+
+      <!-- FAQ Item 3 -->
+      <div
+  class="faq-item flex flex-col bg-white border border-#0B3C5DBF-800 rounded-2xl px-6 py-4 cursor-pointer hover:border-[#0B3C5DBF] hover:shadow-lg transition-all duration-300"
+  data-aos-delay="400">
+
+        <div class="flex justify-between items-center w-full">
+          <span class="text-gray-800 font-medium text-base sm:text-lg">Do you work with all appliance brands?</span>
+          <span class="text-xl text-gray-600 ml-4 transition-transform duration-300">+</span>
+        </div>
+        <div class="faq-answer mt-3 text-gray-700 text-sm sm:text-base leading-relaxed text-left hidden">
+          Yes. We service and install appliances from all major brands. If you have a specific model or concern, feel free to contact us in advance.
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Contact Box -->
+    <!-- <div class="mt-16 max-w-md mx-auto bg-white border border-yellow-300 rounded-2xl p-10 text-center shadow-sm"  data-aos-delay="500">
+      <h3 class="font-semibold text-lg text-gray-900">Still have questions?</h3>
+      <p class="text-gray-600 mt-1">Don't hesitate to reach out to our friendly cowboys!</p>
+
+      <button class="mt-5 bg-[#8B0A1A] text-white font-medium px-6 py-3 rounded-full hover:bg-[#a50d21] transition">
+        Contact us Today
+      </button>
+    </div> -->
+
+
+  </div>
+
+  <div class="pb-10"></div>
+</section>
+
+  <!-- CTA -->
+  <!-- <section class="bg-sky-100 py-16 text-center px-6" >
+    <h2 class="text-2xl md:text-3xl font-bold mb-4">Your Comfort, Our Mission</h2>
+    <p class="text-gray-700 max-w-xl mx-auto mb-6">From emergency repairs to full installations — HVAC Cowboys delivers honest work, fast response, and reliable results.</p>
+    <button onclick="scrollToSection('contact')" class="bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-500 transition">Talk to us now →</button>
+  </section> -->
+
+  <!-- CONTACT -->
+  <section id="contact" class="bg-[#f7f7f7]">  <!-- Off-white background -->
+  <div class="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch">
+
+    <!-- LEFT BOX -->
+    <div class="bg-white text-black p-8 rounded-xl shadow-md flex flex-col" >
+      <h3 class="font-bold text-lg mb-4">Need Reliable Home Services?</h3>
+      <p class="text-gray-600 mb-6">Contact Your Handyman Duties today for professional, dependable home repairs and installations.</p>
+
+      <form class="grid grid-cols-1 gap-4 mt-auto">
+        <input type="text" placeholder="Full Name*" required class="p-3 rounded border border-gray-300 w-full">
+        <input type="email" placeholder="Email*" required class="p-3 rounded border border-gray-300 w-full">
+        <input type="text" placeholder="Phone Number*" required class="p-3 rounded border border-gray-300 w-full">
+        <textarea placeholder="How can we help?*" required class="p-3 rounded border border-gray-300 w-full h-32"></textarea>
+        <button type="submit"
+  class="bg-[#0B3C5D] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#0B3C5DBF] transition">
+  Request Service
+</button>
+
+      </form>
+    </div>
+
+    <!-- RIGHT IMAGE -->
+    <!-- GOOGLE MAP -->
+<div  data-aos-delay="150" class="flex justify-center items-center w-full">
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24689.605476130928!2d-76.77917578199443!3d39.32903848461405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c818e58ad9bc19%3A0x25f322c1e335dc3!2sWindsor%20Mill%2C%20Milford%20Mill%2C%20MD%2021244%2C%20USA!5e0!3m2!1sen!2snp!4v1770034116009!5m2!1sen!2snp" 
+    class="rounded-xl w-full max-w-[418px] h-[600px] object-cover"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+
+ 
+</div>
+
+  </div>
+</section>
+
+  <!-- FOOTER -->
+<footer class="bg-black text-gray-300 pt-12 pb-6">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+
+    <!-- About / Logo -->
+    <div class="text-center md:text-left" data-aos="fade-up">
+      <img src="assets/images/abt - Copy.jpeg" alt=" Logo" class="w-24 mx-auto md:mx-0 mb-4 rounded-full border-2 border-white/50">
+      <p class="text-gray-400 text-sm">
+        Reliable, skilled, and professional home services you can trust.Your Handyman Duties Services provides dependable handyman solutions, quality workmanship, and honest service for homeowners and businesses.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+      <h3 class="text-white font-semibold mb-4">Quick Links</h3>
+      <ul class="space-y-2">
+        <li><a href="#about" class="footer-quick-link text-white transition">About Us</a></li>
+        <li><a href="#services" class="footer-quick-link text-white transition">Services</a></li>
+        
+        <li><a href="#faq" class="footer-quick-link text-white transition">FAQ</a></li>
+        <li><a href="#contact" class="footer-quick-link text-white transition">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="text-center md:text-right" data-aos="fade-up" data-aos-delay="200">
+      <h3 class="text-white font-semibold mb-4">Contact Us</h3>
+      <p class="text-gray-400 text-sm">414 Audubon Cir, Brandon, MS, 39047</p>
+      <p class="text-gray-400 text-sm">Phone: (601) 401-4430</p>
+      <p class="text-gray-400 text-sm">Email: yourhandymanduties@gmailcom</p>
+      <div class="flex justify-center md:justify-end gap-4 mt-3">
+        <a href="#" class="text-gray-400 hover:text-blue-400 transition"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="text-gray-400 hover:text-blue-400 transition"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-gray-400 hover:text-blue-400 transition"><i class="fab fa-instagram"></i></a>
+      </div>
+
+<!-- Admin Section -->
+      
+
+
+    </div>
+
+  <style>
+    .footer-quick-link {
+      color: #fff;
+      transition: color 0.2s;
+    }
+    .footer-quick-link:hover {
+      color: #5858fd !important; /* Tailwind yellow-400 */
+    }
+  </style>
+  </div>
+
+  <div class="border-t border-gray-800 mt-8 pt-6 text-center text-gray-500 text-sm" data-aos="fade-up" data-aos-delay="300">
+    © 2026 Your Handyman Duties. All rights reserved.
+    <br>
+    <br>
+    Powered by <a href="https://www.ensefy.com" class="hover:text-blue-400 transition">Perfect Web</a>.
+  </div>
+
+  
+  
+</footer>
+
+  <!-- AOS Init (kept exactly like original) -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 900, once: true });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="assets/js/script.js"></script>
+
+
+</body>
+</html>
+
+
