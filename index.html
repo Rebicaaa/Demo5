@@ -8,9 +8,9 @@
   <title>Your Handyman Duties – Quality You Can Trust</title>
  <!-- Favicon -->
 <link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
-<link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.webp">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.webp">
+<link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.webp">
 <link rel="manifest" href="assets/favicon/site.webmanifest">
 
 
@@ -425,7 +425,7 @@ li, li * hover {
   position: absolute;
   inset: 0;
 
-  background-image: url("assets/images/horse.png");
+  background-image: url("assets/images/horse.webp");
   background-repeat: repeat;
   background-size: 300px auto;
 
@@ -484,6 +484,46 @@ li, li * hover {
 
 
 
+/* HARD-LOCKED PERFECT CIRCLE */
+.location-icon {
+  width: 38px;
+  height: 38px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #0B3C5D;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+  line-height: 0; /* CRITICAL */
+}
+
+/* SVG inside must NOT affect layout */
+.location-icon svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+/* Mobile – slightly smaller but still circle */
+@media (max-width: 640px) {
+  .location-icon {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    min-height: 34px;
+  }
+}
+
+
+img {
+  image-rendering: auto; /* smooth scaling */
+  will-change: transform; /* hint for better GPU rendering */
+  backface-visibility: hidden;
+}
   </style>
 </head>
 
@@ -506,7 +546,7 @@ li, li * hover {
 
       <!-- Slide 1 -->
       <div class="swiper-slide">
-     <img src="assets/images/b2.jpg" class="w-full h-full object-cover object-center sm:object-top">
+     <img src="assets/images/b2.webp" class="w-full h-full object-cover object-center sm:object-top">
         <div class="absolute inset-0 bg-black opacity-40"></div>
             <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6 z-20 pt-24 sm:pt-28 md:pt-32">
 
@@ -527,16 +567,16 @@ li, li * hover {
 
       <!-- Slide 2 -->
       <div class="swiper-slide">
-        <img src="assets/images/shanibanner1.jpeg" class="w-full h-full object-cover object-center sm:object-top">
+        <img src="assets/images/tv5.webp" class="w-full h-full object-cover object-center sm:object-top">
         <div class="absolute inset-0 bg-black opacity-40"></div>
         <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6 z-20 pt-24 sm:pt-28 md:pt-32">
 <br><br><br>
           <h1 class="hero-title text-white font-normal text-4xl sm:text-5xl lg:text-6xl mb-4 drop-shadow-lg"
 
-              >Complete Plumbing Solutions</h1>
+              >Remodeling, Renovations & Additions</h1>
           <p class="text-white/90 max-w-4xl text-lg sm:text-xl py-3"
                data-aos-delay="200">
-           From appliance installation and plumbing to electrical work and home repairs, Your Handyman Dutiesdelivers dependable service with expert craftsmanship for every job—big or small.
+           From full home renovations and room additions to flooring and custom upgrades, Your Handyman Duties delivers quality craftsmanship and dependable results—start to finish.
           </p>
           
          
@@ -550,7 +590,7 @@ li, li * hover {
 
     <!-- Slide 3 -->
 <div class="swiper-slide relative">
-          <img src="assets/images/121212.jpeg" class="w-full h-full object-cover">
+          <img src="assets/images/b5.webp" class="w-full h-full object-cover">
 
   <div class="absolute inset-0 bg-black opacity-10"></div>
 
@@ -573,16 +613,16 @@ li, li * hover {
 
       <!-- Slide 4 -->
       <div class="swiper-slide">
-        <img src="assets/images/o1.jpeg" class="w-full h-full object-cover sm:object-top">
+        <img src="assets/images/ok.webp" class="w-full h-full object-cover sm:object-top">
         <div class="absolute inset-0 bg-black opacity-40"></div>
         <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6 z-20 pt-24 sm:pt-28 md:pt-32">
 
           <h1 class="hero-title text-white font-normal text-4xl sm:text-5xl lg:text-6xl mb-4 drop-shadow-lg"
 
-              ><br>Expert Lighting Installation & Repair</h1>
+              ><br>Outdoor Living & Custom Structures</h1>
           <p class="text-white/90 max-w-2xl text-lg sm:text-xl"
                data-aos-delay="200">
-            Brighten your space with expert lighting services. From installing modern fixtures to fixing electrical issues, we deliver safe, efficient, and reliable solutions that enhance both comfort and style.
+            Transform your outdoor space with custom decks, porches, outdoor kitchens, and stone & brickwork built for beauty, durability, and enjoyment.
           </p>
           <a href="#contact"
             class="scroll-link mt-8 border border-white text-white bg-transparent px-7 py-3 rounded-full font-semibold hover:bg-white hover:text-black transition"
@@ -668,12 +708,12 @@ li, li * hover {
     <!-- LOGO -->
     <div class="flex items-center gap-4">
       <!-- <img
-        src="assets/images/abt - Copy.jpeg"
+        src="assets/images/abt - Copy.jpeg.webp"
         alt="HVAC Cowboys Logo"
         class="w-20 h-20 object-cover"
       /> -->
 
-      <img src="assets/images/abt - Copy.jpeg" alt="HVAC Cowboys Logo" class="w-24 mx-auto md:mx-0 mb-0 rounded-full border-2 border-white/50">
+      <img src="assets/images/abt - Copy.jpeg.webp" alt="HVAC Cowboys Logo" class="w-24 mx-auto md:mx-0 mb-0 rounded-full border-2 border-white/50">
       <div>
         <div class="text-xl font-bold text-gray-900">Your Handyman Duties</div>
         <div class="text-sm text-gray-500">Quality You Can Trust</div>
@@ -699,15 +739,46 @@ li, li * hover {
     <i class="fa-solid fa-chevron-down text-xs mt-1 transition-transform duration-300" id="servicesArrow"></i>
   </button>
 
-  <!-- Dropdown Menu -->
-   <div id="servicesMenu" class="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-md opacity-0 invisible transition-opacity duration-300 z-50">
-    <a href="appliance.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">Garage Doors Installation</a>
-    <a href="electrical.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">Remodels</a>
-    <a href="plumbing.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">Doors & Windows</a>
-    <a href="tv-mounting.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">Bathroom Remodeling</a>
-    <a href="furniture.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">Kitchen Remodeling</a> 
-     
-  </div>
+ <!-- Dropdown Menu -->
+<div id="servicesMenu" class="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-md opacity-0 invisible transition-opacity duration-300 z-50">
+
+  <a href="remodeling.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+    Remodeling / Renovations & Additions
+  </a>
+
+  <a href="flooring.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+    Flooring
+  </a>
+
+  <a href="bathroom-kitchen.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+    Bathroom & Kitchen Remodel
+  </a>
+
+  <a href="decks-porches.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+    Custom Decks & Porches
+  </a>
+
+  <a href="general-contractor.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+    General Contractor Services
+  </a>
+
+  <a href="house-painting.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+    House Painting (Interior & Exterior)
+  </a>
+
+  <a href="outdoor-living.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+    Outdoor Living Spaces & Structures
+  </a>
+
+  <a href="outdoor-kitchens.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+    Outdoor Kitchens
+  </a>
+
+  <a href="stone-brickwork.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+    Stone & Brickwork
+  </a>
+
+</div>
 </div>
 
 
@@ -763,7 +834,7 @@ li, li * hover {
   <!-- Mobile Menu Header -->
   <div class="flex items-center justify-between px-6 py-6 border-b border-white/10">
     <div class="flex items-center gap-3">
-      <img src="assets/images/abt - Copy.jpeg" alt="HVAC Cowboys Logo" class="w-12 h-12 rounded-full object-cover border-2 border-white/50" />
+      <img src="assets/images/abt - Copy.jpeg.webp" alt="HVAC Cowboys Logo" class="w-12 h-12 rounded-full object-cover border-2 border-white/50" />
       <div>
         <div class="text-white font-semibold text-lg">Your Handyman Duties</div>
         <div class="text-white text-xs">Quality you can trust </div>
@@ -876,7 +947,7 @@ li, li * hover {
 
         <!-- LEFT image (lower only on lg screens) -->
         <img
-          src="assets/images/1.jpeg"
+          src="assets/images/s3.webp"
           class="rounded-2xl object-cover h-64 sm:h-80 w-full 
                  mt-4 lg:mt-14 
                  shadow-xl hover:scale-105 transition duration-500"
@@ -884,7 +955,7 @@ li, li * hover {
 
         <!-- RIGHT image (higher only on lg screens) -->
         <img
-          src="assets/images/4.jpeg"
+          src="assets/images/s6.webp"
           class="rounded-2xl object-cover h-64 sm:h-80 w-full 
                  -mt-2 lg:-mt-14 
                  shadow-xl hover:scale-105 transition duration-500"
@@ -932,147 +1003,170 @@ li, li * hover {
       <!-- ⬇️ YOUR GRID (UNCHANGED) -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-12">
 
-      <!-- Card 1 -->
-      
-  <div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1">
-    
-    <div class="relative overflow-hidden">
-      <img src="assets/images/door.jpg" alt="HVAC"
-           class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
-    </div>
-
-    <div class="p-6 transition-all duration-500 group-hover:translate-y-1">
-      <h3 class="text-xl font-semibold text-[#0B3C5D] mb-2 group-hover:text-[#0B3C5DBF] transition">
-        Garage Doors Installation
-      </h3>
-
-      <p class="text-gray-600 text-sm mb-4 opacity-80">
-        Professional installation and repair of all major household appliances. We ensure safe setup, proper functionality, and dependable performance across all major brands.
-      </p>
-
-      <span class="inline-block bg-[#0B3C5D] text-white px-5 py-2 rounded-full hover:bg-[#0B3C5DBF] transition">
-        Read More
-      </span>
-    </div>
-
+    <!-- Card 1 – Remodeling / Renovations & Additions -->
+<div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1">
+  <div class="relative overflow-hidden">
+    <img src="assets/images/s1.webp" alt="Remodeling and Renovations"
+         class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
   </div>
-</a>
-
-
-      <!-- Card 2 -->
-      
-  <div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1" data-aos-delay="150">
-    <div class="relative overflow-hidden">
-      <img src="assets/images/elec.jpg" alt="Electrical Services"
-           class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
-    </div>
-    <div class="p-6">
-      <h3 class="text-xl font-semibold text-[#0B3C5D] mb-2 group-hover:text-[#0B3C5DBF] transition">
-
-       Remodels
-
-      </h3>
-      <p class="text-gray-600 text-sm mb-4 opacity-80">
-        Expert assembly of furniture from all brands and styles—fast, precise, and hassle-free.
-      </p>
-      <span class="inline-block bg-[#0B3C5D] text-white px-5 py-2 rounded-full hover:bg-[#0B3C5DBF] transition">
-  Read More
-</span>
-    </div>
+  <div class="p-6 transition-all duration-500 group-hover:translate-y-1">
+    <h3 class="text-xl font-semibold text-[#0B3C5D] mb-2 group-hover:text-[#0B3C5DBF] transition">
+      Remodeling, Renovations & Additions
+    </h3>
+    <p class="text-gray-600 text-sm mb-4 opacity-80">
+      Comprehensive home remodeling and renovation services including room additions, layout changes, and structural improvements.
+    </p>
+    <span class="inline-block bg-[#0B3C5D] text-white px-5 py-2 rounded-full hover:bg-[#0B3C5DBF] transition">
+      Read More
+    </span>
   </div>
-</a>
-
-      <!-- Card 3 -->
-      
-  <div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1" data-aos-delay="300">
-    <div class="relative overflow-hidden">
-      <img src="assets/images/window.jpg" alt="Plumbing Services"
-           class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
-    </div>
-    <div class="p-6">
-      <h3 class="text-xl font-semibold text-[#0B3C5D] mb-2 group-hover:text-[#0B3C5DBF] transition">
-
-        Doors & Windows 
-      </h3>
-      <p class="text-gray-600 text-sm mb-4 opacity-80">
-        Expert assembly of furniture from all brands and styles—fast, precise, and hassle-free.
-      </p>
-      <span class="inline-block bg-[#0B3C5D] text-white px-5 py-2 rounded-full hover:bg-[#0B3C5DBF] transition">
-  Read More
-</span>
-    </div>
+</div>
+<!-- Card 2 – Flooring -->
+<div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1" data-aos-delay="150">
+  <div class="relative overflow-hidden">
+    <img src="assets/images/s2.webp" alt="Flooring Installation"
+         class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
   </div>
-</a>
-
-
-      <!-- Card 4 -->
-
-  <div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1" data-aos-delay="450">
-    <div class="relative overflow-hidden">
-      <img src="assets/images/bathroom.jpg" alt="TV Wall Mounting"
-           class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
-    </div>
-    <div class="p-6">
-      <h3 class="text-xl font-semibold text-[#0B3C5D] mb-2 group-hover:text-[#0B3C5DBF] transition">
-
-        Bathroom remodeling
-
-      </h3>
-      <p class="text-gray-600 text-sm mb-4 opacity-80">
-        Expert assembly of furniture from all brands and styles—fast, precise, and hassle-free.
-      </p>
-      <span class="inline-block bg-[#0B3C5D] text-white px-5 py-2 rounded-full hover:bg-[#0B3C5DBF] transition">
-  Read More
-</span>
-    </div>
+  <div class="p-6">
+    <h3 class="text-xl font-semibold text-[#0B3C5D] mb-2 group-hover:text-[#0B3C5DBF] transition">
+      Flooring Installation
+    </h3>
+    <p class="text-gray-600 text-sm mb-4 opacity-80">
+      Expert installation of hardwood, laminate, vinyl, tile, and other flooring options with precision and durability.
+    </p>
+    <span class="inline-block bg-[#0B3C5D] text-white px-5 py-2 rounded-full hover:bg-[#0B3C5DBF] transition">
+      Read More
+    </span>
   </div>
-</a>
-
-
-<!-- Card 5 -->
-
-  <div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1" data-aos-delay="600">
-    <div class="relative overflow-hidden">
-      <img src="assets/images/kitchen.jpg" alt="Furniture Assembly"
-           class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
-    </div>
-    <div class="p-6">
-      <h3 class="text-xl font-semibold text-[#0B3C5D] mb-2 group-hover:text-[#0B3C5DBF] transition">
-
-        Kitchen remodeling   
-      </h3>
-      <p class="text-gray-600 text-sm mb-4 opacity-80">
-        Expert assembly of furniture from all brands and styles—fast, precise, and hassle-free.
-      </p>
-      <span class="inline-block bg-[#0B3C5D] text-white px-5 py-2 rounded-full hover:bg-[#0B3C5DBF] transition">
-  Read More
-</span>
-
-    </div>
+</div>
+<!-- Card 3 – Bathroom & Kitchen Remodel -->
+<div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1" data-aos-delay="300">
+  <div class="relative overflow-hidden">
+    <img src="assets/images/s3.webp" alt="Bathroom and Kitchen Remodel"
+         class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
   </div>
-</a>
-
-
-<!-- Card 6 -->
-<!-- <a href="handyman.html" class="block">
-  <div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1" data-aos-delay="750">
-    <div class="relative overflow-hidden">
-      <img src="assets/images/88.jpeg" alt="General Handyman Services"
-           class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
-    </div>
-    <div class="p-6">
-      <h3 class="text-xl font-semibold text-blue-800 mb-2 group-hover:text-yellow-500 transition">
-        General Handyman Services
-      </h3>
-      <p class="text-gray-600 text-sm mb-4 opacity-80">
-        Comprehensive home repairs and improvements—from small fixes to full maintenance.
-      </p>
-      <span class="inline-block bg-red-700 text-white px-5 py-2 rounded-full hover:bg-yellow-700 transition">
-        Read More
-      </span>
-    </div>
+  <div class="p-6">
+    <h3 class="text-xl font-semibold text-[#0B3C5D] mb-2 group-hover:text-[#0B3C5DBF] transition">
+      Bathroom & Kitchen Remodel
+    </h3>
+    <p class="text-gray-600 text-sm mb-4 opacity-80">
+      Custom bathroom and kitchen renovations featuring modern designs, quality materials, and functional layouts.
+    </p>
+    <span class="inline-block bg-[#0B3C5D] text-white px-5 py-2 rounded-full hover:bg-[#0B3C5DBF] transition">
+      Read More
+    </span>
   </div>
-</a> -->
+</div>
+<!-- Card 4 – Custom Decks & Porches -->
+<div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1" data-aos-delay="450">
+  <div class="relative overflow-hidden">
+    <img src="assets/images/s4.webp" alt="Custom Decks and Porches"
+         class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-semibold text-[#0B3C5D] mb-2 group-hover:text-[#0B3C5DBF] transition">
+      Custom Decks & Porches
+    </h3>
+    <p class="text-gray-600 text-sm mb-4 opacity-80">
+      Design and construction of custom decks and porches that enhance outdoor comfort, style, and usability.
+    </p>
+    <span class="inline-block bg-[#0B3C5D] text-white px-5 py-2 rounded-full hover:bg-[#0B3C5DBF] transition">
+      Read More
+    </span>
+  </div>
+</div>
+<!-- Card 5 – General Contractor Services -->
+<div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1" data-aos-delay="600">
+  <div class="relative overflow-hidden">
+    <img src="assets/images/s5.webp" alt="General Contractor Services"
+         class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-semibold text-[#0B3C5D] mb-2 group-hover:text-[#0B3C5DBF] transition">
+      General Contractor Services
+    </h3>
+    <p class="text-gray-600 text-sm mb-4 opacity-80">
+      Professional project management handling permits, scheduling, coordination, and quality control from start to finish.
+    </p>
+    <span class="inline-block bg-[#0B3C5D] text-white px-5 py-2 rounded-full hover:bg-[#0B3C5DBF] transition">
+      Read More
+    </span>
+  </div>
+</div>
+<!-- Card 6 – House Painting -->
+<div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1">
+  <div class="relative overflow-hidden">
+    <img src="assets/images/hp2.jpg" alt="House Painting Services"
+         class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-semibold text-[#0B3C5D] mb-2 group-hover:text-[#0B3C5DBF] transition">
+      House Painting (Interior & Exterior)
+    </h3>
+    <p class="text-gray-600 text-sm mb-4 opacity-80">
+      High-quality interior and exterior painting services that refresh, protect, and enhance your home’s appearance.
+    </p>
+    <span class="inline-block bg-[#0B3C5D] text-white px-5 py-2 rounded-full hover:bg-[#0B3C5DBF] transition">
+      Read More
+    </span>
+  </div>
+</div>
+<!-- Card 7 – Outdoor Living Spaces -->
+<div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1">
+  <div class="relative overflow-hidden">
+    <img src="assets/images/s7.webp" alt="Outdoor Living Spaces"
+         class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-semibold text-[#0B3C5D] mb-2 group-hover:text-[#0B3C5DBF] transition">
+      Outdoor Living Spaces & Structures
+    </h3>
+    <p class="text-gray-600 text-sm mb-4 opacity-80">
+      Custom outdoor living areas including pergolas, patios, pavilions, and structural enhancements.
+    </p>
+    <span class="inline-block bg-[#0B3C5D] text-white px-5 py-2 rounded-full hover:bg-[#0B3C5DBF] transition">
+      Read More
+    </span>
+  </div>
+</div>
+<!-- Card 8 – Outdoor Kitchens -->
+<div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1">
+  <div class="relative overflow-hidden">
+    <img src="assets/images/ok.webp" alt="Outdoor Kitchens"
+         class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-semibold text-[#0B3C5D] mb-2 group-hover:text-[#0B3C5DBF] transition">
+      Outdoor Kitchens
+    </h3>
+    <p class="text-gray-600 text-sm mb-4 opacity-80">
+      Fully customized outdoor kitchens designed for entertaining, cooking, and enjoying outdoor living year-round.
+    </p>
+    <span class="inline-block bg-[#0B3C5D] text-white px-5 py-2 rounded-full hover:bg-[#0B3C5DBF] transition">
+      Read More
+    </span>
+  </div>
+</div>
+<!-- Card 9 – Stone & Brickwork -->
+<div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1">
+  <div class="relative overflow-hidden">
+    <img src="assets/images/s9.webp" alt="Stone and Brickwork"
+         class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-semibold text-[#0B3C5D] mb-2 group-hover:text-[#0B3C5DBF] transition">
+      Stone & Brickwork
+    </h3>
+    <p class="text-gray-600 text-sm mb-4 opacity-80">
+      Expert stone and brick masonry for walkways, retaining walls, fireplaces, and architectural features.
+    </p>
+    <span class="inline-block bg-[#0B3C5D] text-white px-5 py-2 rounded-full hover:bg-[#0B3C5DBF] transition">
+      Read More
+    </span>
+  </div>
+</div>
+
+
 
 
 
@@ -1087,74 +1181,108 @@ li, li * hover {
 <!-- WHY CHOOSE US SECTION -->
 <section id="why-us" class="bg-[#EEF3F7] py-16">
 
-<div class="max-w-screen-2xl mx-auto px-6 lg:px-12 text-center">
-
+  <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 text-center">
 
     <!-- Section Title -->
-    <h2 class="hero-title text-4xl font-bold text-[#0B3C5D] mb-6" >
+    <h2 class="hero-title text-4xl font-bold text-[#0B3C5D] mb-6">
       Why Choose Your Handyman Duties
     </h2>
 
     <!-- Intro Text -->
-    <p class="text-gray-700 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto mb-12 opacity-90"  data-aos-delay="100">
-      Maintaining a home requires dependable service and skilled workmanship. Your Handyman Duties delivers both—consistently and professionally.
-
+    <p class="text-gray-700 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto mb-12 opacity-90">
+      We take pride in delivering dependable, high-quality workmanship while treating your home with care and respect.
     </p>
 
     <!-- Key Points Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-      <!-- Point 1: Expertise -->
-      <div class="flex flex-col items-center border-2 border-[#0B3C5DBF] rounded-xl p-6 bg-white shadow-md transform transition-transform duration-300 hover:scale-105 hover:shadow-xl"  data-aos-delay="150">
+      <!-- Point 1: Reliable & Respectful -->
+      <div class="flex flex-col items-center border-2 border-[#0B3C5DBF] rounded-xl p-6 bg-white shadow-md transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
         <div class="w-16 h-16 flex items-center justify-center rounded-full bg-[#0B3C5D] text-white mb-4">
+          <!-- Check Badge -->
           <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m7 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
           </svg>
         </div>
-        <h3 class="text-lg font-semibold text-blue-900 mb-2">Skilled Professionals</h3>
-        <p class="text-gray-700 text-sm">Our technicians bring hands-on experience and attention to detail to every project.</p>
+        <h3 class="text-lg font-semibold text-blue-900 mb-2">Reliable & Respectful</h3>
+        <p class="text-gray-700 text-sm">
+          We take pride in our work and treat every customer and home with professionalism and respect.
+        </p>
       </div>
 
-      <!-- Point 2: Customer Comfort -->
-      <div class="flex flex-col items-center border-2 border-[#0B3C5DBF] rounded-xl p-6 bg-white shadow-md transform transition-transform duration-300 hover:scale-105 hover:shadow-xl"  data-aos-delay="250">
+      <!-- Point 2: Experienced -->
+      <div class="flex flex-col items-center border-2 border-[#0B3C5DBF] rounded-xl p-6 bg-white shadow-md transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
         <div class="w-16 h-16 flex items-center justify-center rounded-full bg-[#0B3C5D] text-white mb-4">
-
+          <!-- Briefcase -->
           <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-3 0-5 3-5 5s2 5 5 5 5-2 5-5-2-5-5-5z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-7 8h8a2 2 0 002-2V7a2 2 0 00-2-2h-2V3H10v2H8a2 2 0 00-2 2v11a2 2 0 002 2z"/>
           </svg>
         </div>
-        <h3 class="text-lg font-semibold text-blue-900 mb-2">Reliable & Honest Service</h3>
-        <p class="text-gray-700 text-sm">We believe in transparent pricing, clear communication, and delivering exactly what we promise.</p>
+        <h3 class="text-lg font-semibold text-blue-900 mb-2">Experienced</h3>
+        <p class="text-gray-700 text-sm">
+          Backed by years of hands-on experience, we have the skills to handle projects of any size.
+        </p>
       </div>
 
-      <!-- Point 3: Reliable Service -->
-      <div class="flex flex-col items-center border-2 border-[#0B3C5DBF] rounded-xl p-6 bg-white shadow-md transform transition-transform duration-300 hover:scale-105 hover:shadow-xl"  data-aos-delay="350">
+      <!-- Point 3: Affordable -->
+      <div class="flex flex-col items-center border-2 border-[#0B3C5DBF] rounded-xl p-6 bg-white shadow-md transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
         <div class="w-16 h-16 flex items-center justify-center rounded-full bg-[#0B3C5D] text-white mb-4">
+          <!-- Dollar -->
           <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-2.2 0-4 1.3-4 3s1.8 3 4 3 4 1.3 4 3-1.8 3-4 3m0-14v2m0 10v2"/>
           </svg>
         </div>
-        <h3 class="text-lg font-semibold text-blue-900 mb-2">Respect for Your Home</h3>
-        <p class="text-gray-700 text-sm">We work cleanly, efficiently, and with full respect for your property and schedule.</p>
+        <h3 class="text-lg font-semibold text-blue-900 mb-2">Affordable</h3>
+        <p class="text-gray-700 text-sm">
+          Fair, competitive pricing without compromising on quality craftsmanship.
+        </p>
       </div>
 
-      <!-- Point 4: Comprehensive Solutions -->
-      <div class="flex flex-col items-center border-2 border-[#0B3C5DBF] rounded-xl p-6 bg-white shadow-md transform transition-transform duration-300 hover:scale-105 hover:shadow-xl"  data-aos-delay="450">
+      <!-- Point 4: Worry-Free -->
+      <div class="flex flex-col items-center border-2 border-[#0B3C5DBF] rounded-xl p-6 bg-white shadow-md transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
         <div class="w-16 h-16 flex items-center justify-center rounded-full bg-[#0B3C5D] text-white mb-4">
-
+          <!-- Shield Check -->
           <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3l7 4v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V7l7-4z"/>
           </svg>
         </div>
-        <h3 class="text-lg font-semibold text-blue-900 mb-2">Comprehensive Solutions</h3>
-        <p class="text-gray-700 text-sm">One trusted provider for multiple home services—saving you time and hassle.</p>
+        <h3 class="text-lg font-semibold text-blue-900 mb-2">Worry-Free</h3>
+        <p class="text-gray-700 text-sm">
+          We guarantee our workmanship and always clean up after the job is done.
+        </p>
+      </div>
+
+      <!-- Point 5: Safe -->
+      <div class="flex flex-col items-center border-2 border-[#0B3C5DBF] rounded-xl p-6 bg-white shadow-md transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+        <div class="w-16 h-16 flex items-center justify-center rounded-full bg-[#0B3C5D] text-white mb-4">
+          <!-- Lock -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c1.1 0 2 .9 2 2v2h-4v-2c0-1.1.9-2 2-2zm6-2V7a6 6 0 10-12 0v2"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-blue-900 mb-2">Safe</h3>
+        <p class="text-gray-700 text-sm">
+          Fully insured with general liability and workers’ compensation for your peace of mind.
+        </p>
+      </div>
+
+      <!-- Point 6: Convenient -->
+      <div class="flex flex-col items-center border-2 border-[#0B3C5DBF] rounded-xl p-6 bg-white shadow-md transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+        <div class="w-16 h-16 flex items-center justify-center rounded-full bg-[#0B3C5D] text-white mb-4">
+          <!-- Phone -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3l2 5-2 1a11 11 0 005 5l1-2 5 2v3a2 2 0 01-2 2A16 16 0 013 5z"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-blue-900 mb-2">Convenient</h3>
+        <p class="text-gray-700 text-sm">
+          A one-call solution for all your home improvement and handyman service needs.
+        </p>
       </div>
 
     </div>
   </div>
 </section>
-
-
 
 
 
@@ -1229,7 +1357,7 @@ li, li * hover {
     <!-- RIGHT SIDE IMAGE -->
     <div class="relative"  data-aos-delay="400">
       <img 
-        src="assets/images/commitment.jpg"
+        src="assets/images/commit.webp"
         class="rounded-3xl shadow-lg w-full object-cover"
         alt="Tools and cowboy hat"
       />
@@ -1275,7 +1403,7 @@ li, li * hover {
           <div class="swiper-slide">
             <div class="bg-white p-6 rounded-2xl shadow-md border-l-4 border-red-800">
               <p class="text-gray-700 mb-4">
-                "Mohammed was great he worked with me. He was very friendly and kind . He did a great job with the installation. He also told me about venting my appliances."
+                "This guy was great he worked with me. He was very friendly and kind . He did a great job with the installation. He also told me about venting my appliances."
               </p>
 
               <!-- Stars -->
@@ -1320,7 +1448,7 @@ li, li * hover {
 
 
               <div class="flex items-center gap-4">
-                <img src="assets/images/person1.jpg"
+                <img src="assets/images/person1.webp"
                      class="w-12 h-12 rounded-full object-cover border-2 border-red-800">
                 <div class="text-left">
                   <h4 class="font-bold text-blue-800">Claire W.</h4>
@@ -1350,7 +1478,7 @@ li, li * hover {
 
 
               <div class="flex items-center gap-4">
-                <img src="assets/images/person3.jpg"
+                <img src="assets/images/person3.webp"
                      class="w-12 h-12 rounded-full object-cover border-2 border-red-800">
                 <div class="text-left">
                   <h4 class="font-bold text-blue-800">Amy K.</h4>
@@ -1499,7 +1627,7 @@ li, li * hover {
 
       <a href="gallery.html" target="_blank">
       <img
-        src="assets/images/1.jpeg"
+        src="assets/images/s2.webp"
         class="w-full h-full object-cover rounded-xl
                transition duration-500 hover:scale-105
                transform-gpu will-change-transform"
@@ -1517,7 +1645,7 @@ li, li * hover {
     >
       <a href="gallery.html" target="_blank">
       <img
-        src="assets/images/gallery1.jpg"
+        src="assets/images/s4.webp"
         class="w-full h-full object-cover rounded-xl
                transition duration-500 hover:scale-105
                transform-gpu will-change-transform"
@@ -1537,7 +1665,7 @@ li, li * hover {
       >
         <a href="gallery.html" target="_blank">
         <img
-          src="assets/images/gallery2.jpg"
+          src="assets/images/s5.webp"
           class="w-full h-full object-cover rounded-xl
                  transition duration-500 hover:scale-105
                  transform-gpu will-change-transform"
@@ -1554,7 +1682,7 @@ li, li * hover {
       >
         <a href="gallery.html" target="_blank">
         <img
-          src="assets/images/gallery3.jpg"
+          src="assets/images/s1.webp"
           class="w-full h-full object-cover rounded-xl
                  transition duration-500 hover:scale-105
                  transform-gpu will-change-transform"
@@ -1675,18 +1803,108 @@ li, li * hover {
     </div>
 
     <!-- RIGHT IMAGE -->
-    <!-- GOOGLE MAP -->
-<div  data-aos-delay="150" class="flex justify-center items-center w-full">
-  <iframe 
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3225.4590401366095!2d-90.06495842435453!3d32.358152373841556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8629d4b31014d48f%3A0xf1e665a725bc23c6!2s414%20Audubon%20Cir%2C%20Brandon%2C%20MS%2039047%2C%20USA!5e1!3m2!1sen!2snp!4v1770568257789!5m2!1sen!2snp" 
-    class="rounded-xl w-full max-w-[418px] h-[600px] object-cover"
-    style="border:0;"
-    allowfullscreen=""
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
+   <!-- SERVICE LOCATIONS -->
+<div data-aos-delay="150"
+     class="bg-[#0B3C5D] text-white rounded-xl w-full p-10 flex flex-col justify-center">
 
- 
+  <h3 class="text-2xl font-bold mb-8 text-center">
+    Proudly Serving These Areas
+  </h3>
+
+  <div class="grid grid-cols-2 sm:grid-cols-3 gap-6">
+
+    <!-- Location Item -->
+    <div class="flex items-center gap-3">
+  <div class="location-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z"/>
+    </svg>
+  </div>
+  <span class="text-white text-sm font-medium">Jackson</span>
+</div>
+
+    <div class="flex items-center gap-3">
+  <div class="location-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z"/>
+    </svg>
+  </div>
+  <span class="text-white text-sm font-medium">Flowood</span>
+    </div>
+
+    <div class="flex items-center gap-3">
+  <div class="location-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z"/>
+    </svg>
+  </div>
+  <span class="text-white text-sm font-medium">Madison</span>
+    </div>
+
+    <div class="flex items-center gap-3">
+  <div class="location-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z"/>
+    </svg>
+  </div>
+  <span class="text-white text-sm font-medium">Brandon</span>
+    </div>
+
+    <div class="flex items-center gap-3">
+  <div class="location-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z"/>
+    </svg>
+  </div>
+  <span class="text-white text-sm font-medium">Pearl</span>
+    </div>
+
+    <div class="flex items-center gap-3">
+  <div class="location-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z"/>
+    </svg>
+  </div>
+  <span class="text-white text-sm font-medium">Richland</span>
+    </div>
+
+    <div class="flex items-center gap-3">
+  <div class="location-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z"/>
+    </svg>
+  </div>
+  <span class="text-white text-sm font-medium">Florence</span>
+    </div>
+
+    <div class="flex items-center gap-3">
+  <div class="location-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z"/>
+    </svg>
+  </div>
+  <span class="text-white text-sm font-medium">Clinton</span>
+    </div>
+
+    <div class="flex items-center gap-3">
+  <div class="location-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z"/>
+    </svg>
+  </div>
+  <span class="text-white text-sm font-medium">Ridgeland</span>
+    </div>
+
+  </div>
+
+  <!-- Call Button -->
+  <div class="mt-10 flex justify-center">
+    <a href="tel:6015943039"
+       class="inline-flex items-center gap-3 bg-white text-[#0B3C5D] px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
+      📞 601-594-3039
+    </a>
+  </div>
+
 </div>
 
   </div>
@@ -1698,7 +1916,7 @@ li, li * hover {
 
     <!-- About / Logo -->
     <div class="text-center md:text-left" data-aos="fade-up">
-      <img src="assets/images/abt - Copy.jpeg" alt=" Logo" class="w-24 mx-auto md:mx-0 mb-4 rounded-full border-2 border-white/50">
+      <img src="assets/images/abt - Copy.jpeg.webp" alt=" Logo" class="w-24 mx-auto md:mx-0 mb-4 rounded-full border-2 border-white/50">
       <p class="text-gray-400 text-sm">
         Reliable, skilled, and professional home services you can trust.Your Handyman Duties Services provides dependable handyman solutions, quality workmanship, and honest service for homeowners and businesses.
       </p>
