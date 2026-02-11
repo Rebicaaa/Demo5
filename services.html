@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8" />
+    
+
+  <title>Your Handyman Duties & Construction – Quality You Can Trust</title>
+ <!-- Favicon -->
+<link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.webp">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.webp">
+<link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.webp">
+<link rel="manifest" href="assets/favicon/site.webmanifest">
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+
+
+  <!-- AOS Animation Library -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+ <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <style>
+    /* Global */
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      scroll-behavior: smooth;
+      background: #ffffff;
+    }
+
+    /* Fade-Up Animation (used alongside AOS for small elements) */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeUp { animation: fadeUp 1s ease-out forwards; opacity: 0; }
+    .delay-200 { animation-delay: .2s; }
+    .delay-400 { animation-delay: .4s; }
+    .delay-600 { animation-delay: .6s; }
+
+    /* Small visual helpers for hero frame */
+    /* Ensure hero frame has the white border look when on dark environments */
+    .hero-frame {
+      box-shadow: 0 8px 30px rgba(0,0,0,0.45);
+      border: 12px solid rgba(255,255,255,0.92);
+    }
+
+    
+ /* Desktop nav ONLY above 1176px */
+@media (min-width: 1177px) {
+  #menuBtn {
+    display: none;
+  }
+
+  #desktopNav {
+    display: flex;
+  }
+}
+
+/* Mobile nav up to 1176px */
+@media (max-width: 1176px) {
+  #desktopNav {
+    display: none;
+  }
+
+  #menuBtn {
+    display: block;
+  }
+}
+
+
+/* Mobile Menu Animations */
+#mobileMenu {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#mobileMenu:not(.hidden) {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobile-link {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease, color 0.2s ease;
+}
+
+#mobileMenu:not(.hidden) .mobile-link {
+  animation: slideInLeft 0.4s ease forwards;
+}
+
+#mobileMenu:not(.hidden) .mobile-link:nth-child(1) { animation-delay: 0.1s; }
+#mobileMenu:not(.hidden) .mobile-link:nth-child(2) { animation-delay: 0.15s; }
+#mobileMenu:not(.hidden) .mobile-link:nth-child(3) { animation-delay: 0.2s; }
+#mobileMenu:not(.hidden) .mobile-link:nth-child(4) { animation-delay: 0.25s; }
+#mobileMenu:not(.hidden) .mobile-link:nth-child(5) { animation-delay: 0.3s; }
+
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Hamburger Icon Animation */
+#hamburgerIcon {
+  display: block;
+}
+
+#closeIcon {
+  display: none;
+}
+
+#menuBtn.active #hamburgerIcon {
+  display: none;
+}
+
+#menuBtn.active #closeIcon {
+  display: block;
+}
+
+/* Swiper Navigation Buttons */
+.hero-nav-next,
+.hero-nav-prev {
+  color: var(--gold-main) !important;
+  width: 50px !important;
+  height: 50px !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-radius: 50% !important;
+  border: none !important;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  z-index: 50 !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  margin-top: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  outline: none !important;
+}
+
+.hero-nav-next:hover,
+.hero-nav-prev:hover {
+   background: rgba(255, 255, 255, 0.85) !important;
+  transform: translateY(-50%) scale(1.1) !important;
+}
+
+.hero-nav-next {
+  right: 20px !important;
+  left: auto !important;
+}
+
+.hero-nav-prev {
+  left: 20px !important;
+  right: auto !important;
+}
+
+.hero-nav-next::after,
+.hero-nav-prev::after {
+  font-size: 28px !important;
+  font-weight: bold !important;
+  font-family: Arial, sans-serif !important;
+}
+
+.hero-nav-next::after {
+  content: '›' !important;
+}
+
+.hero-nav-prev::after {
+  content: '‹' !important;
+}
+
+/* Override any Swiper default styles */
+.heroSwiper .swiper-button-disabled {
+  opacity: 0.35 !important;
+  cursor: auto !important;
+  pointer-events: none !important;
+}
+
+
+/* Hide hero nav buttons on small screens */
+@media (max-width: 768px) {
+  .hero-nav-next,
+  .hero-nav-prev {
+    display: none !important;
+  }
+}
+
+
+/* =========================
+   BULLET ROW LAYOUT
+========================= */
+.bullets-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.bullet-container {
+  display: inline-block;
+}
+
+.bullet-svg {
+  display: block;
+  overflow: visible;
+}
+
+ul li, ol li {
+  color: #ffffff ;         /* Pure black text */
+  font-weight: bold;
+  text-shadow: none;              /* Remove any transparency or shadow */
+  opacity: 1 !important;          /* Fully opaque */
+}
+
+/* =========================
+   ENGRAVED TEXT – INSIDE CIRCLE
+========================= */
+.engraved-text {
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+
+  fill: var(--gold-main);        /* PURE BLACK */
+  stroke: #000000;      /* PURE BLACK */
+  stroke: #000;
+
+  paint-order: stroke fill;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  text-rendering: geometricPrecision;
+
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(0.90) translateY(3px);
+}
+
+
+/* EXTRA SAFETY FOR LONG WORDS */
+.engraved-text textPath {
+  dominant-baseline: middle;
+}
+
+/* =========================
+   SIZE-SPECIFIC TUNING
+========================= */
+
+/* Large bullets (SIX, SHOOTER) */
+.size-lg .engraved-text {
+  font-size: 20px;
+  letter-spacing: 0.6px;
+  transform: scale(0.88) translateY(3px);
+}
+
+/* Medium bullets (BOY, CONDUCT) */
+.size-md .engraved-text {
+  font-size: 19px;
+  letter-spacing: 0.6px;
+  transform: scale(0.87) translateY(3px);
+}
+
+/* Small bullets (CODE) */
+.size-sm .engraved-text {
+  font-size: 19px;
+  letter-spacing: 0.5px;
+  transform: scale(0.86) translateY(3px);
+}
+
+/* Extra small (OF) */
+.size-xs .engraved-text {
+  font-size: 19px;
+  letter-spacing: 0.4px;
+  transform: scale(0.85) translateY(3px);
+}
+
+/* =========================
+   SVG SIZE CONTROL
+========================= */
+.size-lg svg { width: 120px; height: 120px; }
+.size-md svg { width: 100px; height: 100px; }
+.size-sm svg { width: 90px;  height: 90px; }
+.size-xs svg { width: 80px;  height: 80px; }
+
+
+li, li * {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+  background: transparent !important;
+  -webkit-text-stroke: 0.7px #000 !important;
+}
+
+li, li * hover {
+  color: #d8b30e !important;
+  text-shadow: none !important;
+  background: transparent !important;
+  -webkit-text-stroke: 0.7px #000 !important;
+
+}
+
+
+
+/* =========================
+   MOBILE HERO TEXT FIX
+========================= */
+@media (max-width: 768px) {
+
+  /* Center hero text vertically */
+  .heroSwiper .swiper-slide > div.absolute {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    height: 100%;
+  }
+
+  .heroSwiper h1 {
+    margin-bottom: 16px;
+  }
+
+  .heroSwiper p {
+    margin-top: 12px;
+  }
+}
+
+
+
+/* =========================
+   MOBILE HERO IMAGE SCALE UP
+========================= */
+@media (max-width: 768px) {
+
+  /* Make slides slightly taller */
+  .heroSwiper,
+  .heroSwiper .swiper-wrapper,
+  .heroSwiper .swiper-slide {
+    min-height: 105vh !important;
+  }
+
+  /* Scale images vertically */
+  .heroSwiper img,
+  .hero-image {
+    height: 100% !important;
+    width: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+}
+
+
+
+
+
+.footer-links li,
+.footer-links li a {
+  color: #ffffff !important;
+  -webkit-text-stroke: 0 !important;
+  font-weight: 500 !important;
+  color: #0B3C5DBF !important;
+  color: #fff;
+    transition: color 0.2s;
+}
+
+.hero-title {
+  font-family: 'Rye', serif;
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background-color: #0B3C5DBF; /* yellow */
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+
+
+
+.horse-bg {
+  position: relative;
+  background-color: #0B3C5DBF;
+  overflow: hidden;
+}
+
+/* Animated horse layer */
+.horse-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url("assets/images/horse.webp");
+  background-repeat: repeat;
+  background-size: 300px auto;
+
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+
+  /* animations */
+  animation:
+    horseFadeIn 1.4s ease-out forwards,
+    horseWalk 60s linear infinite;
+}
+
+/* Keep content above horses */
+.horse-bg > div {
+  position: relative;
+  z-index: 1;
+}
+
+/* fade-in on page load */
+@keyframes horseFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.06;
+  }
+}
+
+/* slow walking motion */
+@keyframes horseWalk {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: +1200px 0;
+  }
+}
+
+
+.services-header {
+    display: flex;
+    align-items: center;   /* THIS fixes the level */
+    justify-content: space-between;
+    cursor: pointer;
+}
+.services-header i,
+.services-header svg {
+    vertical-align: middle;
+}
+.services-header i {
+    position: relative;
+    top: 1px;   /* try 1–2px if needed */
+}
+
+
+
+
+/* HARD-LOCKED PERFECT CIRCLE */
+.location-icon {
+  width: 38px;
+  height: 38px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #0B3C5D;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+  line-height: 0; /* CRITICAL */
+}
+
+/* SVG inside must NOT affect layout */
+.location-icon svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+/* Mobile – slightly smaller but still circle */
+@media (max-width: 640px) {
+  .location-icon {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    min-height: 34px;
+  }
+}
+
+
+img {
+  image-rendering: auto; /* smooth scaling */
+  will-change: transform; /* hint for better GPU rendering */
+  backface-visibility: hidden;
+}
+  </style>
+</head>
+
+<body class="overflow-x-hidden">
+
+
+
+
+
+
+
+
+   <!-- TOP INFO BAR yes-->
+<div class="w-full bg-black text-white text-sm relative z-20">
+
+
+
+  <div class="max-w-7xl mx-auto px-6 py-2 flex flex-wrap items-center justify-between gap-3">
+
+    <!-- LEFT INFO -->
+    <div class="flex items-center gap-6 flex-wrap">
+      <span class="flex items-center gap-2">
+        ☎  (601) 401-4430 
+      </span>
+      <span class="flex items-center gap-2">
+        ✉ yourhandymanduties@gmailcom
+      </span>
+    </div>
+
+    <!-- RIGHT SOCIAL -->
+    <div class="flex items-center gap-4 text-base">
+  <a href="#" class="text-[#EEF3F7] hover:text-gray-400 transition-colors duration-200">
+    <i class="fa-brands fa-facebook-f"></i>
+  </a>
+  <a href="#" class="text-[#EEF3F7] hover:text-gray-400 transition-colors duration-200">
+    <i class="fa-brands fa-twitter"></i>
+  </a>
+  <a href="#" class="text-[#EEF3F7] hover:text-gray-400 transition-colors duration-200">
+    <i class="fa-brands fa-instagram"></i>
+  </a>
+  <a href="#" class="text-[#EEF3F7] hover:text-gray-400 transition-colors duration-200">
+    <i class="fa-brands fa-linkedin-in"></i>
+  </a>
+  <a href="#" class="text-[#EEF3F7] hover:text-gray-400 transition-colors duration-200">
+    <i class="fa-brands fa-youtube"></i>
+  </a>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- MAIN NAV BAR -->
+<div class="w-full bg-white shadow-md relative z-20">
+  <div class="max-w-7xl mx-auto px-6 py-1.5 flex items-center justify-between">
+
+    <!-- LOGO -->
+    <div class="flex items-center gap-4">
+      <!-- <img
+        src="assets/images/new_logo.png"
+        alt="HVAC Cowboys Logo"
+        class="w-20 h-20 object-cover"
+      /> -->
+
+      <img src="assets/images/new_logo.png" alt="HVAC Cowboys Logo" class="w-24 mx-auto md:mx-0 mb-0 rounded-full border-2 border-white/50">
+      <div>
+        <div class="text-2xl font-bold text-gray-900">Your Handyman Duties & Construction</div>
+        <div class="text-sm text-gray-500">Quality You Can Trust</div>
+      </div>
+    </div>
+
+    <!-- DESKTOP NAV -->
+    <nav id="desktopNav" class="hidden lg:flex items-center gap-8 font-semibold text-gray-700">
+      <a href="index.html"
+   class="nav-link transition hover:text-[#0B3C5DBF]">
+   Home
+</a>
+
+<a href="aboutus.html"
+   class="nav-link transition hover:text-[#0B3C5DBF]">
+   About Us
+</a>
+
+      <div class="relative" >
+  <button id="servicesBtn" class="nav-link transition hover:text-[#0B3C5DBF]">
+    Services
+  
+    <i class="fa-solid fa-chevron-down text-xs mt-1 transition-transform duration-300" id="servicesArrow"></i>
+  </button>
+
+ <!-- Dropdown Menu -->
+<div id="servicesMenu" class="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-md opacity-0 invisible transition-opacity duration-300 z-50">
+
+  <a href="services.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+    Remodeling / Renovations & Additions
+  </a>
+
+  <a href="services.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+    Flooring
+  </a>
+
+  <a href="services.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+    Bathroom & Kitchen Remodel
+  </a>
+
+  <a href="services.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+    Custom Decks & Porches
+  </a>
+
+  <a href="services.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+    General Contractor Services
+  </a>
+
+  <a href="hservices.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+    House Painting (Interior & Exterior)
+  </a>
+
+  <a href="services.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+    Outdoor Living Spaces & Structures
+  </a>
+
+  <a href="services.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+    Outdoor Kitchens
+  </a>
+
+  <a href="services.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+    Stone & Brickwork
+  </a>
+
+</div>
+</div>
+
+
+      <a href="gallery.html" class="nav-link transition hover:text-[#0B3C5DBF]">Gallery</a>
+      <a href="index.html" class="nav-link transition hover:text-[#0B3C5DBF]">Contact</a>
+    </nav>
+    
+
+    <!-- PHONE BUTTON -->
+    <a
+      href="tel:8168088157"
+      
+  class="hidden lg:flex items-center gap-2
+         border border-[#0B3C5DBF]
+         text-[#0B3C5DBF]
+         px-5 py-2 rounded-full font-semibold
+         hover:bg-[#0B3C5DBF] hover:text-white
+         transition"
+>
+  📞 (601) 401-4430 
+</a>
+
+
+    <!-- MOBILE MENU BUTTON (USES YOUR EXISTING JS) -->
+    <button
+      id="menuBtn"
+      class="lg:hidden text-gray-900 text-2xl p-2 hover:bg-gray-100 rounded-lg transition"
+      aria-label="Toggle menu"
+    >
+      ☰
+    </button>
+
+  </div>
+</div>
+
+
+    <!-- Mobile Menu Button -->
+   <button id="menuBtn" class="block lg:hidden text-white text-2xl relative z-50 p-2 hover:bg-white/10 rounded-lg transition-colors" aria-label="Toggle menu">
+     <!-- <svg id="hamburgerIcon" class="w-8 h-8 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+     </svg> -->
+     <svg id="closeIcon" class="w-8 h-8 transition-transform hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+     </svg>
+   </button>
+
+  </div>
+</div>
+
+
+      <!-- Mobile Menu (fixed overlay) -->
+<div id="mobileMenu" class="hidden fixed inset-0 bg-black/95 backdrop-blur-md text-white flex flex-col z-50">
+  <!-- Mobile Menu Header -->
+  <div class="flex items-center justify-between px-6 py-6 border-b border-white/10">
+    <div class="flex items-center gap-3">
+      <img src="assets/images/new_logo.png" alt="HVAC Cowboys Logo" class="w-12 h-12 rounded-full object-cover border-2 border-white/50" />
+      <div>
+        <div class="text-white font-semibold text-lg">Your Handyman Duties & Construction</div>
+        <div class="text-white text-xs">Quality you can trust </div>
+      </div>
+    </div>
+    <button id="closeMenuBtn" class="p-2 hover:bg-white/10 rounded-lg transition-colors" aria-label="Close menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu Content -->
+  <div class="flex-1 flex flex-col justify-center px-6 py-10 space-y-6">
+    <a href="index.html" class="mobile-link flex items-center gap-4 text-xl font-semibold hover:text-[#0B3C5DBF] transition-colors py-3 border-b border-white/10">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+      </svg>
+      Home
+    </a>
+    <a href="services.html" class="mobile-link flex items-center gap-4 text-xl font-semibold hover:text-[#0B3C5DBF] transition-colors py-3 border-b border-white/10">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+      </svg>
+      Services
+    </a>
+    <a href="aboutus.html" class="mobile-link flex items-center gap-4 text-xl font-semibold hover:text-[#0B3C5DBF] transition-colors py-3 border-b border-white/10">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+      About Us
+    </a>
+
+     <a href="gallery.html"
+  class="mobile-link flex items-center gap-4 text-xl font-semibold hover:text-[#0B3C5DBF] transition-colors py-3 border-b border-white/10">
+
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+      Gallery
+    </a>
+
+    <!-- <a href="index.html" class="mobile-link flex items-center gap-4 text-xl font-semibold hover:text-[#0B3C5DBF] transition-colors py-3 border-b border-white/10">
+
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+      FAQ
+    </a> -->
+    <a  href="index.html" class="mobile-link flex items-center gap-4 text-xl font-semibold hover:text-[#0B3C5DBF] transition-colors py-3 border-b border-white/10">
+
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+      </svg>
+      Contact
+    </a>
+  </div>
+
+  <!-- Mobile Menu Footer -->
+  <div class="px-6 py-6 border-t border-white/10 space-y-4">
+    <div class="flex items-center gap-3 text-[#0B3C5DBF]">
+
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+      </svg>
+      <span class="font-semibold"> (601) 401-4430 </span>
+    </div>
+    <button 
+      class="w-full bg-[#0B3C5D] text-white font-semibold px-6 py-3 rounded-full hover:bg-[#0B3C5DBF] transition-colors shadow-lg"
+
+      onclick="smoothScroll('contact')"
+    >
+      Get Free Quote
+    </button>
+  </div>
+</div>
+
+
+  
+  </div>
+</header>
+
+
+
+ <!-- SERVICES (hover effect, no dark overlay) -->
+
+ 
+<section id="services" class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- DROPDOWN TITLE -->
+    <div class="flex items-center justify-center gap-3 cursor-pointer select-none"
+         onclick="toggleServices()">
+      <h2 class="hero-title text-4xl font-bold text-center text-[#0B3C5D] leading-none">
+
+        Our Services
+      </h2>
+      <br> <br>
+      <br><br>
+      <!-- <span id="servicesArrow"
+            class="text-blue-800 text-2xl transition-transform duration-300">
+        ▼
+      </span> -->
+    </div>
+
+    <p class="text-gray-600 leading-relaxed text-base sm:text-lg font-semibold text-center mb-12 max-w-2xl mx-auto"
+        data-aos-delay="150">
+      We offer complete home improvement services — from renovations and flooring to outdoor spaces, painting, and masonry. Our skilled team delivers reliable craftsmanship, quality materials, and results built to last.
+    </p>
+
+    <!-- DROPDOWN CONTENT -->
+    <div id="servicesContent" class="overflow-hidden transition-all duration-500">
+
+
+
+      <!-- ⬇️ YOUR GRID (UNCHANGED) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-12">
+
+    <!-- Card 1 – Remodeling / Renovations & Additions -->
+<div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1">
+  <div class="relative overflow-hidden">
+    <img src="assets/images/kk3.webp" alt="Remodeling and Renovations"
+         class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
+  </div>
+  <div class="p-6 transition-all duration-500 group-hover:translate-y-1">
+    <h3 class="text-xl font-semibold text-[#0B3C5D] mb-2 group-hover:text-[#0B3C5DBF] transition">
+      Remodeling, Renovations & Additions
+    </h3>
+    <p class="text-gray-600 text-sm mb-4 opacity-80">
+      Comprehensive home remodeling and renovation services including room additions, layout changes, and structural improvements.
+    </p>
+    
+  </div>
+</div>
+<!-- Card 2 – Flooring -->
+<div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1" data-aos-delay="150">
+  <div class="relative overflow-hidden">
+    <img src="assets/images/flooring.jpg" alt="Flooring Installation"
+         class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-semibold text-[#0B3C5D] mb-2 group-hover:text-[#0B3C5DBF] transition">
+      Flooring Installation
+    </h3>
+    <p class="text-gray-600 text-sm mb-4 opacity-80">
+      Expert installation of hardwood, laminate, vinyl, tile, and other flooring options with precision and durability.
+    </p>
+    
+  </div>
+</div>
+<!-- Card 3 – Bathroom & Kitchen Remodel -->
+<div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1" data-aos-delay="300">
+  <div class="relative overflow-hidden">
+    <img src="assets/images/kk1.webp" alt="Bathroom and Kitchen Remodel"
+         class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-semibold text-[#0B3C5D] mb-2 group-hover:text-[#0B3C5DBF] transition">
+      Bathroom & Kitchen Remodel
+    </h3>
+    <p class="text-gray-600 text-sm mb-4 opacity-80">
+      Custom bathroom and kitchen renovations featuring modern designs, quality materials, and functional layouts.
+    </p>
+    
+  </div>
+</div>
+<!-- Card 4 – Custom Decks & Porches -->
+<div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1" data-aos-delay="450">
+  <div class="relative overflow-hidden">
+    <img src="assets/images/44 (2).jpg" alt="Custom Decks and Porches"
+         class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-semibold text-[#0B3C5D] mb-2 group-hover:text-[#0B3C5DBF] transition">
+      Custom Decks & Porches
+    </h3>
+    <p class="text-gray-600 text-sm mb-4 opacity-80">
+      Design and construction of custom decks and porches that enhance outdoor comfort, style, and usability.
+    </p>
+    
+  </div>
+</div>
+<!-- Card 5 – General Contractor Services -->
+<div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1" data-aos-delay="600">
+  <div class="relative overflow-hidden">
+    <img src="assets/images/general.jpg" alt="General Contractor Services"
+         class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-semibold text-[#0B3C5D] mb-2 group-hover:text-[#0B3C5DBF] transition">
+      General Contractor Services
+    </h3>
+    <p class="text-gray-600 text-sm mb-4 opacity-80">
+      Professional project management handling permits, scheduling, coordination, and quality control from start to finish.
+    </p>
+    
+  </div>
+</div>
+<!-- Card 6 – House Painting -->
+<div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1">
+  <div class="relative overflow-hidden">
+    <img src="assets/images/oooneeee.webp" alt="House Painting Services"
+         class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-semibold text-[#0B3C5D] mb-2 group-hover:text-[#0B3C5DBF] transition">
+      House Painting (Interior & Exterior)
+    </h3>
+    <p class="text-gray-600 text-sm mb-4 opacity-80">
+      High-quality interior and exterior painting services that refresh, protect, and enhance your home’s appearance.
+    </p>
+    
+  </div>
+</div>
+<!-- Card 7 – Outdoor Living Spaces -->
+<div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1">
+  <div class="relative overflow-hidden">
+    <img src="assets/images/kk4.jpg" alt="Outdoor Living Spaces"
+         class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-semibold text-[#0B3C5D] mb-2 group-hover:text-[#0B3C5DBF] transition">
+      Outdoor Living Spaces & Structures
+    </h3>
+    <p class="text-gray-600 text-sm mb-4 opacity-80">
+      Custom outdoor living areas including pergolas, patios, pavilions, and structural enhancements.
+    </p>
+    
+  </div>
+</div>
+<!-- Card 8 – Outdoor Kitchens -->
+<div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1">
+  <div class="relative overflow-hidden">
+    <img src="assets/images/ok2.webp" alt="Outdoor Kitchens"
+         class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-semibold text-[#0B3C5D] mb-2 group-hover:text-[#0B3C5DBF] transition">
+      Outdoor Kitchens
+    </h3>
+    <p class="text-gray-600 text-sm mb-4 opacity-80">
+      Fully customized outdoor kitchens designed for entertaining, cooking, and enjoying outdoor living year-round.
+    </p>
+    
+  </div>
+</div>
+<!-- Card 9 – Stone & Brickwork -->
+<div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1">
+  <div class="relative overflow-hidden">
+    <img src="assets/images/kk5.jpg" alt="Stone and Brickwork"
+         class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-semibold text-[#0B3C5D] mb-2 group-hover:text-[#0B3C5DBF] transition">
+      Stone & Brickwork
+    </h3>
+    <p class="text-gray-600 text-sm mb-4 opacity-80">
+      Expert stone and brick masonry for walkways, retaining walls, fireplaces, and architectural features.
+    </p>
+    
+  </div>
+</div>
+
+
+
+
+
+</div>
+    </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+  <!-- FOOTER -->
+<footer class="bg-black text-gray-300 pt-12 pb-6">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+
+    <!-- About / Logo -->
+    <div class="text-center md:text-left" data-aos="fade-up">
+      <img src="assets/images/new_logo.png" alt=" Logo" class="w-24 mx-auto md:mx-0 mb-4 rounded-full border-2 border-white/50">
+      <p class="text-gray-400 text-sm">
+        Reliable, skilled, and professional home services you can trust.Your Handyman Duties & Construction Services provides dependable handyman solutions, quality workmanship, and honest service for homeowners and businesses.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+      <h3 class="text-white font-semibold mb-4">Quick Links</h3>
+      <ul class="space-y-2">
+        <li><a href="aboutus.html" class="footer-quick-link text-white transition">About Us</a></li>
+        <li><a href="services.html" class="footer-quick-link text-white transition">Services</a></li>
+        
+        <!-- <li><a href="index.html" class="footer-quick-link text-white transition">FAQ</a></li> -->
+        <li><a href="index.html" class="footer-quick-link text-white transition">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="text-center md:text-right" data-aos="fade-up" data-aos-delay="200">
+      <h3 class="text-white font-semibold mb-4">Contact Us</h3>
+      <p class="text-gray-400 text-sm">414 Audubon Cir, Brandon, MS, 39047</p>
+      <p class="text-gray-400 text-sm">Phone: (601) 401-4430</p>
+      <p class="text-gray-400 text-sm">Email: yourhandymanduties@gmailcom</p>
+      <div class="flex justify-center md:justify-end gap-4 mt-3">
+        <a href="#" class="text-gray-400 hover:text-blue-400 transition"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="text-gray-400 hover:text-blue-400 transition"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-gray-400 hover:text-blue-400 transition"><i class="fab fa-instagram"></i></a>
+      </div>
+
+<!-- Admin Section -->
+      
+
+
+    </div>
+
+  <style>
+    .footer-quick-link {
+      color: #fff;
+      transition: color 0.2s;
+    }
+    .footer-quick-link:hover {
+      color: #5858fd !important; /* Tailwind yellow-400 */
+    }
+  </style>
+  </div>
+
+  <div class="border-t border-gray-800 mt-8 pt-6 text-center text-gray-500 text-sm" data-aos="fade-up" data-aos-delay="300">
+    © 2026 Your Handyman Duties & Construction. All rights reserved.
+    <br>
+    <br>
+    Powered by <a href="https://www.ensefy.com" class="hover:text-blue-400 transition">Perfect Web</a>.
+  </div>
+
+  
+  
+</footer>
+
+  <!-- AOS Init (kept exactly like original) -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 900, once: true });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="assets/js/script.js"></script>
+
+
+</body>
+</html>
+
+
