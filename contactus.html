@@ -524,29 +524,6 @@ img {
   will-change: transform; /* hint for better GPU rendering */
   backface-visibility: hidden;
 }
-
-
-
-/* new */
-
-.service-tab {
-  padding: 10px 18px;
-  border-radius: 999px;
-  background: #e5e7eb;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.service-tab:hover {
-  background: #0B3C5D;
-  color: white;
-}
-
-.service-tab.active {
-  background: #0B3C5D;
-  color: white;
-}
-
   </style>
 </head>
 
@@ -640,7 +617,7 @@ img {
  <!-- Dropdown Menu -->
 <div id="servicesMenu" class="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-md opacity-0 invisible transition-opacity duration-300 z-50">
 
- <a href="services.html?service=0" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+<a href="services.html?service=0" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
   Remodeling / Renovations & Additions
 </a>
 
@@ -818,168 +795,42 @@ img {
 
 
 
- <section id="services" class="py-20 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-6">
+ <!-- CONTACT -->
+  <section id="contact" class="bg-[#f7f7f7]">  <!-- Off-white background -->
+  <div class="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch">
 
-    <!-- SERVICE TABS -->
-<div class="flex flex-wrap gap-4 justify-center mb-12">
-  <button class="service-tab active" onclick="showService(0)">Remodeling & Additions</button>
-  <button class="service-tab" onclick="showService(1)">Flooring</button>
-  <button class="service-tab" onclick="showService(2)">Bathroom & Kitchen</button>
-  <button class="service-tab" onclick="showService(3)">Decks & Porches</button>
-  <button class="service-tab" onclick="showService(4)">General Contractor</button>
-  <button class="service-tab" onclick="showService(5)">House Painting</button>
-  <button class="service-tab" onclick="showService(6)">Outdoor Living</button>
-  <button class="service-tab" onclick="showService(7)">Outdoor Kitchens</button>
-  <button class="service-tab" onclick="showService(8)">Stone & Brickwork</button>
+    <!-- LEFT BOX -->
+    <div class="bg-white text-black p-8 rounded-xl shadow-md flex flex-col" >
+      <h3 class="font-bold text-lg mb-4">Need Reliable Home Services?</h3>
+      <p class="text-gray-600 mb-6">Contact Your Handyman Duties & Construction today for professional, dependable home repairs and installations.</p>
+
+      <form class="grid grid-cols-1 gap-4 mt-auto">
+        <input type="text" placeholder="Full Name*" required class="p-3 rounded border border-gray-300 w-full">
+        <input type="email" placeholder="Email*" required class="p-3 rounded border border-gray-300 w-full">
+        <input type="text" placeholder="Phone Number*" required class="p-3 rounded border border-gray-300 w-full">
+        <textarea placeholder="How can we help?*" required class="p-3 rounded border border-gray-300 w-full h-32"></textarea>
+        <button type="submit"
+  class="bg-[#0B3C5D] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#0B3C5DBF] transition">
+  Request Service
+</button>
+
+      </form>
+    </div>
+
+    <!-- RIGHT IMAGE -->
+   <div class="w-full flex justify-center">
+  <img 
+    src="assets/images/ok2.webp" 
+    alt="Service Areas Map"
+    class="rounded-xl shadow-lg w-full max-w-4xl object-cover"
+  >
 </div>
 
-<!-- SERVICE CONTENT CONTAINER -->
-<div class="bg-white shadow-xl rounded-xl p-8">
-
-  <!-- 1 Remodeling -->
-  <div class="service-content">
-    <div class="grid md:grid-cols-2 gap-8 items-center">
-      <img src="assets/images/kk3.webp" class="rounded-lg shadow-lg">
-      <div>
-        <h2 class="text-4xl font-bold mb-4">Remodeling, Renovations & Additions</h2>
-        <p class="text-gray-600 leading-relaxed mb-6">
-          Comprehensive home remodeling services including room additions,
-          structural modifications, layout redesign, and complete renovations.
-          We handle every stage from planning to final finish.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- 2 Flooring -->
-  <div class="service-content hidden">
-    <div class="grid md:grid-cols-2 gap-8 items-center">
-      <img src="assets/images/flooring.jpg" class="rounded-lg shadow-lg">
-      <div>
-        <h2 class="text-4xl font-bold mb-4">Flooring Installation</h2>
-        <p class="text-gray-600 leading-relaxed mb-6">
-          Professional installation of hardwood, laminate, vinyl, tile,
-          and custom flooring solutions built for durability and style.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- 3 Bathroom & Kitchen -->
-  <div class="service-content hidden">
-    <div class="grid md:grid-cols-2 gap-8 items-center">
-      <img src="assets/images/kk1.webp" class="rounded-lg shadow-lg">
-      <div>
-        <h2 class="text-4xl font-bold mb-4">Bathroom & Kitchen Remodel</h2>
-        <p class="text-gray-600 leading-relaxed mb-6">
-          Custom bathroom and kitchen renovations featuring modern layouts,
-          premium materials, cabinetry upgrades, and high-quality finishes.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- 4 Decks -->
-  <div class="service-content hidden">
-    <div class="grid md:grid-cols-2 gap-8 items-center">
-      <img src="assets/images/44 (2).jpg" class="rounded-lg shadow-lg">
-      <div>
-        <h2 class="text-4xl font-bold mb-4">Custom Decks & Porches</h2>
-        <p class="text-gray-600 leading-relaxed mb-6">
-          Design and construction of durable, stylish decks and porches
-          that enhance outdoor living and increase property value.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- 5 General Contractor -->
-  <div class="service-content hidden">
-    <div class="grid md:grid-cols-2 gap-8 items-center">
-      <img src="assets/images/general.jpg" class="rounded-lg shadow-lg">
-      <div>
-        <h2 class="text-4xl font-bold mb-4">General Contractor Services</h2>
-        <p class="text-gray-600 leading-relaxed mb-6">
-          Full project management including permits, inspections,
-          scheduling, subcontractor coordination, and quality control.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- 6 Painting -->
-  <div class="service-content hidden">
-    <div class="grid md:grid-cols-2 gap-8 items-center">
-      <img src="assets/images/oooneeee.webp" class="rounded-lg shadow-lg">
-      <div>
-        <h2 class="text-4xl font-bold mb-4">House Painting (Interior & Exterior)</h2>
-        <p class="text-gray-600 leading-relaxed mb-6">
-          Professional interior and exterior painting services
-          that refresh, protect, and elevate your property’s appearance.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- 7 Outdoor Living -->
-  <div class="service-content hidden">
-    <div class="grid md:grid-cols-2 gap-8 items-center">
-      <img src="assets/images/od2.jpeg" class="rounded-lg shadow-lg">
-      <div>
-        <h2 class="text-4xl font-bold mb-4">Outdoor Living Spaces & Structures</h2>
-        <p class="text-gray-600 leading-relaxed mb-6">
-          Custom-built pergolas, patios, pavilions, and structural
-          outdoor features designed for comfort and functionality.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- 8 Outdoor Kitchens -->
-  <div class="service-content hidden">
-    <div class="grid md:grid-cols-2 gap-8 items-center">
-      <img src="assets/images/ok2.webp" class="rounded-lg shadow-lg">
-      <div>
-        <h2 class="text-4xl font-bold mb-4">Outdoor Kitchens</h2>
-        <p class="text-gray-600 leading-relaxed mb-6">
-          Fully customized outdoor kitchens built for entertaining,
-          grilling, and enjoying outdoor gatherings year-round.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- 9 Stone -->
-  <div class="service-content hidden">
-    <div class="grid md:grid-cols-2 gap-8 items-center">
-      <img src="assets/images/od.jpeg" class="rounded-lg shadow-lg">
-      <div>
-        <h2 class="text-4xl font-bold mb-4">Stone & Brickwork</h2>
-        <p class="text-gray-600 leading-relaxed mb-6">
-          Expert masonry services including walkways, retaining walls,
-          fireplaces, patios, and decorative architectural stonework.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- NEXT / PREVIOUS BUTTONS -->
-  <div class="flex justify-between mt-10">
-    <button onclick="prevService()" class="px-6 py-2 bg-gray-200 rounded-full hover:bg-gray-300 transition">
-      ← Previous
-    </button>
-    <button onclick="nextService()" class="px-6 py-2 bg-[#0B3C5D] text-white rounded-full hover:bg-[#0B3C5DBF] transition">
-      Next →
-    </button>
-  </div>
 
 </div>
 
   </div>
 </section>
-
-
 
 
 
@@ -1057,33 +908,7 @@ img {
 <script src="assets/js/script.js"></script>
 
 <script>
-  let currentService = 0;
-  const services = document.querySelectorAll(".service-content");
-  const tabs = document.querySelectorAll(".service-tab");
-
-  function showService(index) {
-    services.forEach(s => s.classList.add("hidden"));
-    tabs.forEach(t => t.classList.remove("active"));
-
-    services[index].classList.remove("hidden");
-    tabs[index].classList.add("active");
-
-    currentService = index;
-  }
-
-  function nextService() {
-    currentService = (currentService + 1) % services.length;
-    showService(currentService);
-  }
-
-  function prevService() {
-    currentService = (currentService - 1 + services.length) % services.length;
-    showService(currentService);
-  }
-
-
-
-  
+    
   document.addEventListener("DOMContentLoaded", () => {
     const params = new URLSearchParams(window.location.search);
     const serviceIndex = params.get("service");
@@ -1098,18 +923,17 @@ img {
     }
   });
 
+  function showService(index) {
+  const tabs = document.querySelectorAll(".service-tab");
+  const contents = document.querySelectorAll(".service-content");
 
-</script>
+  tabs.forEach(t => t.classList.remove("active"));
+  contents.forEach(c => c.classList.add("hidden"));
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const params = new URLSearchParams(window.location.search);
-    const serviceIndex = params.get("service");
+  tabs[index].classList.add("active");
+  contents[index].classList.remove("hidden");
+}
 
-    if (serviceIndex !== null) {
-      showService(Number(serviceIndex));
-    }
-  });
 </script>
 
 
