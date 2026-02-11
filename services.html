@@ -524,6 +524,29 @@ img {
   will-change: transform; /* hint for better GPU rendering */
   backface-visibility: hidden;
 }
+
+
+
+/* new */
+
+.service-tab {
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.service-tab:hover {
+  background: #0B3C5D;
+  color: white;
+}
+
+.service-tab.active {
+  background: #0B3C5D;
+  color: white;
+}
+
   </style>
 </head>
 
@@ -617,41 +640,42 @@ img {
  <!-- Dropdown Menu -->
 <div id="servicesMenu" class="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-md opacity-0 invisible transition-opacity duration-300 z-50">
 
-  <a href="services.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
-    Remodeling / Renovations & Additions
-  </a>
+ <a href="services.html?service=0" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Remodeling / Renovations & Additions
+</a>
 
-  <a href="services.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
-    Flooring
-  </a>
+<a href="services.html?service=1" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Flooring
+</a>
 
-  <a href="services.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
-    Bathroom & Kitchen Remodel
-  </a>
+<a href="services.html?service=2" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Bathroom & Kitchen Remodel
+</a>
 
-  <a href="services.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
-    Custom Decks & Porches
-  </a>
+<a href="services.html?service=3" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Custom Decks & Porches
+</a>
 
-  <a href="services.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
-    General Contractor Services
-  </a>
+<a href="services.html?service=4" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  General Contractor Services
+</a>
 
-  <a href="hservices.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
-    House Painting (Interior & Exterior)
-  </a>
+<a href="services.html?service=5" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  House Painting (Interior & Exterior)
+</a>
 
-  <a href="services.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
-    Outdoor Living Spaces & Structures
-  </a>
+<a href="services.html?service=6" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Outdoor Living Spaces & Structures
+</a>
 
-  <a href="services.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
-    Outdoor Kitchens
-  </a>
+<a href="services.html?service=7" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Outdoor Kitchens
+</a>
 
-  <a href="services.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
-    Stone & Brickwork
-  </a>
+<a href="services.html?service=8" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Stone & Brickwork
+</a>
+
 
 </div>
 </div>
@@ -794,195 +818,167 @@ img {
 
 
 
- <!-- SERVICES (hover effect, no dark overlay) -->
-
- 
-<section id="services" class="py-20 bg-gray-50">
+ <section id="services" class="py-20 bg-gray-50">
   <div class="max-w-7xl mx-auto px-6">
 
-    <!-- DROPDOWN TITLE -->
-    <div class="flex items-center justify-center gap-3 cursor-pointer select-none"
-         onclick="toggleServices()">
-      <h2 class="hero-title text-4xl font-bold text-center text-[#0B3C5D] leading-none">
+    <!-- SERVICE TABS -->
+<div class="flex flex-wrap gap-4 justify-center mb-12">
+  <button class="service-tab active" onclick="showService(0)">Remodeling & Additions</button>
+  <button class="service-tab" onclick="showService(1)">Flooring</button>
+  <button class="service-tab" onclick="showService(2)">Bathroom & Kitchen</button>
+  <button class="service-tab" onclick="showService(3)">Decks & Porches</button>
+  <button class="service-tab" onclick="showService(4)">General Contractor</button>
+  <button class="service-tab" onclick="showService(5)">House Painting</button>
+  <button class="service-tab" onclick="showService(6)">Outdoor Living</button>
+  <button class="service-tab" onclick="showService(7)">Outdoor Kitchens</button>
+  <button class="service-tab" onclick="showService(8)">Stone & Brickwork</button>
+</div>
 
-        Our Services
-      </h2>
-      <br> <br>
-      <br><br>
-      <!-- <span id="servicesArrow"
-            class="text-blue-800 text-2xl transition-transform duration-300">
-        ▼
-      </span> -->
+<!-- SERVICE CONTENT CONTAINER -->
+<div class="bg-white shadow-xl rounded-xl p-8">
+
+  <!-- 1 Remodeling -->
+  <div class="service-content">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <img src="assets/images/kk3.webp" class="rounded-lg shadow-lg">
+      <div>
+        <h2 class="text-4xl font-bold mb-4">Remodeling, Renovations & Additions</h2>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          Comprehensive home remodeling services including room additions,
+          structural modifications, layout redesign, and complete renovations.
+          We handle every stage from planning to final finish.
+        </p>
+      </div>
     </div>
+  </div>
 
-    <p class="text-gray-600 leading-relaxed text-base sm:text-lg font-semibold text-center mb-12 max-w-2xl mx-auto"
-        data-aos-delay="150">
-      We offer complete home improvement services — from renovations and flooring to outdoor spaces, painting, and masonry. Our skilled team delivers reliable craftsmanship, quality materials, and results built to last.
-    </p>
-
-    <!-- DROPDOWN CONTENT -->
-    <div id="servicesContent" class="overflow-hidden transition-all duration-500">
-
-
-
-      <!-- ⬇️ YOUR GRID (UNCHANGED) -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-12">
-
-    <!-- Card 1 – Remodeling / Renovations & Additions -->
-<div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1">
-  <div class="relative overflow-hidden">
-    <img src="assets/images/kk3.webp" alt="Remodeling and Renovations"
-         class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
-  </div>
-  <div class="p-6 transition-all duration-500 group-hover:translate-y-1">
-    <h3 class="text-xl font-semibold text-[#0B3C5D] mb-2 group-hover:text-[#0B3C5DBF] transition">
-      Remodeling, Renovations & Additions
-    </h3>
-    <p class="text-gray-600 text-sm mb-4 opacity-80">
-      Comprehensive home remodeling and renovation services including room additions, layout changes, and structural improvements.
-    </p>
-    
-  </div>
-</div>
-<!-- Card 2 – Flooring -->
-<div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1" data-aos-delay="150">
-  <div class="relative overflow-hidden">
-    <img src="assets/images/flooring.jpg" alt="Flooring Installation"
-         class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
-  </div>
-  <div class="p-6">
-    <h3 class="text-xl font-semibold text-[#0B3C5D] mb-2 group-hover:text-[#0B3C5DBF] transition">
-      Flooring Installation
-    </h3>
-    <p class="text-gray-600 text-sm mb-4 opacity-80">
-      Expert installation of hardwood, laminate, vinyl, tile, and other flooring options with precision and durability.
-    </p>
-    
-  </div>
-</div>
-<!-- Card 3 – Bathroom & Kitchen Remodel -->
-<div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1" data-aos-delay="300">
-  <div class="relative overflow-hidden">
-    <img src="assets/images/kk1.webp" alt="Bathroom and Kitchen Remodel"
-         class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
-  </div>
-  <div class="p-6">
-    <h3 class="text-xl font-semibold text-[#0B3C5D] mb-2 group-hover:text-[#0B3C5DBF] transition">
-      Bathroom & Kitchen Remodel
-    </h3>
-    <p class="text-gray-600 text-sm mb-4 opacity-80">
-      Custom bathroom and kitchen renovations featuring modern designs, quality materials, and functional layouts.
-    </p>
-    
-  </div>
-</div>
-<!-- Card 4 – Custom Decks & Porches -->
-<div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1" data-aos-delay="450">
-  <div class="relative overflow-hidden">
-    <img src="assets/images/44 (2).jpg" alt="Custom Decks and Porches"
-         class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
-  </div>
-  <div class="p-6">
-    <h3 class="text-xl font-semibold text-[#0B3C5D] mb-2 group-hover:text-[#0B3C5DBF] transition">
-      Custom Decks & Porches
-    </h3>
-    <p class="text-gray-600 text-sm mb-4 opacity-80">
-      Design and construction of custom decks and porches that enhance outdoor comfort, style, and usability.
-    </p>
-    
-  </div>
-</div>
-<!-- Card 5 – General Contractor Services -->
-<div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1" data-aos-delay="600">
-  <div class="relative overflow-hidden">
-    <img src="assets/images/general.jpg" alt="General Contractor Services"
-         class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
-  </div>
-  <div class="p-6">
-    <h3 class="text-xl font-semibold text-[#0B3C5D] mb-2 group-hover:text-[#0B3C5DBF] transition">
-      General Contractor Services
-    </h3>
-    <p class="text-gray-600 text-sm mb-4 opacity-80">
-      Professional project management handling permits, scheduling, coordination, and quality control from start to finish.
-    </p>
-    
-  </div>
-</div>
-<!-- Card 6 – House Painting -->
-<div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1">
-  <div class="relative overflow-hidden">
-    <img src="assets/images/oooneeee.webp" alt="House Painting Services"
-         class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
-  </div>
-  <div class="p-6">
-    <h3 class="text-xl font-semibold text-[#0B3C5D] mb-2 group-hover:text-[#0B3C5DBF] transition">
-      House Painting (Interior & Exterior)
-    </h3>
-    <p class="text-gray-600 text-sm mb-4 opacity-80">
-      High-quality interior and exterior painting services that refresh, protect, and enhance your home’s appearance.
-    </p>
-    
-  </div>
-</div>
-<!-- Card 7 – Outdoor Living Spaces -->
-<div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1">
-  <div class="relative overflow-hidden">
-    <img src="assets/images/kk4.jpg" alt="Outdoor Living Spaces"
-         class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
-  </div>
-  <div class="p-6">
-    <h3 class="text-xl font-semibold text-[#0B3C5D] mb-2 group-hover:text-[#0B3C5DBF] transition">
-      Outdoor Living Spaces & Structures
-    </h3>
-    <p class="text-gray-600 text-sm mb-4 opacity-80">
-      Custom outdoor living areas including pergolas, patios, pavilions, and structural enhancements.
-    </p>
-    
-  </div>
-</div>
-<!-- Card 8 – Outdoor Kitchens -->
-<div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1">
-  <div class="relative overflow-hidden">
-    <img src="assets/images/ok2.webp" alt="Outdoor Kitchens"
-         class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
-  </div>
-  <div class="p-6">
-    <h3 class="text-xl font-semibold text-[#0B3C5D] mb-2 group-hover:text-[#0B3C5DBF] transition">
-      Outdoor Kitchens
-    </h3>
-    <p class="text-gray-600 text-sm mb-4 opacity-80">
-      Fully customized outdoor kitchens designed for entertaining, cooking, and enjoying outdoor living year-round.
-    </p>
-    
-  </div>
-</div>
-<!-- Card 9 – Stone & Brickwork -->
-<div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1">
-  <div class="relative overflow-hidden">
-    <img src="assets/images/kk5.jpg" alt="Stone and Brickwork"
-         class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
-  </div>
-  <div class="p-6">
-    <h3 class="text-xl font-semibold text-[#0B3C5D] mb-2 group-hover:text-[#0B3C5DBF] transition">
-      Stone & Brickwork
-    </h3>
-    <p class="text-gray-600 text-sm mb-4 opacity-80">
-      Expert stone and brick masonry for walkways, retaining walls, fireplaces, and architectural features.
-    </p>
-    
-  </div>
-</div>
-
-
-
-
-
-</div>
+  <!-- 2 Flooring -->
+  <div class="service-content hidden">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <img src="assets/images/flooring.jpg" class="rounded-lg shadow-lg">
+      <div>
+        <h2 class="text-4xl font-bold mb-4">Flooring Installation</h2>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          Professional installation of hardwood, laminate, vinyl, tile,
+          and custom flooring solutions built for durability and style.
+        </p>
+      </div>
     </div>
+  </div>
 
+  <!-- 3 Bathroom & Kitchen -->
+  <div class="service-content hidden">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <img src="assets/images/kk1.webp" class="rounded-lg shadow-lg">
+      <div>
+        <h2 class="text-4xl font-bold mb-4">Bathroom & Kitchen Remodel</h2>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          Custom bathroom and kitchen renovations featuring modern layouts,
+          premium materials, cabinetry upgrades, and high-quality finishes.
+        </p>
+      </div>
     </div>
+  </div>
+
+  <!-- 4 Decks -->
+  <div class="service-content hidden">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <img src="assets/images/44 (2).jpg" class="rounded-lg shadow-lg">
+      <div>
+        <h2 class="text-4xl font-bold mb-4">Custom Decks & Porches</h2>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          Design and construction of durable, stylish decks and porches
+          that enhance outdoor living and increase property value.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5 General Contractor -->
+  <div class="service-content hidden">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <img src="assets/images/general.jpg" class="rounded-lg shadow-lg">
+      <div>
+        <h2 class="text-4xl font-bold mb-4">General Contractor Services</h2>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          Full project management including permits, inspections,
+          scheduling, subcontractor coordination, and quality control.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6 Painting -->
+  <div class="service-content hidden">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <img src="assets/images/oooneeee.webp" class="rounded-lg shadow-lg">
+      <div>
+        <h2 class="text-4xl font-bold mb-4">House Painting (Interior & Exterior)</h2>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          Professional interior and exterior painting services
+          that refresh, protect, and elevate your property’s appearance.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7 Outdoor Living -->
+  <div class="service-content hidden">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <img src="assets/images/od2.jpeg" class="rounded-lg shadow-lg">
+      <div>
+        <h2 class="text-4xl font-bold mb-4">Outdoor Living Spaces & Structures</h2>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          Custom-built pergolas, patios, pavilions, and structural
+          outdoor features designed for comfort and functionality.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8 Outdoor Kitchens -->
+  <div class="service-content hidden">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <img src="assets/images/ok2.webp" class="rounded-lg shadow-lg">
+      <div>
+        <h2 class="text-4xl font-bold mb-4">Outdoor Kitchens</h2>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          Fully customized outdoor kitchens built for entertaining,
+          grilling, and enjoying outdoor gatherings year-round.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9 Stone -->
+  <div class="service-content hidden">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <img src="assets/images/od.jpeg" class="rounded-lg shadow-lg">
+      <div>
+        <h2 class="text-4xl font-bold mb-4">Stone & Brickwork</h2>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          Expert masonry services including walkways, retaining walls,
+          fireplaces, patios, and decorative architectural stonework.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- NEXT / PREVIOUS BUTTONS -->
+  <div class="flex justify-between mt-10">
+    <button onclick="prevService()" class="px-6 py-2 bg-gray-200 rounded-full hover:bg-gray-300 transition">
+      ← Previous
+    </button>
+    <button onclick="nextService()" class="px-6 py-2 bg-[#0B3C5D] text-white rounded-full hover:bg-[#0B3C5DBF] transition">
+      Next →
+    </button>
+  </div>
+
+</div>
+
   </div>
 </section>
+
 
 
 
@@ -1059,6 +1055,62 @@ img {
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script src="assets/js/script.js"></script>
+
+<script>
+  let currentService = 0;
+  const services = document.querySelectorAll(".service-content");
+  const tabs = document.querySelectorAll(".service-tab");
+
+  function showService(index) {
+    services.forEach(s => s.classList.add("hidden"));
+    tabs.forEach(t => t.classList.remove("active"));
+
+    services[index].classList.remove("hidden");
+    tabs[index].classList.add("active");
+
+    currentService = index;
+  }
+
+  function nextService() {
+    currentService = (currentService + 1) % services.length;
+    showService(currentService);
+  }
+
+  function prevService() {
+    currentService = (currentService - 1 + services.length) % services.length;
+    showService(currentService);
+  }
+
+
+
+  
+  document.addEventListener("DOMContentLoaded", () => {
+    const params = new URLSearchParams(window.location.search);
+    const serviceIndex = params.get("service");
+
+    if (serviceIndex !== null && !isNaN(serviceIndex)) {
+      showService(Number(serviceIndex));
+
+      // Smooth scroll to services section
+      document.getElementById("services").scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+  });
+
+
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const params = new URLSearchParams(window.location.search);
+    const serviceIndex = params.get("service");
+
+    if (serviceIndex !== null) {
+      showService(Number(serviceIndex));
+    }
+  });
+</script>
 
 
 </body>
