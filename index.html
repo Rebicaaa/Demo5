@@ -762,7 +762,12 @@ img {
   </button>
 
  <!-- Dropdown Menu -->
-<div id="servicesMenu" class="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-md opacity-0 invisible transition-opacity duration-300 z-50">
+<!-- Dropdown Menu -->
+<div id="servicesMenu" 
+     class="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-md 
+            opacity-0 invisible transition-opacity duration-300 z-50
+            max-h-80 overflow-y-auto scrollbar-thin">
+
 
   <a href="services.html?service=0" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
   Remodeling / Renovations & Additions
@@ -800,6 +805,57 @@ img {
   Stone & Brickwork
 </a>
 
+<a href="services.html?service=9" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Fencing
+</a>
+
+<a href="services.html?service=10" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Pressure Washing 
+</a>
+<a href="services.html?service=11" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Punch List or Inspection Report Repairs
+</a>
+
+<a href="services.html?service=12" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Residential Property Maintenance
+</a>
+
+<a href="services.html?service=13" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Rot Repairs
+</a>
+
+<a href="services.html?service=14" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Furniture Assembly
+</a>
+
+<a href="services.html?service=15" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Electrical
+</a>
+
+<a href="services.html?service=16" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Drywall Repair
+</a>
+
+
+<a href="services.html?service=17" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Dryer Vent Cleaning
+</a>
+
+<a href="services.html?service=18" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Door
+</a>
+
+<a href="services.html?service=19" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Gate Repair
+</a>
+
+<a href="services.html?service=20" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Fixture Repair, Installation & Replacement
+</a>
+
+<a href="services.html?service=21" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  General Home Repair
+</a>
 
 </div>
 </div>
@@ -1856,17 +1912,102 @@ Our team approaches every project with precision, integrity, and respect for you
       <h3 class="font-bold text-lg mb-4">Need Reliable Home Services?</h3>
       <p class="text-gray-600 mb-6">Contact Your Handyman Duties & Construction today for professional, dependable home repairs and installations.</p>
 
-      <form class="grid grid-cols-1 gap-4 mt-auto">
-        <input type="text" placeholder="Full Name*" required class="p-3 rounded border border-gray-300 w-full">
-        <input type="email" placeholder="Email*" required class="p-3 rounded border border-gray-300 w-full">
-        <input type="text" placeholder="Phone Number*" required class="p-3 rounded border border-gray-300 w-full">
-        <textarea placeholder="How can we help?*" required class="p-3 rounded border border-gray-300 w-full h-32"></textarea>
-        <button type="submit"
-  class="bg-[#0B3C5D] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#0B3C5DBF] transition">
-  Request Service
-</button>
+      <form class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-auto">
 
-      </form>
+  <!-- First & Last Name -->
+  <div>
+    <label class="text-sm font-medium">First Name *</label>
+    <input type="text" required class="p-3 rounded border border-gray-300 w-full">
+  </div>
+
+  <div>
+    <label class="text-sm font-medium">Last Name *</label>
+    <input type="text" required class="p-3 rounded border border-gray-300 w-full">
+  </div>
+
+  <!-- Email & Phone -->
+  <div>
+    <label class="text-sm font-medium">Email *</label>
+    <input type="email" required class="p-3 rounded border border-gray-300 w-full">
+  </div>
+
+  <div>
+    <label class="text-sm font-medium">Phone *</label>
+    <input type="text" required class="p-3 rounded border border-gray-300 w-full">
+  </div>
+
+  <!-- Address & City -->
+  <div>
+    <label class="text-sm font-medium">Address *</label>
+    <input type="text" required class="p-3 rounded border border-gray-300 w-full">
+  </div>
+
+  <div>
+    <label class="text-sm font-medium">City *</label>
+    <input type="text" required class="p-3 rounded border border-gray-300 w-full">
+  </div>
+
+  <!-- Postal Code -->
+  <div>
+    <label class="text-sm font-medium">Postal Code *</label>
+    <input type="text" required class="p-3 rounded border border-gray-300 w-full">
+  </div>
+
+  <!-- Communication Preference -->
+  <div>
+    <label class="text-sm font-medium">How would you like us to communicate with you? *</label>
+    <div class="flex flex-col gap-2 mt-2">
+      <label><input type="radio" name="contact_method" required> Phone</label>
+      <label><input type="radio" name="contact_method"> Email</label>
+      <label><input type="radio" name="contact_method"> Text</label>
+    </div>
+  </div>
+
+  <!-- How did you hear about us -->
+  <div class="md:col-span-2">
+    <label class="text-sm font-medium">How did you hear about us?</label>
+    <input type="text" class="p-3 rounded border border-gray-300 w-full">
+  </div>
+
+  <!-- Property Details Title -->
+  <div class="md:col-span-2 mt-6">
+    <h3 class="text-xl font-semibold text-[#0B3C5D]">Property Details:</h3>
+  </div>
+
+  <!-- Service Type -->
+  <div class="md:col-span-2">
+    <label class="text-sm font-medium">What type of Home Improvement service are you interested in?</label>
+    <textarea class="p-3 rounded border border-gray-300 w-full h-28"></textarea>
+  </div>
+
+  <!-- Gate Access Code -->
+  <div class="md:col-span-2">
+    <label class="text-sm font-medium">Do you have a Gate Access Code? If so please include the code.</label>
+    <input type="text" placeholder="Enter Access Code"
+      class="p-3 rounded border border-gray-300 w-full">
+  </div>
+
+  <!-- SMS Consent -->
+  <div class="md:col-span-2 flex items-start gap-2">
+    <input type="checkbox" required class="mt-1">
+    <p class="text-sm text-gray-600">
+      I Consent to Receive SMS Notifications, Alerts & Occasional Marketing Communication from company.
+      Message frequency varies. Message & data rates may apply. Text HELP to
+      <a href="tel:6014014430" class="text-blue-600 underline">(601) 401-4430</a>
+      for assistance. You can reply STOP to unsubscribe at any time.
+    </p>
+  </div>
+
+  <!-- Submit Button -->
+  <div class="md:col-span-2">
+    <button type="submit"
+      class="bg-[#0B3C5D] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#0B3C5DBF] transition w-full">
+      Request Service
+    </button>
+  </div>
+
+</form>
+
     </div>
 
     <!-- RIGHT IMAGE -->

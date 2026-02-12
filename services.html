@@ -637,10 +637,14 @@ img {
     <i class="fa-solid fa-chevron-down text-xs mt-1 transition-transform duration-300" id="servicesArrow"></i>
   </button>
 
- <!-- Dropdown Menu -->
-<div id="servicesMenu" class="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-md opacity-0 invisible transition-opacity duration-300 z-50">
+<!-- Dropdown Menu -->
+<div id="servicesMenu" 
+     class="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-md 
+            opacity-0 invisible transition-opacity duration-300 z-50
+            max-h-80 overflow-y-auto scrollbar-thin">
 
- <a href="services.html?service=0" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+
+  <a href="services.html?service=0" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
   Remodeling / Renovations & Additions
 </a>
 
@@ -676,6 +680,57 @@ img {
   Stone & Brickwork
 </a>
 
+<a href="services.html?service=9" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Fencing
+</a>
+
+<a href="services.html?service=10" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Pressure Washing 
+</a>
+<a href="services.html?service=11" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Punch List or Inspection Report Repairs
+</a>
+
+<a href="services.html?service=12" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Residential Property Maintenance
+</a>
+
+<a href="services.html?service=13" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Rot Repairs
+</a>
+
+<a href="services.html?service=14" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Furniture Assembly
+</a>
+
+<a href="services.html?service=15" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Electrical
+</a>
+
+<a href="services.html?service=16" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Drywall Repair
+</a>
+
+
+<a href="services.html?service=17" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Dryer Vent Cleaning
+</a>
+
+<a href="services.html?service=18" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Door
+</a>
+
+<a href="services.html?service=19" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Gate Repair
+</a>
+
+<a href="services.html?service=20" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Fixture Repair, Installation & Replacement
+</a>
+
+<a href="services.html?service=21" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  General Home Repair
+</a>
 
 </div>
 </div>
@@ -827,11 +882,26 @@ img {
   <button class="service-tab" onclick="showService(1)">Flooring</button>
   <button class="service-tab" onclick="showService(2)">Bathroom & Kitchen</button>
   <button class="service-tab" onclick="showService(3)">Decks & Porches</button>
-  <button class="service-tab" onclick="showService(4)">General Contractor</button>
+  <button class="service-tab" onclick="showService(4)">General Contracting</button>
   <button class="service-tab" onclick="showService(5)">House Painting</button>
   <button class="service-tab" onclick="showService(6)">Outdoor Living</button>
   <button class="service-tab" onclick="showService(7)">Outdoor Kitchens</button>
   <button class="service-tab" onclick="showService(8)">Stone & Brickwork</button>
+  <button class="service-tab" onclick="showService(9)">Fencing</button>
+  <button class="service-tab" onclick="showService(10)">Pressure Washing</button>
+  <button class="service-tab" onclick="showService(11)">Punch List or Inspection Report Repairs</button>
+  <button class="service-tab" onclick="showService(12)">Residential Property Maintenance</button>
+  <button class="service-tab" onclick="showService(13)">Rot Repair</button>
+  <button class="service-tab" onclick="showService(14)">Furniture Assembly</button>
+  <button class="service-tab" onclick="showService(15)">Electrical</button>
+  <button class="service-tab" onclick="showService(16)">Drywall Repair</button>
+  <button class="service-tab" onclick="showService(17)">Dryer Vent Cleaning</button>
+  <button class="service-tab" onclick="showService(18)">Doors</button>
+  <button class="service-tab" onclick="showService(19)">Gate Repair</button>
+  <button class="service-tab" onclick="showService(20)">Fixture Repair, Installation & Replacement</button>
+  <button class="service-tab" onclick="showService(21)">General Home Repair</button>
+  
+
 </div>
 
 <!-- SERVICE CONTENT CONTAINER -->
@@ -899,10 +969,10 @@ img {
     <div class="grid md:grid-cols-2 gap-8 items-center">
       <img src="assets/images/general.jpg" class="rounded-lg shadow-lg">
       <div>
-        <h2 class="text-4xl font-bold mb-4">General Contractor Services</h2>
+        <h2 class="text-4xl font-bold mb-4">General Contracting</h2>
         <p class="text-gray-600 leading-relaxed mb-6">
-          Full project management including permits, inspections,
-          scheduling, subcontractor coordination, and quality control.
+          
+Whether you’re building a new structure, remodeling, or renovating an existing one, you need a professional with exceptional management and organizational skills. Hiring a general contractor with experience, tools, and a keen eye for detail is critical
         </p>
       </div>
     </div>
@@ -963,6 +1033,184 @@ img {
       </div>
     </div>
   </div>
+
+
+  <!-- 10 Fencing -->
+  <div class="service-content hidden">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <img src="assets/images/unnamed.jpg" class="rounded-lg shadow-lg">
+      <div>
+        <h2 class="text-4xl font-bold mb-4">Fencing</h2>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          From sagging fencing to broken fence gates, we can help with your fence repair.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 11 Pressure Washing -->
+  <div class="service-content hidden">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <img src="assets/images/pressure.jpg" class="rounded-lg shadow-lg">
+      <div>
+        <h2 class="text-4xl font-bold mb-4">Pressure Washing</h2>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          Steady Home Maintenance specializes in house washing to keep the exterior of your home clean and safe from harm caused by mother nature: exterior home washing, pressure washing sidewalks and driveways, softwashing, and roof cleaning
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 12 Punch List or Inspection Report Repairs -->
+  <div class="service-content hidden">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <img src="assets/images/punch.jpg" class="rounded-lg shadow-lg">
+      <div>
+        <h2 class="text-4xl font-bold mb-4">Punch List or Inspection Report Repairs</h2>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          Check those home maintenance tasks off your to-do list today! We can help with your punch lists and any task generated from your inspections
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 13 Punch List or Inspection Report Repairs -->
+  <div class="service-content hidden">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <img src="assets/images/resedential.jpg" class="rounded-lg shadow-lg">
+      <div>
+        <h2 class="text-4xl font-bold mb-4">Residential Property Maintenance</h2>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          Our team of experts offers a variety of Flowood property maintenance services to help tackle any general repair issues.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 13 Punch List or Inspection Report Repairs -->
+  <div class="service-content hidden">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <img src="assets/images/rot.jpg" class="rounded-lg shadow-lg">
+      <div>
+        <h2 class="text-4xl font-bold mb-4">Rot Repair</h2>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          Our team of experts offers a variety of Flowood property maintenance services to help tackle any general repair issues.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 14 Punch List or Inspection Report Repairs -->
+  <div class="service-content hidden">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <img src="assets/images/furniture1.jpg" class="rounded-lg shadow-lg">
+      <div>
+        <h2 class="text-4xl font-bold mb-4">Furniture Assembly</h2>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          We have the tools and experience to make quick work of your furniture assembly project.
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 15 Punch List or Inspection Report Repairs -->
+  <div class="service-content hidden">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <img src="assets/images/electrical.jpg" class="rounded-lg shadow-lg">
+      <div>
+        <h2 class="text-4xl font-bold mb-4">Electrical</h2>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          Have an electrical issue and need a professional? Want to swap out outlets and switches or install a ceiling fan? We can help.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 15 Punch List or Inspection Report Repairs -->
+  <div class="service-content hidden">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <img src="assets/images/drywall.jpg" class="rounded-lg shadow-lg">
+      <div>
+        <h2 class="text-4xl font-bold mb-4">Drywall Repair</h2>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          Revitalize your walls with our drywall repair service. Our experienced technicians specialize in patching holes, fixing cracks, and restoring damaged surfaces to their original condition.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 15 Punch List or Inspection Report Repairs -->
+  <div class="service-content hidden">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <img src="assets/images/dryvent.jpg" class="rounded-lg shadow-lg">
+      <div>
+        <h2 class="text-4xl font-bold mb-4">Dryer Vent Cleaning</h2>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          RAnnual dryer vent cleaning is an important home maintenance item that will improve your dryer’s performance, save on electrical costs, and most importantly prevent a house fire.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 15 Punch List or Inspection Report Repairs -->
+  <div class="service-content hidden">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <img src="assets/images/doors.jpg" class="rounded-lg shadow-lg">
+      <div>
+        <h2 class="text-4xl font-bold mb-4">Doors</h2>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          Steady Home Maintenance can help with your door repair, replacement, or installation.
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  
+
+  <!-- 15 Punch List or Inspection Report Repairs -->
+  <div class="service-content hidden">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <img src="assets/images/gate.jpg" class="rounded-lg shadow-lg">
+      <div>
+        <h2 class="text-4xl font-bold mb-4">Gate Repair</h2>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          Your gate is one of the most essential components of your security system that ensures the safety of your residential or commercial property. If your gate opener is malfunctioning, damaged, or worn out, contact our team.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 15 Punch List or Inspection Report Repairs -->
+  <div class="service-content hidden">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <img src="assets/images/fixture.jpg" class="rounded-lg shadow-lg">
+      <div>
+        <h2 class="text-4xl font-bold mb-4">Fixture Repair, Installation & Replacement</h2>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          Whether it be a sink, shelves, curtain rods, shutters, or more, we can help with your fixture installation.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 15 Punch List or Inspection Report Repairs -->
+  <div class="service-content hidden">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <img src="assets/images/home.jpg" class="rounded-lg shadow-lg">
+      <div>
+        <h2 class="text-4xl font-bold mb-4">General Home Repair</h2>
+        <p class="text-gray-600 leading-relaxed mb-6">
+         We provide home repair jobs anywhere in your home. From fixture repair to TV Mounting, we’ve got you covered.
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+
+
 
   <!-- NEXT / PREVIOUS BUTTONS -->
   <div class="flex justify-between mt-10">
@@ -1101,7 +1349,7 @@ img {
 
 </script>
 
-<script>
+<!-- <script>
   document.addEventListener("DOMContentLoaded", () => {
     const params = new URLSearchParams(window.location.search);
     const serviceIndex = params.get("service");
@@ -1110,7 +1358,7 @@ img {
       showService(Number(serviceIndex));
     }
   });
-</script>
+</script> -->
 
 
 </body>
