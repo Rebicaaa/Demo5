@@ -524,6 +524,55 @@ img {
   will-change: transform; /* hint for better GPU rendering */
   backface-visibility: hidden;
 }
+
+
+
+
+/* MODAL BACKGROUND */
+.modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  z-index: 9999; /* very high so it stays on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6); /* dark overlay */
+}
+
+/* MODAL BOX */
+.modal-content {
+  background-color: #ffffff;
+  margin: 8% auto;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* CLOSE BUTTON */
+.close-btn {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: red;
+}
+
+/* Optional animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
   </style>
 </head>
 
@@ -640,7 +689,7 @@ img {
 
           <h1 class="hero-title text-white font-normal text-4xl sm:text-5xl lg:text-6xl mb-4 drop-shadow-lg"
 
-              ><br>Kitchen Remodelling</h1>
+              ><br>Kitchen Remodeling</h1>
           <p class="text-white/90 max-w-2xl text-lg sm:text-xl"
                data-aos-delay="200">
             Custom kitchen renovations featuring modern designs, quality materials, and functional layouts.
@@ -725,7 +774,8 @@ img {
 
 <!-- MAIN NAV BAR -->
 <div class="w-full bg-white shadow-md relative z-20">
-  <div class="max-w-7xl mx-auto px-6 py-1.5 flex items-center justify-between">
+  <div class="max-w-7xl mx-auto px-2 py-1.5 flex items-center justify-between">
+
 
     <!-- LOGO -->
     <div class="flex items-center gap-4">
@@ -737,13 +787,15 @@ img {
 
       <img src="assets/images/new_logo.png" alt="HVAC Cowboys Logo" class="w-24 mx-auto md:mx-0 mb-0 rounded-full border-2 border-white/50">
       <div>
-        <div class="text-2xl font-bold text-gray-900">Your Handyman Duties & Construction</div>
-        <div class="text-sm text-gray-500">Quality You Can Trust</div>
-      </div>
+  <div class="text-xl font-bold text-gray-900">Your Handyman Duties & Construction</div>
+  <div class="text-xs text-gray-500">Quality You Can Trust</div>
+</div>
+
     </div>
 
     <!-- DESKTOP NAV -->
-    <nav id="desktopNav" class="hidden lg:flex items-center gap-8 font-semibold text-gray-700">
+    <nav id="desktopNav" class="hidden lg:flex items-center gap-10 font-semibold text-sm text-gray-700">
+
       <a href="index.html"
    class="nav-link transition hover:text-[#0B3C5DBF]">
    Home
@@ -769,7 +821,7 @@ img {
             max-h-80 overflow-y-auto scrollbar-thin">
 
 
-  <a href="services.html?service=0" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+    <a href="services.html?service=0" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
   Remodeling / Renovations & Additions
 </a>
 
@@ -809,39 +861,39 @@ img {
   Fencing
 </a>
 
-<a href="services.html?service=10" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+<!-- <a href="services.html?service=10" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
   Pressure Washing 
-</a>
-<a href="services.html?service=11" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+</a> -->
+<a href="services.html?service=10" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
   Punch List or Inspection Report Repairs
 </a>
 
-<a href="services.html?service=12" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+<a href="services.html?service=11" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
   Residential Property Maintenance
 </a>
 
-<a href="services.html?service=13" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+<a href="services.html?service=12" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
   Rot Repairs
 </a>
 
-<a href="services.html?service=14" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+<!-- <a href="services.html?service=14" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
   Furniture Assembly
-</a>
+</a> -->
 
-<a href="services.html?service=15" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+<a href="services.html?service=13" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
   Electrical
 </a>
 
-<a href="services.html?service=16" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+<a href="services.html?service=14" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
   Drywall Repair
 </a>
 
 
-<a href="services.html?service=17" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+<!-- <a href="services.html?service=17" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
   Dryer Vent Cleaning
-</a>
+</a> -->
 
-<a href="services.html?service=18" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+<!-- <a href="services.html?service=18" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
   Door
 </a>
 
@@ -851,9 +903,9 @@ img {
 
 <a href="services.html?service=20" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
   Fixture Repair, Installation & Replacement
-</a>
+</a> -->
 
-<a href="services.html?service=21" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+<a href="services.html?service=15" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
   General Home Repair
 </a>
 
@@ -862,6 +914,9 @@ img {
 
 
       <a href="gallery.html" class="nav-link transition hover:text-[#0B3C5DBF]">Gallery</a>
+
+        <a href="subscription.html" class="nav-link transition hover:text-[#0B3C5DBF]">Subscription</a>
+      
       <a href="contactus.html" class="nav-link transition hover:text-[#0B3C5DBF]">Contact</a>
     </nav>
     
@@ -1903,7 +1958,7 @@ Our team approaches every project with precision, integrity, and respect for you
     <button onclick="scrollToSection('contact')" class="bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-500 transition">Talk to us now →</button>
   </section> -->
 
-  <!-- CONTACT -->
+   <!-- CONTACT -->
   <section id="contact" class="bg-[#f7f7f7]">  <!-- Off-white background -->
   <div class="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch">
 
@@ -1965,7 +2020,7 @@ Our team approaches every project with precision, integrity, and respect for you
 
   <!-- How did you hear about us -->
   <div class="md:col-span-2">
-    <label class="text-sm font-medium">How did you hear about us?</label>
+    <label class="text-sm font-medium">How did you hear about us? *</label>
     <input type="text" class="p-3 rounded border border-gray-300 w-full">
   </div>
 
@@ -1976,13 +2031,13 @@ Our team approaches every project with precision, integrity, and respect for you
 
   <!-- Service Type -->
   <div class="md:col-span-2">
-    <label class="text-sm font-medium">What type of Home Improvement service are you interested in?</label>
+    <label class="text-sm font-medium">What type of Home Improvement service are you interested in? *</label>
     <textarea class="p-3 rounded border border-gray-300 w-full h-28"></textarea>
   </div>
 
   <!-- Gate Access Code -->
   <div class="md:col-span-2">
-    <label class="text-sm font-medium">Do you have a Gate Access Code? If so please include the code.</label>
+    <label class="text-sm font-medium">Do you have a Gate Access Code? If so please include the code. *</label>
     <input type="text" placeholder="Enter Access Code"
       class="p-3 rounded border border-gray-300 w-full">
   </div>
@@ -1998,16 +2053,53 @@ Our team approaches every project with precision, integrity, and respect for you
     </p>
   </div>
 
-  <!-- Submit Button -->
-  <div class="md:col-span-2">
-    <button type="submit"
-      class="bg-[#0B3C5D] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#0B3C5DBF] transition w-full">
-      Request Service
-    </button>
-  </div>
+  <!-- POLICY -->
+<div class="md:col-span-2 mt-4 text-sm text-gray-600">
+
+  <!-- Checkbox -->
+  <label class="flex items-start gap-2 cursor-pointer">
+    <input type="checkbox" required class="mt-1">
+    <span>
+      I agree to the 
+      <a href="#" class="text-[#0B3C5D] font-semibold hover:underline"
+         onclick="openModal('privacyModal'); return false;">
+         Privacy Policy
+      </a>
+      and
+      <a href="#" class="text-[#0B3C5D] font-semibold hover:underline"
+         onclick="openModal('termsModal'); return false;">
+         Terms of Service
+      </a>
+    </span>
+  </label>
+
+  <!-- ✅ SUBMIT BUTTON GOES HERE -->
+  <button type="submit"
+    class="w-full mt-6 bg-[#123E57] hover:bg-[#0F3247] text-white
+           font-semibold py-4 rounded-full text-lg
+           transition duration-300">
+    Request Service
+  </button>
+
+  <!-- Bottom legal -->
+  <p class="text-center mt-4 text-gray-500">
+    By submitting this form, you agree to our
+    <a href="#" class="text-[#0B3C5D] font-semibold hover:underline"
+       onclick="openModal('privacyModal'); return false;">
+       Privacy Policy
+    </a>
+    |
+    <a href="#" class="text-[#0B3C5D] font-semibold hover:underline"
+       onclick="openModal('termsModal'); return false;">
+       Terms of Service
+    </a>
+  </p>
+
+</div>
+
+
 
 </form>
-
     </div>
 
     <!-- RIGHT IMAGE -->
@@ -2089,6 +2181,51 @@ Our team approaches every project with precision, integrity, and respect for you
   
 </footer>
 
+<div id="termsModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal('termsModal')">&times;</span>
+
+    <h2 class="text-xl font-bold mb-3">Terms of Service</h2>
+
+    <div class="modal-text">
+      <p>
+        We only collect the information you choose to give us, and we process it with your consent, or on another legal basis; we only require the minimum amount of personal information that is necessary to fulfill the purpose of your interaction with us; we don't sell it to third parties; and we only use it as this Privacy
+Statement describes.
+      </p>
+
+      <!-- <p class="mt-3">
+        Your Handyman Duties & Construction reserves the right to refuse
+        service when necessary.
+      </p> -->
+    </div>
+  </div>
+</div>
+
+<!-- Privacy Policy Modal -->
+<div id="privacyModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal('privacyModal')">&times;</span>
+
+    <h2 class="text-2xl font-bold mb-4">Privacy Policy</h2>
+
+    <div class="modal-text">
+      <p>
+        We only collect the information you choose to give us, and we process it with your consent, or on another legal basis; we only require the minimum amount of personal information that is necessary to fulfill the purpose of your interaction with us; we don't sell it to third parties; and we only use it as this Privacy
+Statement describes.
+      </p>
+
+      <!-- <p class="mt-3">
+        We do not sell, trade, or share your information with third parties.
+      </p>
+
+      <p class="mt-3">
+        By using our website, you consent to our privacy practices.
+      </p> -->
+    </div>
+  </div>
+</div>
+
+
   <!-- AOS Init (kept exactly like original) -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
@@ -2125,6 +2262,25 @@ Our team approaches every project with precision, integrity, and respect for you
   contents[index].classList.remove("hidden");
 }
 
+</script>
+
+<script>
+function openModal(id){
+  document.getElementById(id).style.display = "block";
+}
+
+function closeModal(id){
+  document.getElementById(id).style.display = "none";
+}
+
+// close when clicking outside
+window.onclick = function(e){
+  document.querySelectorAll(".modal").forEach(modal => {
+    if(e.target === modal){
+      modal.style.display = "none";
+    }
+  });
+}
 </script>
 
 
