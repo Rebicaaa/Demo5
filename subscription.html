@@ -1,0 +1,1495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8" />
+    
+
+  <title>Your Handyman Duties & Construction – Quality You Can Trust</title>
+ <!-- Favicon -->
+<link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.webp">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.webp">
+<link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.webp">
+<link rel="manifest" href="assets/favicon/site.webmanifest">
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+
+
+  <!-- AOS Animation Library -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+ <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <style>
+    /* Global */
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      scroll-behavior: smooth;
+      background: #ffffff;
+    }
+
+    /* Fade-Up Animation (used alongside AOS for small elements) */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeUp { animation: fadeUp 1s ease-out forwards; opacity: 0; }
+    .delay-200 { animation-delay: .2s; }
+    .delay-400 { animation-delay: .4s; }
+    .delay-600 { animation-delay: .6s; }
+
+    /* Small visual helpers for hero frame */
+    /* Ensure hero frame has the white border look when on dark environments */
+    .hero-frame {
+      box-shadow: 0 8px 30px rgba(0,0,0,0.45);
+      border: 12px solid rgba(255,255,255,0.92);
+    }
+
+    
+ /* Desktop nav ONLY above 1176px */
+@media (min-width: 1177px) {
+  #menuBtn {
+    display: none;
+  }
+
+  #desktopNav {
+    display: flex;
+  }
+}
+
+/* Mobile nav up to 1176px */
+@media (max-width: 1176px) {
+  #desktopNav {
+    display: none;
+  }
+
+  #menuBtn {
+    display: block;
+  }
+}
+
+
+/* Mobile Menu Animations */
+#mobileMenu {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#mobileMenu:not(.hidden) {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobile-link {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease, color 0.2s ease;
+}
+
+#mobileMenu:not(.hidden) .mobile-link {
+  animation: slideInLeft 0.4s ease forwards;
+}
+
+#mobileMenu:not(.hidden) .mobile-link:nth-child(1) { animation-delay: 0.1s; }
+#mobileMenu:not(.hidden) .mobile-link:nth-child(2) { animation-delay: 0.15s; }
+#mobileMenu:not(.hidden) .mobile-link:nth-child(3) { animation-delay: 0.2s; }
+#mobileMenu:not(.hidden) .mobile-link:nth-child(4) { animation-delay: 0.25s; }
+#mobileMenu:not(.hidden) .mobile-link:nth-child(5) { animation-delay: 0.3s; }
+
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Hamburger Icon Animation */
+#hamburgerIcon {
+  display: block;
+}
+
+#closeIcon {
+  display: none;
+}
+
+#menuBtn.active #hamburgerIcon {
+  display: none;
+}
+
+#menuBtn.active #closeIcon {
+  display: block;
+}
+
+/* Swiper Navigation Buttons */
+.hero-nav-next,
+.hero-nav-prev {
+  color: var(--gold-main) !important;
+  width: 50px !important;
+  height: 50px !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-radius: 50% !important;
+  border: none !important;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  z-index: 50 !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  margin-top: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  outline: none !important;
+}
+
+.hero-nav-next:hover,
+.hero-nav-prev:hover {
+   background: rgba(255, 255, 255, 0.85) !important;
+  transform: translateY(-50%) scale(1.1) !important;
+}
+
+.hero-nav-next {
+  right: 20px !important;
+  left: auto !important;
+}
+
+.hero-nav-prev {
+  left: 20px !important;
+  right: auto !important;
+}
+
+.hero-nav-next::after,
+.hero-nav-prev::after {
+  font-size: 28px !important;
+  font-weight: bold !important;
+  font-family: Arial, sans-serif !important;
+}
+
+.hero-nav-next::after {
+  content: '›' !important;
+}
+
+.hero-nav-prev::after {
+  content: '‹' !important;
+}
+
+/* Override any Swiper default styles */
+.heroSwiper .swiper-button-disabled {
+  opacity: 0.35 !important;
+  cursor: auto !important;
+  pointer-events: none !important;
+}
+
+
+/* Hide hero nav buttons on small screens */
+@media (max-width: 768px) {
+  .hero-nav-next,
+  .hero-nav-prev {
+    display: none !important;
+  }
+}
+
+
+/* =========================
+   BULLET ROW LAYOUT
+========================= */
+.bullets-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.bullet-container {
+  display: inline-block;
+}
+
+.bullet-svg {
+  display: block;
+  overflow: visible;
+}
+
+ul li, ol li {
+  color: #ffffff ;         /* Pure black text */
+  font-weight: bold;
+  text-shadow: none;              /* Remove any transparency or shadow */
+  opacity: 1 !important;          /* Fully opaque */
+}
+
+/* =========================
+   ENGRAVED TEXT – INSIDE CIRCLE
+========================= */
+.engraved-text {
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+
+  fill: var(--gold-main);        /* PURE BLACK */
+  stroke: #000000;      /* PURE BLACK */
+  stroke: #000;
+
+  paint-order: stroke fill;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  text-rendering: geometricPrecision;
+
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(0.90) translateY(3px);
+}
+
+
+/* EXTRA SAFETY FOR LONG WORDS */
+.engraved-text textPath {
+  dominant-baseline: middle;
+}
+
+/* =========================
+   SIZE-SPECIFIC TUNING
+========================= */
+
+/* Large bullets (SIX, SHOOTER) */
+.size-lg .engraved-text {
+  font-size: 20px;
+  letter-spacing: 0.6px;
+  transform: scale(0.88) translateY(3px);
+}
+
+/* Medium bullets (BOY, CONDUCT) */
+.size-md .engraved-text {
+  font-size: 19px;
+  letter-spacing: 0.6px;
+  transform: scale(0.87) translateY(3px);
+}
+
+/* Small bullets (CODE) */
+.size-sm .engraved-text {
+  font-size: 19px;
+  letter-spacing: 0.5px;
+  transform: scale(0.86) translateY(3px);
+}
+
+/* Extra small (OF) */
+.size-xs .engraved-text {
+  font-size: 19px;
+  letter-spacing: 0.4px;
+  transform: scale(0.85) translateY(3px);
+}
+
+/* =========================
+   SVG SIZE CONTROL
+========================= */
+.size-lg svg { width: 120px; height: 120px; }
+.size-md svg { width: 100px; height: 100px; }
+.size-sm svg { width: 90px;  height: 90px; }
+.size-xs svg { width: 80px;  height: 80px; }
+
+
+li, li * {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+  background: transparent !important;
+  -webkit-text-stroke: 0.7px #000 !important;
+}
+
+li, li * hover {
+  color: #d8b30e !important;
+  text-shadow: none !important;
+  background: transparent !important;
+  -webkit-text-stroke: 0.7px #000 !important;
+
+}
+
+
+
+/* =========================
+   MOBILE HERO TEXT FIX
+========================= */
+@media (max-width: 768px) {
+
+  /* Center hero text vertically */
+  .heroSwiper .swiper-slide > div.absolute {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    height: 100%;
+  }
+
+  .heroSwiper h1 {
+    margin-bottom: 16px;
+  }
+
+  .heroSwiper p {
+    margin-top: 12px;
+  }
+}
+
+
+
+/* =========================
+   MOBILE HERO IMAGE SCALE UP
+========================= */
+@media (max-width: 768px) {
+
+  /* Make slides slightly taller */
+  .heroSwiper,
+  .heroSwiper .swiper-wrapper,
+  .heroSwiper .swiper-slide {
+    min-height: 105vh !important;
+  }
+
+  /* Scale images vertically */
+  .heroSwiper img,
+  .hero-image {
+    height: 100% !important;
+    width: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+}
+
+
+
+
+
+.footer-links li,
+.footer-links li a {
+  color: #ffffff !important;
+  -webkit-text-stroke: 0 !important;
+  font-weight: 500 !important;
+  color: #0B3C5DBF !important;
+  color: #fff;
+    transition: color 0.2s;
+}
+
+.hero-title {
+  font-family: 'Rye', serif;
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background-color: #0B3C5DBF; /* yellow */
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+
+
+
+.horse-bg {
+  position: relative;
+  background-color: #0B3C5DBF;
+  overflow: hidden;
+}
+
+/* Animated horse layer */
+.horse-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url("assets/images/horse.webp");
+  background-repeat: repeat;
+  background-size: 300px auto;
+
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+
+  /* animations */
+  animation:
+    horseFadeIn 1.4s ease-out forwards,
+    horseWalk 60s linear infinite;
+}
+
+/* Keep content above horses */
+.horse-bg > div {
+  position: relative;
+  z-index: 1;
+}
+
+/* fade-in on page load */
+@keyframes horseFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.06;
+  }
+}
+
+/* slow walking motion */
+@keyframes horseWalk {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: +1200px 0;
+  }
+}
+
+
+.services-header {
+    display: flex;
+    align-items: center;   /* THIS fixes the level */
+    justify-content: space-between;
+    cursor: pointer;
+}
+.services-header i,
+.services-header svg {
+    vertical-align: middle;
+}
+.services-header i {
+    position: relative;
+    top: 1px;   /* try 1–2px if needed */
+}
+
+
+
+
+/* HARD-LOCKED PERFECT CIRCLE */
+.location-icon {
+  width: 38px;
+  height: 38px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #0B3C5D;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+  line-height: 0; /* CRITICAL */
+}
+
+/* SVG inside must NOT affect layout */
+.location-icon svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+/* Mobile – slightly smaller but still circle */
+@media (max-width: 640px) {
+  .location-icon {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    min-height: 34px;
+  }
+}
+
+
+img {
+  image-rendering: auto; /* smooth scaling */
+  will-change: transform; /* hint for better GPU rendering */
+  backface-visibility: hidden;
+}
+
+
+
+
+
+/* Overlay */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+/* Box */
+.modal-content {
+  background: #fff;
+  width: 90%;
+  max-width: 600px;
+  margin: 6% auto;
+  padding: 25px;
+  border-radius: 12px;
+  position: relative;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  right: 18px;
+  top: 12px;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* Scrollable text */
+.modal-text {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-top: 15px;
+  line-height: 1.6;
+}
+
+
+  /* ✅ Force the plan list to ignore your global li white/bold rules */
+  .plan-list,
+  .plan-list * {
+    color: #2f2f2f !important;
+    font-weight: 500 !important;
+    -webkit-text-stroke: 0 !important;
+    text-shadow: none !important;
+  }
+
+  /* Font size/spacing like screenshot */
+  .plan-list li {
+    font-size: 18px;
+    line-height: 1.7;
+    
+  }
+
+  /* Center the whole list block like the image */
+  .plan-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin-top: 28px;
+    
+  }
+
+  /* Each row: icon + text */
+  .plan-item {
+    width: 100%;
+    max-width: 560px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  /* Indented items (like “Unlimited…” and “Annual…” in your screenshot) */
+  .plan-item.sub {
+    padding-left: 46px;
+  }
+
+  /* Outlined circle check icon */
+  .plan-icon {
+    width: 26px;
+    height: 26px;
+    flex: 0 0 26px;
+    margin-top: 2px;
+  }
+
+/* ✅ FAQ answer list - force normal font + normal color (no yellow) */
+#faq .faq-answer,
+#faq .faq-answer * {
+  color: #374151 !important;          /* Tailwind gray-700 */
+  font-weight: 400 !important;        /* normal */
+  -webkit-text-stroke: 0 !important;
+  text-shadow: none !important;
+}
+
+/* bullets spacing like screenshot */
+#faq .faq-answer ul {
+  margin-top: 8px;
+  padding-left: 22px;                /* matches list-disc */
+}
+
+#faq .faq-answer li {
+  line-height: 1.7;
+  margin: 6px 0;
+}
+
+
+  </style>
+</head>
+
+<body class="overflow-x-hidden">
+
+
+
+
+
+
+
+
+   <!-- TOP INFO BAR yes-->
+<div class="w-full bg-black text-white text-sm relative z-20">
+
+
+
+  <div class="max-w-7xl mx-auto px-6 py-2 flex flex-wrap items-center justify-between gap-3">
+
+    <!-- LEFT INFO -->
+    <div class="flex items-center gap-6 flex-wrap">
+      <span class="flex items-center gap-2">
+        ☎  (601) 401-4430 
+      </span>
+      <span class="flex items-center gap-2">
+        ✉ yourhandymanduties@gmailcom
+      </span>
+    </div>
+
+    <!-- RIGHT SOCIAL -->
+    <div class="flex items-center gap-4 text-base">
+  <a href="#" class="text-[#EEF3F7] hover:text-gray-400 transition-colors duration-200">
+    <i class="fa-brands fa-facebook-f"></i>
+  </a>
+  <a href="#" class="text-[#EEF3F7] hover:text-gray-400 transition-colors duration-200">
+    <i class="fa-brands fa-twitter"></i>
+  </a>
+  <a href="#" class="text-[#EEF3F7] hover:text-gray-400 transition-colors duration-200">
+    <i class="fa-brands fa-instagram"></i>
+  </a>
+  <a href="#" class="text-[#EEF3F7] hover:text-gray-400 transition-colors duration-200">
+    <i class="fa-brands fa-linkedin-in"></i>
+  </a>
+  <a href="#" class="text-[#EEF3F7] hover:text-gray-400 transition-colors duration-200">
+    <i class="fa-brands fa-youtube"></i>
+  </a>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- MAIN NAV BAR --><!-- MAIN NAV BAR -->
+<div class="w-full bg-white shadow-md relative z-20">
+  <div class="max-w-7xl mx-auto px-2 py-1.5 flex items-center justify-between">
+
+
+    <!-- LOGO -->
+    <div class="flex items-center gap-4">
+      <!-- <img
+        src="assets/images/new_logo.png"
+        alt="HVAC Cowboys Logo"
+        class="w-20 h-20 object-cover"
+      /> -->
+
+      <img src="assets/images/new_logo.png" alt="HVAC Cowboys Logo" class="w-24 mx-auto md:mx-0 mb-0 rounded-full border-2 border-white/50">
+      <div>
+  <div class="text-xl font-bold text-gray-900">Your Handyman Duties & Construction</div>
+  <div class="text-xs text-gray-500">Quality You Can Trust</div>
+</div>
+
+    </div>
+
+    <!-- DESKTOP NAV -->
+    <nav id="desktopNav" class="hidden lg:flex items-center gap-10 font-semibold text-sm text-gray-700">
+
+      <a href="index.html"
+   class="nav-link transition hover:text-[#0B3C5DBF]">
+   Home
+</a>
+
+<a href="aboutus.html"
+   class="nav-link transition hover:text-[#0B3C5DBF]">
+   About Us
+</a>
+
+      <div class="relative" >
+  <button id="servicesBtn" class="nav-link transition hover:text-[#0B3C5DBF]">
+    Services
+  
+    <i class="fa-solid fa-chevron-down text-xs mt-1 transition-transform duration-300" id="servicesArrow"></i>
+  </button>
+
+ <!-- Dropdown Menu -->
+<!-- Dropdown Menu -->
+<div id="servicesMenu" 
+     class="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-md 
+            opacity-0 invisible transition-opacity duration-300 z-50
+            max-h-80 overflow-y-auto scrollbar-thin">
+
+
+    <a href="services.html?service=0" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Remodeling / Renovations & Additions
+</a>
+
+<a href="services.html?service=1" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Flooring
+</a>
+
+<a href="services.html?service=2" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Bathroom & Kitchen Remodel
+</a>
+
+<a href="services.html?service=3" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Custom Decks & Porches
+</a>
+
+<a href="services.html?service=4" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  General Contractor Services
+</a>
+
+<a href="services.html?service=5" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  House Painting (Interior & Exterior)
+</a>
+
+<a href="services.html?service=6" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Outdoor Living Spaces & Structures
+</a>
+
+<a href="services.html?service=7" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Outdoor Kitchens
+</a>
+
+<a href="services.html?service=8" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Stone & Brickwork
+</a>
+
+<a href="services.html?service=9" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Fencing
+</a>
+
+<!-- <a href="services.html?service=10" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Pressure Washing 
+</a> -->
+<a href="services.html?service=10" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Punch List or Inspection Report Repairs
+</a>
+
+<a href="services.html?service=11" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Residential Property Maintenance
+</a>
+
+<a href="services.html?service=12" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Rot Repairs
+</a>
+
+<!-- <a href="services.html?service=14" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Furniture Assembly
+</a> -->
+
+<a href="services.html?service=13" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Electrical
+</a>
+
+<a href="services.html?service=14" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Drywall Repair
+</a>
+
+
+<!-- <a href="services.html?service=17" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Dryer Vent Cleaning
+</a> -->
+
+<!-- <a href="services.html?service=18" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Door
+</a>
+
+<a href="services.html?service=19" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Gate Repair
+</a>
+
+<a href="services.html?service=20" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  Fixture Repair, Installation & Replacement
+</a> -->
+
+<a href="services.html?service=15" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600">
+  General Home Repair
+</a>
+
+</div>
+</div>
+
+
+      <a href="gallery.html" class="nav-link transition hover:text-[#0B3C5DBF]">Gallery</a>
+
+        <a href="subscription.html" class="nav-link transition hover:text-[#0B3C5DBF]">Subscription</a>
+      
+      <a href="contactus.html" class="nav-link transition hover:text-[#0B3C5DBF]">Contact</a>
+    </nav>
+    
+
+    <!-- PHONE BUTTON -->
+    <a
+      href="tel:8168088157"
+      
+  class="hidden lg:flex items-center gap-2
+         border border-[#0B3C5DBF]
+         text-[#0B3C5DBF]
+         px-5 py-2 rounded-full font-semibold
+         hover:bg-[#0B3C5DBF] hover:text-white
+         transition"
+>
+  📞 (601) 401-4430 
+</a>
+
+
+    <!-- MOBILE MENU BUTTON (USES YOUR EXISTING JS) -->
+    <button
+      id="menuBtn"
+      class="lg:hidden text-gray-900 text-2xl p-2 hover:bg-gray-100 rounded-lg transition"
+      aria-label="Toggle menu"
+    >
+      ☰
+    </button>
+
+  </div>
+</div>
+
+
+    <!-- Mobile Menu Button -->
+   <button id="menuBtn" class="block lg:hidden text-white text-2xl relative z-50 p-2 hover:bg-white/10 rounded-lg transition-colors" aria-label="Toggle menu">
+     <!-- <svg id="hamburgerIcon" class="w-8 h-8 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+     </svg> -->
+     <svg id="closeIcon" class="w-8 h-8 transition-transform hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+     </svg>
+   </button>
+
+  </div>
+</div>
+
+
+      <!-- Mobile Menu (fixed overlay) -->
+<div id="mobileMenu" class="hidden fixed inset-0 bg-black/95 backdrop-blur-md text-white flex flex-col z-50">
+  <!-- Mobile Menu Header -->
+  <div class="flex items-center justify-between px-6 py-6 border-b border-white/10">
+    <div class="flex items-center gap-3">
+      <img src="assets/images/new_logo.png" alt="HVAC Cowboys Logo" class="w-12 h-12 rounded-full object-cover border-2 border-white/50" />
+      <div>
+        <div class="text-white font-semibold text-lg">Your Handyman Duties & Construction</div>
+        <div class="text-white text-xs">Quality you can trust </div>
+      </div>
+    </div>
+    <button id="closeMenuBtn" class="p-2 hover:bg-white/10 rounded-lg transition-colors" aria-label="Close menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu Content -->
+  <div class="flex-1 flex flex-col justify-center px-6 py-10 space-y-6">
+    <a href="index.html" class="mobile-link flex items-center gap-4 text-xl font-semibold hover:text-[#0B3C5DBF] transition-colors py-3 border-b border-white/10">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+      </svg>
+      Home
+    </a>
+    <a href="services.html" class="mobile-link flex items-center gap-4 text-xl font-semibold hover:text-[#0B3C5DBF] transition-colors py-3 border-b border-white/10">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+      </svg>
+      Services
+    </a>
+    <a href="aboutus.html" class="mobile-link flex items-center gap-4 text-xl font-semibold hover:text-[#0B3C5DBF] transition-colors py-3 border-b border-white/10">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+      About Us
+    </a>
+
+     <a href="gallery.html"
+  class="mobile-link flex items-center gap-4 text-xl font-semibold hover:text-[#0B3C5DBF] transition-colors py-3 border-b border-white/10">
+
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+      Gallery
+    </a>
+
+    <!-- <a href="index.html" class="mobile-link flex items-center gap-4 text-xl font-semibold hover:text-[#0B3C5DBF] transition-colors py-3 border-b border-white/10">
+
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+      FAQ
+    </a> -->
+    <a  href="contactus.html" class="mobile-link flex items-center gap-4 text-xl font-semibold hover:text-[#0B3C5DBF] transition-colors py-3 border-b border-white/10">
+
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+      </svg>
+      Contact
+    </a>
+  </div>
+
+  <!-- Mobile Menu Footer -->
+  <div class="px-6 py-6 border-t border-white/10 space-y-4">
+    <div class="flex items-center gap-3 text-[#0B3C5DBF]">
+
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+      </svg>
+      <span class="font-semibold"> (601) 401-4430 </span>
+    </div>
+    <button 
+      class="w-full bg-[#0B3C5D] text-white font-semibold px-6 py-3 rounded-full hover:bg-[#0B3C5DBF] transition-colors shadow-lg"
+
+      onclick="smoothScroll('contact')"
+    >
+      Get Free Quote
+    </button>
+  </div>
+</div>
+
+
+  
+  </div>
+</header>
+
+
+
+ <!-- CONTACT -->
+<section id="contact" class="bg-[#f7f7f7]">
+  <div class="max-w-7xl mx-auto px-6 py-20">
+
+    <!-- ✅ TWO BOXES (like screenshot) -->
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+
+        <!-- LEFT CARD -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
+          <div class="bg-[#0B2A4A] text-center py-8">
+            <h2 class="text-3xl font-extrabold tracking-wide text-[#6FD3FF]">Full Day Residential Service Project</h2>
+            <p class="text-white/80 text-sm mt-1">What's Included:</p>
+          </div>
+
+          <div class="p-8 flex-1 flex flex-col">
+            <div class="text-center">
+              <div class="text-gray-800 font-extrabold leading-none">
+                <span class="text-2xl align-top">$</span>
+                <span class="text-6xl">1500</span>
+              </div>
+              <!-- <p class="text-gray-500 mt-2">Per Month (Paid Annually)</p> -->
+            </div>
+
+            
+
+            <ul class="plan-list">
+
+  <li class="plan-item">
+    <svg class="plan-icon" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2">
+      <circle cx="12" cy="12" r="9"></circle>
+      <path d="M8 12.5l2.6 2.6L16.5 9.2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    <span>Priority Scheduling</span>
+  </li>
+
+  <li class="plan-item">
+    <svg class="plan-icon" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2">
+      <circle cx="12" cy="12" r="9"></circle>
+      <path d="M8 12.5l2.6 2.6L16.5 9.2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    <span>10% of all handyman services (does not include remodels)</span>
+  </li>
+
+  <li class="plan-item">
+    <svg class="plan-icon" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2">
+      <circle cx="12" cy="12" r="9"></circle>
+      <path d="M8 12.5l2.6 2.6L16.5 9.2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    <span>Includes a $300 credit to be applied to the first invoice</span>
+  </li>
+
+  <li class="plan-item ">
+    <svg class="plan-icon" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2">
+      <circle cx="12" cy="12" r="9"></circle>
+      <path d="M8 12.5l2.6 2.6L16.5 9.2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    <span>Unlimited project consults</span>
+  </li>
+
+  <li class="plan-item">
+    <svg class="plan-icon" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2">
+      <circle cx="12" cy="12" r="9"></circle>
+      <path d="M8 12.5l2.6 2.6L16.5 9.2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    <span>Access to the Steady Approved subcontractor list</span>
+  </li>
+
+  <li class="plan-item">
+    <svg class="plan-icon" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2">
+      <circle cx="12" cy="12" r="9"></circle>
+      <path d="M8 12.5l2.6 2.6L16.5 9.2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    <span>Discount on managing later projects with subcontractors</span>
+  </li>
+
+  <li class="plan-item">
+    <svg class="plan-icon" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2">
+      <circle cx="12" cy="12" r="9"></circle>
+      <path d="M8 12.5l2.6 2.6L16.5 9.2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    <span>Annual home maintenance evaluation</span>
+  </li>
+
+</ul>
+
+
+            <div class="mt-10 flex justify-center">
+              <a href="#"
+                 class="inline-flex items-center justify-center px-10 py-3 rounded-md bg-[#6FD3FF] text-[#0B2A4A] font-bold tracking-wide hover:opacity-90 transition">
+                SIGN UP HERE
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT CARD -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
+          <div class="bg-[#6FD3FF] text-center py-8">
+            <h2 class="text-3xl font-extrabold tracking-wide text-[#0B2A4A]">Half Day Residential Service Project</h2>
+            <p class="text-[#0B2A4A]/80 text-sm mt-1">What's Included:</p>
+          </div>
+
+          <div class="p-8 flex-1 flex flex-col">
+            <div class="text-center">
+              <div class="text-gray-800 font-extrabold leading-none">
+                <span class="text-2xl align-top">$</span>
+                <span class="text-6xl">750</span>
+              </div>
+              <!-- <p class="text-gray-500 mt-2">Per Month</p> -->
+              <!-- <p class="text-gray-700 font-semibold mt-1">Valued at $4,575</p> -->
+            </div>
+
+            <ul class="plan-list">
+
+  <li class="plan-item">
+    <svg class="plan-icon" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2">
+      <circle cx="12" cy="12" r="9"></circle>
+      <path d="M8 12.5l2.6 2.6L16.5 9.2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    <span>Replace Air Filters*</span>
+  </li>
+
+  <li class="plan-item">
+    <svg class="plan-icon" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2">
+      <circle cx="12" cy="12" r="9"></circle>
+      <path d="M8 12.5l2.6 2.6L16.5 9.2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    <span>Inspect and Replace Lightbulbs*</span>
+  </li>
+
+  <li class="plan-item">
+    <svg class="plan-icon" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2">
+      <circle cx="12" cy="12" r="9"></circle>
+      <path d="M8 12.5l2.6 2.6L16.5 9.2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    <span>Leak Check Around Plumbing Fixtures</span>
+  </li>
+
+  <li class="plan-item">
+    <svg class="plan-icon" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2">
+      <circle cx="12" cy="12" r="9"></circle>
+      <path d="M8 12.5l2.6 2.6L16.5 9.2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    <span>Toilet Check and Maintenance*</span>
+  </li>
+
+  <li class="plan-item">
+    <svg class="plan-icon" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2">
+      <circle cx="12" cy="12" r="9"></circle>
+      <path d="M8 12.5l2.6 2.6L16.5 9.2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    <span>Caulk Maintenance (exterior)*</span>
+  </li>
+
+  <li class="plan-item">
+    <svg class="plan-icon" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2">
+      <circle cx="12" cy="12" r="9"></circle>
+      <path d="M8 12.5l2.6 2.6L16.5 9.2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    <span>Check Weather Stripping and Door Sweeps*</span>
+  </li>
+
+</ul>
+
+
+            <div class="mt-10 flex justify-center">
+              <a href="#"
+                 class="inline-flex items-center justify-center px-10 py-3 rounded-md bg-[#6FD3FF] text-[#0B2A4A] font-bold tracking-wide hover:opacity-90 transition">
+                SIGN UP HERE
+              </a>
+            </div>
+
+            <div class="mt-6 text-center text-xs text-gray-500">
+              <p class="font-semibold text-gray-700">Other Benefits:</p>
+              <p>• Access to the Steady approved specialty contractor referral system.</p>
+              <p>• 5% discount on services needed outside of the maintenance package.</p>
+              <p>• Schedule priority for any services outside of the maintenance package.</p>
+              <p class="mt-2">* See FAQs for materials and disclaimers.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FAQ SECTION -->
+<section id="faq" class="bg-[#EEF3F7] py-20">
+  <div class="pt-10"></div>
+  <div class="max-w-3xl mx-auto px-4 text-center">
+
+    <!-- Title -->
+    <h2 class="hero-title text-3xl md:text-4xl font-bold text-[#0B3C5D]">
+      Frequently Asked Questions
+    </h2>
+
+    <!-- Subtitle -->
+    <p class="text-gray-700 mt-3" data-aos-delay="100">
+      Got questions? We've got answers! Here are the most common questions our customers ask.
+    </p>
+
+    <!-- FAQ List -->
+    <div class="mt-10 space-y-4">
+
+      <!-- FAQ Item -->
+      <div class="faq-item flex flex-col bg-white border border-#0B3C5DBF-800 rounded-2xl px-6 py-4 cursor-pointer hover:border-[#0B3C5DBF] hover:shadow-lg transition-all duration-300" data-aos-delay="200">
+        <div class="flex justify-between items-center w-full">
+          <span class="text-gray-800 font-medium text-base sm:text-lg">What if we want to add items?</span>
+          <span class="text-xl text-gray-600 ml-4 transition-transform duration-300">+</span>
+        </div>
+        <div class="faq-answer mt-3 text-gray-700 text-sm sm:text-base leading-relaxed text-left hidden">
+          We know that different homes have different needs. This is our base package. ASK US ABOUT ADD ONS!
+        </div>
+      </div>
+
+      <div class="faq-item flex flex-col bg-white border border-#0B3C5DBF-800 rounded-2xl px-6 py-4 cursor-pointer hover:border-[#0B3C5DBF] hover:shadow-lg transition-all duration-300" data-aos-delay="250">
+        <div class="flex justify-between items-center w-full">
+          <span class="text-gray-800 font-medium text-base sm:text-lg">What if we move?</span>
+          <span class="text-xl text-gray-600 ml-4 transition-transform duration-300">+</span>
+        </div>
+        <div class="faq-answer mt-3 text-gray-700 text-sm sm:text-base leading-relaxed text-left hidden">
+          Take your subscription to your new home if it’s in our service area!<br>
+          “Gift” your subscription to the buyer of your current home.
+        </div>
+      </div>
+
+      <div class="faq-item flex flex-col bg-white border border-#0B3C5DBF-800 rounded-2xl px-6 py-4 cursor-pointer hover:border-[#0B3C5DBF] hover:shadow-lg transition-all duration-300" data-aos-delay="300">
+        <div class="flex justify-between items-center w-full">
+          <span class="text-gray-800 font-medium text-base sm:text-lg">How do I know what is done with each visit?</span>
+          <span class="text-xl text-gray-600 ml-4 transition-transform duration-300">+</span>
+        </div>
+        <div class="faq-answer mt-3 text-gray-700 text-sm sm:text-base leading-relaxed text-left hidden">
+          You will get a report card after each visit detailing what was completed! If we find any areas that could use extra attention, we will notate these on your report.
+        </div>
+      </div>
+
+      <div class="faq-item flex flex-col bg-white border border-#0B3C5DBF-800 rounded-2xl px-6 py-4 cursor-pointer hover:border-[#0B3C5DBF] hover:shadow-lg transition-all duration-300" data-aos-delay="350">
+        <div class="flex justify-between items-center w-full">
+          <span class="text-gray-800 font-medium text-base sm:text-lg">What are our payment options?</span>
+          <span class="text-xl text-gray-600 ml-4 transition-transform duration-300">+</span>
+        </div>
+        <div class="faq-answer mt-3 text-gray-700 text-sm sm:text-base leading-relaxed text-left hidden">
+          Membership is annual only. Subscription may be paid monthly with an autodraft.<br>
+          You may pay IN FULL for the year and get a $200 discount (for Subscription only).
+        </div>
+      </div>
+
+      <div class="faq-item flex flex-col bg-white border border-#0B3C5DBF-800 rounded-2xl px-6 py-4 cursor-pointer hover:border-[#0B3C5DBF] hover:shadow-lg transition-all duration-300" data-aos-delay="400">
+        <div class="flex justify-between items-center w-full">
+          <span class="text-gray-800 font-medium text-base sm:text-lg">What is the frequency of your visits?</span>
+          <span class="text-xl text-gray-600 ml-4 transition-transform duration-300">+</span>
+        </div>
+        <div class="faq-answer mt-3 text-gray-700 text-sm sm:text-base leading-relaxed text-left hidden">
+          We will be in your home 5 times per year: 1 time for the annual check up and 4 times for your maintenance schedule.
+        </div>
+      </div>
+
+      <div class="faq-item flex flex-col bg-white border border-#0B3C5DBF-800 rounded-2xl px-6 py-4 cursor-pointer hover:border-[#0B3C5DBF] hover:shadow-lg transition-all duration-300" data-aos-delay="450">
+        <div class="flex justify-between items-center w-full">
+          <span class="text-gray-800 font-medium text-base sm:text-lg">What is priority scheduling?</span>
+          <span class="text-xl text-gray-600 ml-4 transition-transform duration-300">+</span>
+        </div>
+        <div class="faq-answer mt-3 text-gray-700 text-sm sm:text-base leading-relaxed text-left hidden">
+          You are a priority! If you need additional services not included in your maintenance plan, you will receive first choice on our schedule over non-subscribers.
+        </div>
+      </div>
+
+      <div class="faq-item flex flex-col bg-white border border-#0B3C5DBF-800 rounded-2xl px-6 py-4 cursor-pointer hover:border-[#0B3C5DBF] hover:shadow-lg transition-all duration-300" data-aos-delay="500">
+        <div class="flex justify-between items-center w-full">
+          <span class="text-gray-800 font-medium text-base sm:text-lg">What if we wish to cancel?</span>
+          <span class="text-xl text-gray-600 ml-4 transition-transform duration-300">+</span>
+        </div>
+        <div class="faq-answer mt-3 text-gray-700 text-sm sm:text-base leading-relaxed text-left hidden">
+          As long as written notice is provided 30 days before your next scheduled date, you may cancel your subscription.<br>
+          Written notice can be sent via email to <a href="mailto:info@steadyhomemaintenance.com" class="text-blue-600 underline">info@steadyhomemaintenance.com</a> or by mail to: Steady Home Maintenance, PO Box 320251, Flowood, MS 39232.<br>
+          If you paid in full, you will receive a refund for work not yet completed. The refund reflects deductions for discounts already applied to completed work.
+        </div>
+      </div>
+
+      <div class="faq-item flex flex-col bg-white border border-#0B3C5DBF-800 rounded-2xl px-6 py-4 cursor-pointer hover:border-[#0B3C5DBF] hover:shadow-lg transition-all duration-300" data-aos-delay="550">
+        <div class="flex justify-between items-center w-full">
+          <span class="text-gray-800 font-medium text-base sm:text-lg">What's included in the Annual Evaluation?</span>
+          <span class="text-xl text-gray-600 ml-4 transition-transform duration-300">+</span>
+        </div>
+        <div class="faq-answer mt-3 text-gray-700 text-sm sm:text-base leading-relaxed text-left hidden">
+          <strong>Exterior:</strong><br>
+          Check for rotted wood, sealant around windows/doors, foundation cracks, insulation, condenser unit cleanliness, weather stripping, faucets, exterior outlets, fences/gates, GFIs.<br>
+          <strong>Interior:</strong><br>
+          Check faucets, stoppers, P-traps, toilets, doors, cabinets, drywall, vent fans, caulking, GFIs, smoke detectors, attic insulation, electrical panel, exhaust fans.<br>
+          Detailed report provided for client records.
+        </div>
+      </div>
+
+      <div class="faq-item flex flex-col bg-white border border-#0B3C5DBF-800 rounded-2xl px-6 py-4 cursor-pointer hover:border-[#0B3C5DBF] hover:shadow-lg transition-all duration-300" data-aos-delay="600">
+        <div class="flex justify-between items-center w-full">
+          <span class="text-gray-800 font-medium text-base sm:text-lg">What are the materials and disclaimers for Steady Subscriber?</span>
+          <span class="text-xl text-gray-600 ml-4 transition-transform duration-300">+</span>
+        </div>
+        <div class="faq-answer mt-3 text-gray-700 text-sm sm:text-base leading-relaxed text-left hidden">
+          <ul class="list-disc pl-5">
+            <li>Air Filters: 9 Merv+, replace up to 3 per visit (does not include floor vents).</li>
+            <li>Light Bulbs: Replace up to 2 exterior and 2 interior bulbs (12′ height restriction).</li>
+            <li>Leak Check: Interior faucets/P-traps/drains, exterior spigots, washer hoses, dishwasher/icemaker/refrigerator lines (visual only). Replace up to 1 seat & spring per visit.</li>
+            <li>GFI Outlet: Replace up to 1 per year.</li>
+            <li>Toilet Check: One flapper per visit if needed, tighten handle & bolts.</li>
+            <li>Door Maintenance: 3 doors per visit, tighten screws, adjust strike plates, lube locks.</li>
+            <li>Exterior Caulk: Windows/doors, up to 25LF clear caulk included, no paint, no windows over 12′ high.</li>
+            <li>Weather Stripping: Replace up to 36′ per year.</li>
+            <li>Dryer Vent: Must be on side of house, not roof.</li>
+            <li>GFI Check: Verify GFI strip, install up to 1 per year.</li>
+            <li>HVAC Suction Line: Replace up to 8′ insulation on exterior.</li>
+            <li>Smoke Detector: Replace batteries once per year, add up to one detector where required by code.</li>
+            <li>Winterize: Add covers to all spigots; wrap up to 20LF exposed pipe (extra for crawlspace).</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="pb-10"></div>
+</section>
+
+
+
+<!-- Modal -->
+<div id="policyModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2 id="modalTitle"></h2>
+
+    <div id="modalText" class="modal-text">
+      <!-- text will be injected here -->
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- FOOTER -->
+<footer class="bg-black text-gray-300 pt-12 pb-6">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+
+    <!-- About / Logo -->
+    <div class="text-center md:text-left" data-aos="fade-up">
+      <img src="assets/images/new_logo.png" alt=" Logo" class="w-24 mx-auto md:mx-0 mb-4 rounded-full border-2 border-white/50">
+      <p class="text-gray-400 text-sm">
+        Reliable, skilled, and professional home services you can trust.Your Handyman Duties & Construction Services provides dependable handyman solutions, quality workmanship, and honest service for homeowners and businesses.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+      <h3 class="text-white font-semibold mb-4">Quick Links</h3>
+      <ul class="space-y-2">
+        <li><a href="aboutus.html" class="footer-quick-link text-white transition">About Us</a></li>
+        <li><a href="services.html" class="footer-quick-link text-white transition">Services</a></li>
+        
+        <!-- <li><a href="index.html" class="footer-quick-link text-white transition">FAQ</a></li> -->
+        <li><a href="contactus.html" class="footer-quick-link text-white transition">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="text-center md:text-right" data-aos="fade-up" data-aos-delay="200">
+      <h3 class="text-white font-semibold mb-4">Contact Us</h3>
+      <p class="text-gray-400 text-sm">414 Audubon Cir, Brandon, MS, 39047</p>
+      <p class="text-gray-400 text-sm">Phone: (601) 401-4430</p>
+      <p class="text-gray-400 text-sm">Email: yourhandymanduties@gmailcom</p>
+      <div class="flex justify-center md:justify-end gap-4 mt-3">
+        <a href="#" class="text-gray-400 hover:text-blue-400 transition"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="text-gray-400 hover:text-blue-400 transition"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-gray-400 hover:text-blue-400 transition"><i class="fab fa-instagram"></i></a>
+      </div>
+
+<!-- Admin Section -->
+
+
+
+      
+
+
+    </div>
+
+  <style>
+    .footer-quick-link {
+      color: #fff;
+      transition: color 0.2s;
+    }
+    .footer-quick-link:hover {
+      color: #5858fd !important; /* Tailwind yellow-400 */
+    }
+  </style>
+  </div>
+
+  <div class="border-t border-gray-800 mt-8 pt-6 text-center text-gray-500 text-sm" data-aos="fade-up" data-aos-delay="300">
+    © 2026 Your Handyman Duties & Construction. All rights reserved.
+    <br>
+    <br>
+    Powered by <a href="https://www.ensefy.com" class="hover:text-blue-400 transition">Perfect Web</a>.
+  </div>
+
+  
+  
+</footer>
+
+<div id="termsModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal('termsModal')">&times;</span>
+
+    <h2 class="text-xl font-bold mb-3">Terms of Service</h2>
+
+    <div class="modal-text">
+      <p>
+        We only collect the information you choose to give us, and we process it with your consent, or on another legal basis; we only require the minimum amount of personal information that is necessary to fulfill the purpose of your interaction with us; we don't sell it to third parties; and we only use it as this Privacy
+Statement describes.
+      </p>
+
+      <!-- <p class="mt-3">
+        Your Handyman Duties & Construction reserves the right to refuse
+        service when necessary.
+      </p> -->
+    </div>
+  </div>
+</div>
+
+<!-- Privacy Policy Modal -->
+<div id="privacyModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal('privacyModal')">&times;</span>
+
+    <h2 class="text-2xl font-bold mb-4">Privacy Policy</h2>
+
+    <div class="modal-text">
+      <p>
+        We only collect the information you choose to give us, and we process it with your consent, or on another legal basis; we only require the minimum amount of personal information that is necessary to fulfill the purpose of your interaction with us; we don't sell it to third parties; and we only use it as this Privacy
+Statement describes.
+      </p>
+
+      <!-- <p class="mt-3">
+        We do not sell, trade, or share your information with third parties.
+      </p>
+
+      <p class="mt-3">
+        By using our website, you consent to our privacy practices.
+      </p> -->
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- AOS Init (kept exactly like original) -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 900, once: true });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="assets/js/script.js"></script>
+
+<script>
+    
+  document.addEventListener("DOMContentLoaded", () => {
+    const params = new URLSearchParams(window.location.search);
+    const serviceIndex = params.get("service");
+
+    if (serviceIndex !== null && !isNaN(serviceIndex)) {
+      showService(Number(serviceIndex));
+
+      // Smooth scroll to services section
+      document.getElementById("services").scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+  });
+
+  function showService(index) {
+  const tabs = document.querySelectorAll(".service-tab");
+  const contents = document.querySelectorAll(".service-content");
+
+  tabs.forEach(t => t.classList.remove("active"));
+  contents.forEach(c => c.classList.add("hidden"));
+
+  tabs[index].classList.add("active");
+  contents[index].classList.remove("hidden");
+}
+
+</script>
+
+<script>
+function openModal(id){
+  document.getElementById(id).style.display = "block";
+}
+
+function closeModal(id){
+  document.getElementById(id).style.display = "none";
+}
+
+// close when clicking outside
+window.onclick = function(e){
+  document.querySelectorAll(".modal").forEach(modal => {
+    if(e.target === modal){
+      modal.style.display = "none";
+    }
+  });
+}
+</script>
+
+
+
+
+
+
+</body>
+</html>
+
+
