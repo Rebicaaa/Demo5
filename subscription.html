@@ -685,6 +685,65 @@ img {
 }
 
 
+/* =========================
+   SUBSCRIPTION INTRO – PREMIUM STYLE
+========================= */
+
+#contact > div > p {
+  position: relative;
+  color: #1f2937 !important;        /* deeper gray */
+  font-size: 19px;
+  line-height: 1.9;
+  font-weight: 400 !important;
+  max-width: 900px;
+  margin: 0 auto 28px auto;
+  text-align: center;
+
+  -webkit-text-stroke: 0 !important;
+  text-shadow: none !important;
+  letter-spacing: 0.3px;
+}
+
+/* Accent line under first paragraph */
+#contact > div > p:first-of-type::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  margin: 26px auto 0 auto;
+  background: linear-gradient(
+    90deg,
+    #0B2A4A,
+    #6FD3FF
+  );
+  border-radius: 50px;
+}
+
+/* Slight fade-up entrance */
+#contact > div > p {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: subscriptionFade 0.8s ease forwards;
+}
+
+#contact > div > p:nth-of-type(2) {
+  animation-delay: 0.15s;
+}
+
+@keyframes subscriptionFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Remove <br> spacing hacks */
+#contact br {
+  display: none;
+}
+
+
+
 
 
   </style>
@@ -1032,6 +1091,13 @@ img {
  <!-- CONTACT -->
 <section id="contact" class="bg-[#f7f7f7]">
   <div class="max-w-7xl mx-auto px-6 py-20">
+<br>
+    <P>We believe in being proactive with your home maintenance and that the maintenance process should be easy. So, we offer two options for being proactive with your home maintenance. One is a true automated maintenance program where the Steady team performs certain maintenance tasks throughout the year, while the other is more of a call us as you need us approach. Both of these have extra benefits for “being in the club.”</P>
+<br>
+    <p>Check out the details of each membership option below!</p>
+
+    <br>
+    <br>
 
     <!-- ✅ TWO BOXES (like screenshot) -->
     <div class="max-w-6xl mx-auto px-4">
