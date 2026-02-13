@@ -1,0 +1,53 @@
+/* ===== PREMIUM BOOKING BOX ===== */
+
+#bookingBox{
+  background: linear-gradient(135deg, #ffffff, #f3f6f9);
+  padding: 22px;
+  border-radius: 14px;
+  border: 1px solid #e6edf3;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.04);
+}
+
+/* inputs */
+#bookingBox input,
+#bookingBox select{
+  appearance: none;
+  background: white;
+  transition: all .25s ease;
+  font-weight: 500;
+}
+
+/* hover */
+#bookingBox input:hover,
+#bookingBox select:hover{
+  border-color: #0B3C5D;
+}
+
+/* focus glow */
+#bookingBox input:focus,
+#bookingBox select:focus{
+  outline: none;
+  border-color: #0B3C5D;
+  box-shadow: 0 0 0 3px rgba(11,60,93,0.12);
+}
+
+/* label style */
+#bookingBox h3{
+  color:#0B3C5D;
+  letter-spacing:.2px;
+}
+
+/* helper text */
+#bookingBox p{
+  font-size:13px;
+}
+
+/* make date icon nicer */
+input[type="date"]::-webkit-calendar-picker-indicator{
+  cursor:pointer;
+  opacity:.7;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover{
+  opacity:1;
+}

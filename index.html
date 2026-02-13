@@ -34,6 +34,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/contract.css">
+
 
   <style>
     /* Global */
@@ -570,10 +572,135 @@ img {
   color: red;
 }
 
+
 /* Optional animation */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Overlay */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+/* Box */
+.modal-content {
+  background: #fff;
+  width: 90%;
+  max-width: 600px;
+  margin: 6% auto;
+  padding: 25px;
+  border-radius: 12px;
+  position: relative;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  right: 18px;
+  top: 12px;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* Scrollable text */
+.modal-text {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-top: 15px;
+  line-height: 1.6;
+}
+
+
+  /* ✅ Force the plan list to ignore your global li white/bold rules */
+  .plan-list,
+  .plan-list * {
+    color: #2f2f2f !important;
+    font-weight: 500 !important;
+    -webkit-text-stroke: 0 !important;
+    text-shadow: none !important;
+  }
+
+  /* Font size/spacing like screenshot */
+  .plan-list li {
+    font-size: 18px;
+    line-height: 1.7;
+    
+  }
+
+  /* Center the whole list block like the image */
+  .plan-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin-top: 28px;
+    
+  }
+
+  /* Each row: icon + text */
+  .plan-item {
+    width: 100%;
+    max-width: 560px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  /* Indented items (like “Unlimited…” and “Annual…” in your screenshot) */
+  .plan-item.sub {
+    padding-left: 46px;
+  }
+
+  /* Outlined circle check icon */
+  .plan-icon {
+    width: 26px;
+    height: 26px;
+    flex: 0 0 26px;
+    margin-top: 2px;
+  }
+
+/* ✅ FAQ answer list - force normal font + normal color (no yellow) */
+#faq .faq-answer,
+#faq .faq-answer * {
+  color: #374151 !important;          /* Tailwind gray-700 */
+  font-weight: 400 !important;        /* normal */
+  -webkit-text-stroke: 0 !important;
+  text-shadow: none !important;
+}
+
+/* bullets spacing like screenshot */
+#faq .faq-answer ul {
+  margin-top: 8px;
+  padding-left: 22px;                /* matches list-disc */
+}
+
+#faq .faq-answer li {
+  line-height: 1.7;
+  margin: 6px 0;
 }
 
   </style>
@@ -609,7 +736,7 @@ img {
                data-aos-delay="200">
             High-quality interior and exterior painting services that refresh, protect, and enhance your home’s appearance.
           </p>
-          <a href="#services"
+          <a href="#contact"
             class="scroll-link mt-8 border border-white text-white bg-transparent px-7 py-3 rounded-full font-semibold hover:bg-white hover:text-black transition"
              data-aos-delay="500">
            Contact Us
@@ -632,7 +759,7 @@ img {
           </p>
           
          
-          <a href="#services"
+          <a href="#contact"
             class="scroll-link mt-8 border border-white text-white bg-transparent px-7 py-3 rounded-full font-semibold hover:bg-white hover:text-black transition"
              data-aos-delay="500">
              Contact Us
@@ -655,7 +782,7 @@ img {
          data-aos-delay="200">
      Design and construction of custom decks and porches that enhance outdoor comfort, style, and usability.
     </p>
-    <a href="contactus.html"
+    <a href="#contact"
        class="scroll-link mt-8 border border-white text-white bg-transparent px-7 py-3 rounded-full font-semibold hover:bg-white hover:text-black transition"
         data-aos-delay="500">
       Contact Us
@@ -676,7 +803,7 @@ img {
                data-aos-delay="200">
             Transform your outdoor space with custom decks, porches, outdoor kitchens, and stone & brickwork built for beauty, durability, and enjoyment.
           </p>
-          <a href="contactus.html"
+          <a href="#contact"
             class="scroll-link mt-8 border border-white text-white bg-transparent px-7 py-3 rounded-full font-semibold hover:bg-white hover:text-black transition"
              data-aos-delay="500">
             Contact Us
@@ -1014,6 +1141,15 @@ img {
       Gallery
     </a>
 
+     <a href="subscription.html"
+  class="mobile-link flex items-center gap-4 text-xl font-semibold hover:text-[#0B3C5DBF] transition-colors py-3 border-b border-white/10">
+
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+      Subscription
+    </a>
+
     <!-- <a href="#faq" class="mobile-link flex items-center gap-4 text-xl font-semibold hover:text-[#0B3C5DBF] transition-colors py-3 border-b border-white/10">
 
       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1310,6 +1446,97 @@ Our team approaches every project with precision, integrity, and respect for you
     </div>
 
     </div>
+  </div>
+</section>
+
+ <!-- box -->
+<section id="signup" class="bg-[#f7f7f7]">
+  <div class="max-w-7xl mx-auto px-6 py-20">
+
+    <!-- ✅ TWO BOXES (like screenshot) -->
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+
+        <!-- LEFT CARD -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
+          <div class="bg-[#0B2A4A] text-center py-8">
+            <h2 class="text-3xl font-extrabold tracking-wide text-[#6FD3FF]">Full Day Residential Service Project</h2>
+            <p class="text-white/80 text-sm mt-1">What's Included:</p>
+          </div>
+
+          <div class="p-8 flex-1 flex flex-col">
+            <div class="text-center">
+              <div class="text-gray-800 font-extrabold leading-none">
+                <span class="text-2xl align-top">$</span>
+                <span class="text-6xl">1500</span>
+                <p>for full 8 hours</p>
+              </div>
+              <!-- <p class="text-gray-500 mt-2">Per Month (Paid Annually)</p> -->
+            </div>
+
+            
+
+           <br><br><br>
+            <p>
+              Let us complete your "To-Do List" or small upgrades for you!
+Reserve a full day for our professional craftsman to complete work around your home. Call today for easy and convenient scheduling. Guarantee included on all labor and materials purchased on your behalf. Eight-hour block must be used in one trip and cannot be split. Price includes labor only; any needed materials will be billed separately. Cannot be combined with any other offers. Void where prohibited, restrictions may apply.
+Contact our office for further detalls.
+            </p>
+
+
+            <div class="mt-10 flex justify-center">
+              <a href="#contact"
+                 class="scroll-link inline-flex items-center justify-center px-10 py-3 rounded-md bg-[#6FD3FF] text-[#0B2A4A] font-bold tracking-wide hover:opacity-90 transition">
+                SIGN UP HERE
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT CARD -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
+          <div class="bg-[#6FD3FF] text-center py-8">
+            <h2 class="text-3xl font-extrabold tracking-wide text-[#0B2A4A]">Half Day Residential Service Project</h2>
+            <p class="text-[#0B2A4A]/80 text-sm mt-1">What's Included:</p>
+          </div>
+
+          <div class="p-8 flex-1 flex flex-col">
+            <div class="text-center">
+              <div class="text-gray-800 font-extrabold leading-none">
+                <span class="text-2xl align-top">$</span>
+                <span class="text-6xl">750</span>
+              </div>
+              <!-- <p class="text-gray-500 mt-2">Per Month</p> -->
+              <!-- <p class="text-gray-700 font-semibold mt-1">Valued at $4,575</p> -->
+            </div>
+<br><br><br>
+            <p>
+              Let us complete that "To-Do List" for you! Reserve a half day for our professional craftsman to complete work around your home.
+Call today for easy and convenient scheduling. Guarantee included on all labor and materials purchase on your behalf. Four-hour block must be used in one trip and cannot be split. Price includes labor only, any needed materials will be billed separately.
+Cannot be combined with any other offers. Void where prohibited, restrictions may apply. Contact our office for further details.
+            </p>
+
+
+            <div class="mt-10 flex justify-center">
+              <a href="#contact"
+                 class="scroll-link inline-flex items-center justify-center px-10 py-3 rounded-md bg-[#6FD3FF] text-[#0B2A4A] font-bold tracking-wide hover:opacity-90 transition">
+                SIGN UP HERE
+              </a>
+            </div>
+
+            <div class="mt-6 text-center text-xs text-gray-500">
+              <p class="font-semibold text-gray-700">Other Benefits:</p>
+              <p>• Access to the Your Handyman approved specialty contractor referral system.</p>
+              <p>• 5% discount on services needed outside of the maintenance package.</p>
+              <p>• Schedule priority for any services outside of the maintenance package.</p>
+              <p class="mt-2">* See FAQs for materials and disclaimers.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -1961,7 +2188,8 @@ Our team approaches every project with precision, integrity, and respect for you
     <button onclick="scrollToSection('contact')" class="bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-500 transition">Talk to us now →</button>
   </section> -->
 
-   <!-- CONTACT -->
+
+ <!-- CONTACT -->
   <section id="contact" class="bg-[#f7f7f7]">  <!-- Off-white background -->
   <div class="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch">
 
@@ -1970,7 +2198,68 @@ Our team approaches every project with precision, integrity, and respect for you
       <h3 class="font-bold text-lg mb-4">Need Reliable Home Services?</h3>
       <p class="text-gray-600 mb-6">Contact Your Handyman Duties & Construction today for professional, dependable home repairs and installations.</p>
 
-      <form class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-auto">
+
+      <!-- APPOINTMENT CALENDAR -->
+<!-- PREMIUM APPOINTMENT CALENDAR -->
+<div id="bookingBox" class="mb-6">
+
+  <h3 class="font-semibold text-lg mb-3">
+    Select Appointment Date & Time
+  </h3>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+    <!-- DATE -->
+    <div>
+      <label class="text-sm font-medium text-gray-600 mb-1 block">
+        Choose Date
+      </label>
+
+      <input 
+        id="appointmentDate"
+        type="date"
+        required
+        class="p-3 rounded-lg border border-gray-300 w-full"
+      >
+    </div>
+
+    <!-- TIME -->
+    <div>
+      <label class="text-sm font-medium text-gray-600 mb-1 block">
+        Choose Time
+      </label>
+
+      <select 
+        id="appointmentTime"
+        required
+        class="p-3 rounded-lg border border-gray-300 w-full"
+      >
+        <option value="">Select Time</option>
+        <option>08:00 AM</option>
+        <option>09:00 AM</option>
+        <option>10:00 AM</option>
+        <option>11:00 AM</option>
+        <option>12:00 PM</option>
+        <option>01:00 PM</option>
+        <option>02:00 PM</option>
+        <option>03:00 PM</option>
+        <option>04:00 PM</option>
+        <option>05:00 PM</option>
+      </select>
+    </div>
+
+  </div>
+
+  <p class="text-gray-500 mt-3">
+    Please choose your preferred appointment slot to continue.
+  </p>
+
+</div>
+
+
+
+      <form id="contactForm" class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-auto hidden">
+
 
   <!-- First & Last Name -->
   <div>
@@ -2192,8 +2481,40 @@ Our team approaches every project with precision, integrity, and respect for you
 
     <div class="modal-text">
       <p>
-        We only collect the information you choose to give us, and we process it with your consent, or on another legal basis; we only require the minimum amount of personal information that is necessary to fulfill the purpose of your interaction with us; we don't sell it to third parties; and we only use it as this Privacy
-Statement describes.
+        Labor Only: Prices reflect professional labor for the specified time block (4 hours for Half-Day / 8 hours for Full-Day).
+</p>
+<p>• Materials: All materials, parts, and hardware required for your projects are billed separately. We can pick up materials on your behalf; however, travel and shopping time are included within your purchased service block.
+</p>
+<p>• Single Trip Requirement: Service blocks must be used in one continuous trip and cannot be split across multiple days or locations.
+Labor Only: Prices reflect professional labor for the specified time block (4 hours for Half-Day / 8 hours for Full-Day).
+</p>
+<p>• Materials: All materials, parts, and hardware required for your projects are billed separately. We can pick up materials on your behalf; however, travel and shopping time are included within your purchased service block.
+Labor Only: Prices reflect professional labor for the specified time block (4 hours for Half-Day / 8 hours for Full-Day).
+</p>
+<p>• Materials: All materials, parts, and hardware required for your projects are billed separately. We can pick up materials on your behalf; however, travel and shopping time are included within your purchased service block.
+</p>
+<p>• Single Trip Requirement: Service blocks must be used in one continuous trip and cannot be split across multiple days or locations.
+</p>
+<p>• The "To-Do List" Strategy: We work through your prioritized list in order. While we strive for maximum efficiency, we do not guarantee completion of an entire list if the scope exceeds the purchased time block.
+</p>
+<p>• Exclusions: High-voltage electrical, major plumbing reroutes, or projects requiring structural permits may require a separate custom estimate and are not included in standard "Day Packages."
+</p>
+<p>• Cancellation Policy: To respect our craftsmen’s schedules, we require 48 hours' notice for any cancellations or rescheduling to avoid a fee.</p>
+<p>• Single Trip Requirement: Service blocks must be used in one continuous trip and cannot be split across multiple days or locations.
+</p>
+<p>• The "To-Do List" Strategy: We work through your prioritized list in order. While we strive for maximum efficiency, we do not guarantee completion of an entire list if the scope exceeds the purchased time block.
+</p>
+<p>• Exclusions: High-voltage electrical, major plumbing reroutes, or projects requiring structural permits may require a separate custom estimate and are not included in standard "Day Packages."
+</p>
+<p>
+  • Cancellation Policy: To respect our craftsmen’s schedules, we require 48 hours' notice for any cancellations or rescheduling to avoid a fee.
+</p>
+<p>• The "To-Do List" Strategy: We work through your prioritized list in order. While we strive for maximum efficiency, we do not guarantee completion of an entire list if the scope exceeds the purchased time block.
+</p>
+
+<p>• Exclusions: High-voltage electrical, major plumbing reroutes, or projects requiring structural permits may require a separate custom estimate and are not included in standard "Day Packages."</p>
+<p>
+• Cancellation Policy: To respect our craftsmen’s schedules, we require 48 hours' notice for any cancellations or rescheduling to avoid a fee.
       </p>
 
       <!-- <p class="mt-3">
@@ -2237,6 +2558,9 @@ Statement describes.
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script src="assets/js/script.js"></script>
+<script src="assets/js/contact.js"></script>
+
+
 <script>
     
   document.addEventListener("DOMContentLoaded", () => {
