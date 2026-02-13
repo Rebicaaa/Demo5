@@ -373,6 +373,48 @@ li, li * hover {
 
 
 
+/* =========================
+   CONTACT FORM - DARK GREY TEXT
+========================= */
+
+/* If your form is inside the popup modal */
+#contactModal,
+#contactModal * {
+  color: #3f3f3f !important;   /* dark grey */
+  -webkit-text-stroke: 0 !important;
+  text-shadow: none !important;
+}
+
+/* Inputs typing color */
+#contactModal input,
+#contactModal textarea,
+#contactModal select {
+  color: #2f2f2f !important;
+}
+
+/* Placeholder color */
+#contactModal input::placeholder,
+#contactModal textarea::placeholder {
+  color: #4b5563 !important;
+  opacity: 1 !important;
+}
+
+/* Keep buttons text white (so not affected by the * selector) */
+#contactModal button,
+#contactModal .btn,
+#contactModal [type="submit"] {
+  color: #ffffff !important;
+}
+
+
+/* prevent background scroll when modal is open */
+body.modal-open {
+  overflow: hidden !important;
+}
+
+
+
+
 
 
 .footer-links li,
@@ -545,13 +587,16 @@ img {
 /* Box */
 .modal-content {
   background: #fff;
-  width: 90%;
-  max-width: 600px;
-  margin: 6% auto;
+  width: 92%;
+  max-width: 650px;
+  margin: 40px auto;
   padding: 25px;
   border-radius: 12px;
   position: relative;
+  max-height: 85vh;
+  overflow-y: auto;
 }
+
 
 /* Close button */
 .close-btn {
@@ -638,6 +683,8 @@ img {
   line-height: 1.7;
   margin: 6px 0;
 }
+
+
 
 
   </style>
@@ -1071,10 +1118,12 @@ img {
 
 
             <div class="mt-10 flex justify-center">
-              <a href="#"
-                 class="inline-flex items-center justify-center px-10 py-3 rounded-md bg-[#6FD3FF] text-[#0B2A4A] font-bold tracking-wide hover:opacity-90 transition">
-                SIGN UP HERE
-              </a>
+              <button type="button"
+  onclick="openModal('contactModal')"
+  class="inline-flex items-center justify-center px-10 py-3 rounded-md bg-[#6FD3FF] text-[#0B2A4A] font-bold tracking-wide hover:opacity-90 transition">
+  SIGN UP HERE
+</button>
+
             </div>
           </div>
         </div>
@@ -1218,10 +1267,13 @@ Valued at $3,588</p>
 
 
             <div class="mt-10 flex justify-center">
-              <a href="#"
-                 class="inline-flex items-center justify-center px-10 py-3 rounded-md bg-[#6FD3FF] text-[#0B2A4A] font-bold tracking-wide hover:opacity-90 transition">
-                SIGN UP HERE
-              </a>
+              <button type="button"
+  onclick="openModal('contactModal')"
+  class="inline-flex items-center justify-center px-10 py-3 rounded-md bg-[#6FD3FF] text-[#0B2A4A] font-bold tracking-wide hover:opacity-90 transition">
+  SIGN UP HERE
+</button>
+
+
             </div>
 
             <div class="mt-6 text-center text-xs text-gray-500">
@@ -1456,7 +1508,96 @@ Valued at $3,588</p>
     Powered by <a href="https://www.ensefy.com" class="hover:text-blue-400 transition">Perfect Web</a>.
   </div>
 
-  
+  <!-- CONTACT FORM MODAL -->
+<div id="contactModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal('contactModal')">&times;</span>
+
+    <h2 class="text-2xl font-bold mb-4 text-[#0B2A4A]">Sign Up</h2>
+
+    <!-- ✅ Paste your form here (NO date/time fields) -->
+    <form class="space-y-4">
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="text-sm font-semibold">First Name *</label>
+          <input required class="w-full mt-1 border rounded-md px-3 py-2" type="text">
+        </div>
+
+        <div>
+          <label class="text-sm font-semibold">Last Name *</label>
+          <input required class="w-full mt-1 border rounded-md px-3 py-2" type="text">
+        </div>
+
+        <div>
+          <label class="text-sm font-semibold">Email *</label>
+          <input required class="w-full mt-1 border rounded-md px-3 py-2" type="email">
+        </div>
+
+        <div>
+          <label class="text-sm font-semibold">Phone *</label>
+          <input required class="w-full mt-1 border rounded-md px-3 py-2" type="tel">
+        </div>
+
+        <div>
+          <label class="text-sm font-semibold">Address *</label>
+          <input required class="w-full mt-1 border rounded-md px-3 py-2" type="text">
+        </div>
+
+        <div>
+          <label class="text-sm font-semibold">City *</label>
+          <input required class="w-full mt-1 border rounded-md px-3 py-2" type="text">
+        </div>
+
+        <div>
+          <label class="text-sm font-semibold">Postal Code *</label>
+          <input required class="w-full mt-1 border rounded-md px-3 py-2" type="text">
+        </div>
+
+        <div>
+          <label class="text-sm font-semibold">How would you like us to communicate? *</label>
+          <div class="mt-2 space-y-1 text-sm">
+            <label class="flex items-center gap-2"><input required type="radio" name="comm"> Phone</label>
+            <label class="flex items-center gap-2"><input required type="radio" name="comm"> Email</label>
+            <label class="flex items-center gap-2"><input required type="radio" name="comm"> Text</label>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <label class="text-sm font-semibold">How did you hear about us? *</label>
+        <input required class="w-full mt-1 border rounded-md px-3 py-2" type="text">
+      </div>
+
+      <div>
+        <label class="text-sm font-semibold">What type of Home Improvement service are you interested in? *</label>
+        <textarea required class="w-full mt-1 border rounded-md px-3 py-2" rows="4"></textarea>
+      </div>
+
+      <div>
+        <label class="text-sm font-semibold">Gate Access Code (optional)</label>
+        <input class="w-full mt-1 border rounded-md px-3 py-2" type="text">
+      </div>
+
+      <label class="flex items-start gap-2 text-xs text-gray-600">
+        <input type="checkbox" class="mt-1">
+        I Consent to Receive SMS Notifications, Alerts & Occasional Marketing Communication.
+      </label>
+
+      <label class="flex items-start gap-2 text-xs text-gray-600">
+        <input required type="checkbox" class="mt-1">
+        I agree to the Privacy Policy and Terms of Service
+      </label>
+
+      <button type="submit"
+        class="w-full bg-[#0B2A4A] text-white font-bold py-3 rounded-full hover:opacity-95 transition">
+        Request Service
+      </button>
+
+    </form>
+  </div>
+</div>
+
   
 </footer>
 
@@ -1503,6 +1644,7 @@ Statement describes.
     </div>
   </div>
 </div>
+
 
 
 
@@ -1561,6 +1703,57 @@ window.onclick = function(e){
     }
   });
 }
+
+
+
+
+
+
+
+
+function openModal(id){
+  const modal = document.getElementById(id);
+  if (!modal) return;
+
+  modal.style.display = "block";
+  document.body.classList.add("modal-open"); // ✅ lock background scroll
+}
+
+function closeModal(id){
+  const modal = document.getElementById(id);
+  if (!modal) return;
+
+  modal.style.display = "none";
+
+  // ✅ unlock scroll only if no other modal is open
+  const anyOpen = Array.from(document.querySelectorAll(".modal"))
+    .some(m => m.style.display === "block");
+  if (!anyOpen) document.body.classList.remove("modal-open");
+}
+
+// close when clicking outside
+window.onclick = function(e){
+  document.querySelectorAll(".modal").forEach(modal => {
+    if(e.target === modal){
+      modal.style.display = "none";
+    }
+  });
+
+  // ✅ unlock if nothing open
+  const anyOpen = Array.from(document.querySelectorAll(".modal"))
+    .some(m => m.style.display === "block");
+  if (!anyOpen) document.body.classList.remove("modal-open");
+}
+
+// optional: ESC key closes open modal
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    document.querySelectorAll(".modal").forEach(modal => modal.style.display = "none");
+    document.body.classList.remove("modal-open");
+  }
+});
+
+
 </script>
 
 
