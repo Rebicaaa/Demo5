@@ -1,0 +1,711 @@
+/* Global */
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      scroll-behavior: smooth;
+      background: #ffffff;
+    }
+
+    /* Fade-Up Animation (used alongside AOS for small elements) */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeUp { animation: fadeUp 1s ease-out forwards; opacity: 0; }
+    .delay-200 { animation-delay: .2s; }
+    .delay-400 { animation-delay: .4s; }
+    .delay-600 { animation-delay: .6s; }
+
+    /* Small visual helpers for hero frame */
+    /* Ensure hero frame has the white border look when on dark environments */
+    .hero-frame {
+      box-shadow: 0 8px 30px rgba(0,0,0,0.45);
+      border: 12px solid rgba(255,255,255,0.92);
+    }
+
+    
+ /* Desktop nav ONLY above 1176px */
+@media (min-width: 1177px) {
+  #menuBtn {
+    display: none;
+  }
+
+  #desktopNav {
+    display: flex;
+  }
+}
+
+/* Mobile nav up to 1176px */
+@media (max-width: 1176px) {
+  #desktopNav {
+    display: none;
+  }
+
+  #menuBtn {
+    display: block;
+  }
+}
+
+
+/* Mobile Menu Animations */
+#mobileMenu {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#mobileMenu:not(.hidden) {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobile-link {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease, color 0.2s ease;
+}
+
+#mobileMenu:not(.hidden) .mobile-link {
+  animation: slideInLeft 0.4s ease forwards;
+}
+
+#mobileMenu:not(.hidden) .mobile-link:nth-child(1) { animation-delay: 0.1s; }
+#mobileMenu:not(.hidden) .mobile-link:nth-child(2) { animation-delay: 0.15s; }
+#mobileMenu:not(.hidden) .mobile-link:nth-child(3) { animation-delay: 0.2s; }
+#mobileMenu:not(.hidden) .mobile-link:nth-child(4) { animation-delay: 0.25s; }
+#mobileMenu:not(.hidden) .mobile-link:nth-child(5) { animation-delay: 0.3s; }
+
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Hamburger Icon Animation */
+#hamburgerIcon {
+  display: block;
+}
+
+#closeIcon {
+  display: none;
+}
+
+#menuBtn.active #hamburgerIcon {
+  display: none;
+}
+
+#menuBtn.active #closeIcon {
+  display: block;
+}
+
+/* Swiper Navigation Buttons */
+.hero-nav-next,
+.hero-nav-prev {
+  color: var(--gold-main) !important;
+  width: 50px !important;
+  height: 50px !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-radius: 50% !important;
+  border: none !important;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  z-index: 50 !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  margin-top: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  outline: none !important;
+}
+
+.hero-nav-next:hover,
+.hero-nav-prev:hover {
+   background: rgba(255, 255, 255, 0.85) !important;
+  transform: translateY(-50%) scale(1.1) !important;
+}
+
+.hero-nav-next {
+  right: 20px !important;
+  left: auto !important;
+}
+
+.hero-nav-prev {
+  left: 20px !important;
+  right: auto !important;
+}
+
+.hero-nav-next::after,
+.hero-nav-prev::after {
+  font-size: 28px !important;
+  font-weight: bold !important;
+  font-family: Arial, sans-serif !important;
+}
+
+.hero-nav-next::after {
+  content: '›' !important;
+}
+
+.hero-nav-prev::after {
+  content: '‹' !important;
+}
+
+/* Override any Swiper default styles */
+.heroSwiper .swiper-button-disabled {
+  opacity: 0.35 !important;
+  cursor: auto !important;
+  pointer-events: none !important;
+}
+
+
+/* Hide hero nav buttons on small screens */
+@media (max-width: 768px) {
+  .hero-nav-next,
+  .hero-nav-prev {
+    display: none !important;
+  }
+}
+
+
+/* =========================
+   BULLET ROW LAYOUT
+========================= */
+.bullets-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.bullet-container {
+  display: inline-block;
+}
+
+.bullet-svg {
+  display: block;
+  overflow: visible;
+}
+
+ul li, ol li {
+  color: #ffffff ;         /* Pure black text */
+  font-weight: bold;
+  text-shadow: none;              /* Remove any transparency or shadow */
+  opacity: 1 !important;          /* Fully opaque */
+}
+
+/* =========================
+   ENGRAVED TEXT – INSIDE CIRCLE
+========================= */
+.engraved-text {
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+
+  fill: var(--gold-main);        /* PURE BLACK */
+  stroke: #000000;      /* PURE BLACK */
+  stroke: #000;
+
+  paint-order: stroke fill;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  text-rendering: geometricPrecision;
+
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(0.90) translateY(3px);
+}
+
+
+/* EXTRA SAFETY FOR LONG WORDS */
+.engraved-text textPath {
+  dominant-baseline: middle;
+}
+
+/* =========================
+   SIZE-SPECIFIC TUNING
+========================= */
+
+/* Large bullets (SIX, SHOOTER) */
+.size-lg .engraved-text {
+  font-size: 20px;
+  letter-spacing: 0.6px;
+  transform: scale(0.88) translateY(3px);
+}
+
+/* Medium bullets (BOY, CONDUCT) */
+.size-md .engraved-text {
+  font-size: 19px;
+  letter-spacing: 0.6px;
+  transform: scale(0.87) translateY(3px);
+}
+
+/* Small bullets (CODE) */
+.size-sm .engraved-text {
+  font-size: 19px;
+  letter-spacing: 0.5px;
+  transform: scale(0.86) translateY(3px);
+}
+
+/* Extra small (OF) */
+.size-xs .engraved-text {
+  font-size: 19px;
+  letter-spacing: 0.4px;
+  transform: scale(0.85) translateY(3px);
+}
+
+/* =========================
+   SVG SIZE CONTROL
+========================= */
+.size-lg svg { width: 120px; height: 120px; }
+.size-md svg { width: 100px; height: 100px; }
+.size-sm svg { width: 90px;  height: 90px; }
+.size-xs svg { width: 80px;  height: 80px; }
+
+
+li, li * {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+  background: transparent !important;
+  -webkit-text-stroke: 0.7px #000 !important;
+}
+
+li, li * hover {
+  color: #d8b30e !important;
+  text-shadow: none !important;
+  background: transparent !important;
+  -webkit-text-stroke: 0.7px #000 !important;
+
+}
+
+
+
+/* =========================
+   MOBILE HERO TEXT FIX
+========================= */
+@media (max-width: 768px) {
+
+  /* Center hero text vertically */
+  .heroSwiper .swiper-slide > div.absolute {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    height: 100%;
+  }
+
+  .heroSwiper h1 {
+    margin-bottom: 16px;
+  }
+
+  .heroSwiper p {
+    margin-top: 12px;
+  }
+}
+
+
+
+/* =========================
+   MOBILE HERO IMAGE SCALE UP
+========================= */
+@media (max-width: 768px) {
+
+  /* Make slides slightly taller */
+  .heroSwiper,
+  .heroSwiper .swiper-wrapper,
+  .heroSwiper .swiper-slide {
+    min-height: 105vh !important;
+  }
+
+  /* Scale images vertically */
+  .heroSwiper img,
+  .hero-image {
+    height: 100% !important;
+    width: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+}
+
+
+
+
+
+.footer-links li,
+.footer-links li a {
+  color: #ffffff !important;
+  -webkit-text-stroke: 0 !important;
+  font-weight: 500 !important;
+  color: #0B3C5DBF !important;
+  color: #fff;
+    transition: color 0.2s;
+}
+
+.hero-title {
+ font-family: 'Playfair Display', serif;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.nav-link {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background-color: #0B3C5DBF; /* yellow */
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+
+
+
+.horse-bg {
+  position: relative;
+  background-color: #0B3C5DBF;
+  overflow: hidden;
+}
+
+/* Animated horse layer */
+.horse-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url("assets/images/horse.webp");
+  background-repeat: repeat;
+  background-size: 300px auto;
+
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+
+  /* animations */
+  animation:
+    horseFadeIn 1.4s ease-out forwards,
+    horseWalk 60s linear infinite;
+}
+
+/* Keep content above horses */
+.horse-bg > div {
+  position: relative;
+  z-index: 1;
+}
+
+/* fade-in on page load */
+@keyframes horseFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.06;
+  }
+}
+
+/* slow walking motion */
+@keyframes horseWalk {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: +1200px 0;
+  }
+}
+
+
+.services-header {
+    display: flex;
+    align-items: center;   /* THIS fixes the level */
+    justify-content: space-between;
+    cursor: pointer;
+}
+.services-header i,
+.services-header svg {
+    vertical-align: middle;
+}
+.services-header i {
+    position: relative;
+    top: 1px;   /* try 1–2px if needed */
+}
+
+
+
+
+/* HARD-LOCKED PERFECT CIRCLE */
+.location-icon {
+  width: 38px;
+  height: 38px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #0B3C5D;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+  line-height: 0; /* CRITICAL */
+}
+
+/* SVG inside must NOT affect layout */
+.location-icon svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+/* Mobile – slightly smaller but still circle */
+@media (max-width: 640px) {
+  .location-icon {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    min-height: 34px;
+  }
+}
+
+
+img {
+  image-rendering: auto; /* smooth scaling */
+  will-change: transform; /* hint for better GPU rendering */
+  backface-visibility: hidden;
+}
+
+
+
+
+/* MODAL BACKGROUND */
+.modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  z-index: 9999; /* very high so it stays on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6); /* dark overlay */
+}
+
+/* MODAL BOX */
+.modal-content {
+  background-color: #ffffff;
+  margin: 8% auto;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* CLOSE BUTTON */
+.close-btn {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: red;
+}
+
+
+/* Optional animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+
+
+/* =========================
+   CONTACT FORM - DARK GREY TEXT
+========================= */
+
+/* If your form is inside the popup modal */
+#contactModal,
+#contactModal * {
+  color: #3f3f3f !important;   /* dark grey */
+  -webkit-text-stroke: 0 !important;
+  text-shadow: none !important;
+}
+
+/* Inputs typing color */
+#contactModal input,
+#contactModal textarea,
+#contactModal select {
+  color: #2f2f2f !important;
+}
+
+/* Placeholder color */
+#contactModal input::placeholder,
+#contactModal textarea::placeholder {
+  color: #4b5563 !important;
+  opacity: 1 !important;
+}
+
+/* Keep buttons text white (so not affected by the * selector) */
+#contactModal button,
+#contactModal .btn,
+#contactModal [type="submit"] {
+  color: #ffffff !important;
+}
+
+
+/* prevent background scroll when modal is open */
+body.modal-open {
+  overflow: hidden !important;
+}
+
+
+
+
+
+
+
+
+
+/* Overlay */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+/* Box */
+.modal-content {
+  background: #fff;
+  width: 92%;
+  max-width: 650px;
+  margin: 40px auto;
+  padding: 25px;
+  border-radius: 12px;
+  position: relative;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  right: 18px;
+  top: 12px;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* Scrollable text */
+.modal-text {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-top: 15px;
+  line-height: 1.6;
+}
+
+
+  /* ✅ Force the plan list to ignore your global li white/bold rules */
+  .plan-list,
+  .plan-list * {
+    color: #2f2f2f !important;
+    font-weight: 500 !important;
+    -webkit-text-stroke: 0 !important;
+    text-shadow: none !important;
+  }
+
+  /* Font size/spacing like screenshot */
+  .plan-list li {
+    font-size: 18px;
+    line-height: 1.7;
+    
+  }
+
+  /* Center the whole list block like the image */
+  .plan-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin-top: 28px;
+    
+  }
+
+  /* Each row: icon + text */
+  .plan-item {
+    width: 100%;
+    max-width: 560px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  /* Indented items (like “Unlimited…” and “Annual…” in your screenshot) */
+  .plan-item.sub {
+    padding-left: 46px;
+  }
+
+  /* Outlined circle check icon */
+  .plan-icon {
+    width: 26px;
+    height: 26px;
+    flex: 0 0 26px;
+    margin-top: 2px;
+  }
+
+/* ✅ FAQ answer list - force normal font + normal color (no yellow) */
+#faq .faq-answer,
+#faq .faq-answer * {
+  color: #374151 !important;          /* Tailwind gray-700 */
+  font-weight: 400 !important;        /* normal */
+  -webkit-text-stroke: 0 !important;
+  text-shadow: none !important;
+}
+
+/* bullets spacing like screenshot */
+#faq .faq-answer ul {
+  margin-top: 8px;
+  padding-left: 22px;                /* matches list-disc */
+}
+
+#faq .faq-answer li {
+  line-height: 1.7;
+  margin: 6px 0;
+}
+
+
+
+.google-g {
+  width: 22px;
+  height: 22px;
+}
