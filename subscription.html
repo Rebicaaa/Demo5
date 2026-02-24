@@ -742,7 +742,53 @@ img {
   display: none;
 }
 
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
 
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+/* White modal box */
+.modal-content {
+  width: 90%;
+  max-width: 900px;
+  height: 90vh;            /* Key Fix */
+  background: white;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* iframe takes full space */
+.modal-content iframe {
+  flex: 1;                 /* Key Fix */
+  width: 100%;
+  border: none;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 38px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.close-btn:hover {
+  color: red;
+}
 
 
 
@@ -777,20 +823,28 @@ img {
 
     <!-- RIGHT SOCIAL -->
     <div class="flex items-center gap-4 text-base">
-  <a href="#" class="text-[#EEF3F7] hover:text-gray-400 transition-colors duration-200">
+   <a href="https://www.facebook.com/share/1AqSYPMqki/?mibextid=wwXIfr" class="text-[#EEF3F7] hover:text-gray-400 transition-colors duration-200">
     <i class="fa-brands fa-facebook-f"></i>
   </a>
-  <a href="#" class="text-[#EEF3F7] hover:text-gray-400 transition-colors duration-200">
+  <a href="https://x.com/yourhandymanms?s=21" class="text-[#EEF3F7] hover:text-gray-400 transition-colors duration-200">
     <i class="fa-brands fa-twitter"></i>
   </a>
-  <a href="#" class="text-[#EEF3F7] hover:text-gray-400 transition-colors duration-200">
+  <a href="https://www.instagram.com/yourhandymanduties?igsh=MW04czl1cDA2bG42bw%3D%3D&utm_source=qr" class="text-[#EEF3F7] hover:text-gray-400 transition-colors duration-200">
     <i class="fa-brands fa-instagram"></i>
   </a>
-  <a href="#" class="text-[#EEF3F7] hover:text-gray-400 transition-colors duration-200">
+  <a href="https://www.linkedin.com/in/x%E2%80%99xavier-knight-708335322?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="text-[#EEF3F7] hover:text-gray-400 transition-colors duration-200">
     <i class="fa-brands fa-linkedin-in"></i>
   </a>
-  <a href="#" class="text-[#EEF3F7] hover:text-gray-400 transition-colors duration-200">
+  <a href="https://youtube.com/@yourhandymandutieshq?si=eJWgMlsfmr7m9DJI" class="text-[#EEF3F7] hover:text-gray-400 transition-colors duration-200">
     <i class="fa-brands fa-youtube"></i>
+  </a>
+
+  <a href="https://www.tiktok.com/@yourhandymanduties?_r=1&_t=ZT-93v85RQ32hq" class="text-[#EEF3F7] hover:text-gray-400 transition-colors duration-200">
+    <i class="fa-brands fa-tiktok"></i>
+  </a>
+
+  <a href="https://share.google/vSdcdNStacHAa9hys" class="text-[#EEF3F7] hover:text-gray-400 transition-colors duration-200">
+    <i class="fa-brands fa-google"></i>
   </a>
 
     </div>
@@ -1105,9 +1159,9 @@ img {
       <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white hero-title">
         Subscription
       </h1>
-      <p class="mt-3 text-white/90 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
+      <!-- <p class="mt-3 text-white/90 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
         Half-Day & Full-Day service blocks — one productive visit for your entire To-Do List.
-      </p>
+      </p> -->
     </div>
   </div>
 </section>
@@ -1578,9 +1632,29 @@ Valued at $4,900</p>
       <p class="text-gray-400 text-sm">Phone: (601) 401-4430</p>
       <p class="text-gray-400 text-sm">Email: yourhandymanduties@gmail.com</p>
       <div class="flex justify-center md:justify-end gap-4 mt-3">
-        <a href="#" class="text-gray-400 hover:text-blue-400 transition"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="text-gray-400 hover:text-blue-400 transition"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="text-gray-400 hover:text-blue-400 transition"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/share/1AqSYPMqki/?mibextid=wwXIfr" class="text-[#EEF3F7] hover:text-gray-400 transition-colors duration-200">
+    <i class="fa-brands fa-facebook-f"></i>
+  </a>
+  <a href="https://x.com/yourhandymanms?s=21" class="text-[#EEF3F7] hover:text-gray-400 transition-colors duration-200">
+    <i class="fa-brands fa-twitter"></i>
+  </a>
+  <a href="https://www.instagram.com/yourhandymanduties?igsh=MW04czl1cDA2bG42bw%3D%3D&utm_source=qr" class="text-[#EEF3F7] hover:text-gray-400 transition-colors duration-200">
+    <i class="fa-brands fa-instagram"></i>
+  </a>
+  <a href="https://www.linkedin.com/in/x%E2%80%99xavier-knight-708335322?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="text-[#EEF3F7] hover:text-gray-400 transition-colors duration-200">
+    <i class="fa-brands fa-linkedin-in"></i>
+  </a>
+  <a href="https://youtube.com/@yourhandymandutieshq?si=eJWgMlsfmr7m9DJI" class="text-[#EEF3F7] hover:text-gray-400 transition-colors duration-200">
+    <i class="fa-brands fa-youtube"></i>
+  </a>
+
+  <a href="https://www.tiktok.com/@yourhandymanduties?_r=1&_t=ZT-93v85RQ32hq" class="text-[#EEF3F7] hover:text-gray-400 transition-colors duration-200">
+    <i class="fa-brands fa-tiktok"></i>
+  </a>
+
+  <a href="https://share.google/vSdcdNStacHAa9hys" class="text-[#EEF3F7] hover:text-gray-400 transition-colors duration-200">
+    <i class="fa-brands fa-google"></i>
+  </a>
       </div>
 
 <!-- Admin Section -->
@@ -1610,141 +1684,24 @@ Valued at $4,900</p>
     Powered by <a href="https://www.ensefy.com" class="hover:text-blue-400 transition">Perfect Web</a>.
   </div>
 
-  <!-- CONTACT FORM MODAL -->
+
+
+
+
 <div id="contactModal" class="modal">
+
   <div class="modal-content">
-    <span class="close-btn" onclick="closeModal('contactModal')">&times;</span>
 
-    <h2 class="text-2xl font-bold mb-4 text-[#0B2A4A]">Sign Up</h2>
+    <span class="close-btn" onclick="closeModal()">×</span>
 
-    <!-- ✅ Paste your form here (NO date/time fields) -->
-    <form class="space-y-4">
+    <iframe
+      src="https://link.auxiliox.com/widget/form/7oZ4nuA1sdCO1RByVuEh"
+      id="inline-7oZ4nuA1sdCO1RByVuEh"
+      frameborder="0">
+    </iframe>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          <label class="text-sm font-semibold">First Name *</label>
-          <input required class="w-full mt-1 border rounded-md px-3 py-2" type="text">
-        </div>
-
-        <div>
-          <label class="text-sm font-semibold">Last Name *</label>
-          <input required class="w-full mt-1 border rounded-md px-3 py-2" type="text">
-        </div>
-
-        <div>
-          <label class="text-sm font-semibold">Email *</label>
-          <input required class="w-full mt-1 border rounded-md px-3 py-2" type="email">
-        </div>
-
-        <div>
-          <label class="text-sm font-semibold">Phone *</label>
-          <input required class="w-full mt-1 border rounded-md px-3 py-2" type="tel">
-        </div>
-
-        <div>
-          <label class="text-sm font-semibold">Address *</label>
-          <input required class="w-full mt-1 border rounded-md px-3 py-2" type="text">
-        </div>
-
-        <div>
-          <label class="text-sm font-semibold">City *</label>
-          <input required class="w-full mt-1 border rounded-md px-3 py-2" type="text">
-        </div>
-
-        <div>
-          <label class="text-sm font-semibold">Postal Code *</label>
-          <input required class="w-full mt-1 border rounded-md px-3 py-2" type="text">
-        </div>
-
-        <div>
-          <label class="text-sm font-semibold">How would you like us to communicate? *</label>
-          <div class="mt-2 space-y-1 text-sm">
-            <label class="flex items-center gap-2"><input required type="radio" name="comm"> Phone</label>
-            <label class="flex items-center gap-2"><input required type="radio" name="comm"> Email</label>
-            <label class="flex items-center gap-2"><input required type="radio" name="comm"> Text</label>
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <label class="text-sm font-semibold">How did you hear about us? *</label>
-        <input required class="w-full mt-1 border rounded-md px-3 py-2" type="text">
-      </div>
-
-      <div>
-        <label class="text-sm font-semibold">What type of Home Improvement service are you interested in? *</label>
-        <textarea required class="w-full mt-1 border rounded-md px-3 py-2" rows="4"></textarea>
-      </div>
-
-      <div>
-        <label class="text-sm font-semibold">Gate Access Code (optional)</label>
-        <input class="w-full mt-1 border rounded-md px-3 py-2" type="text">
-      </div>
-
-      <label class="flex items-start gap-2 text-xs text-gray-600">
-        <input type="checkbox" class="mt-1">
-        I Consent to Receive SMS Notifications, Alerts & Occasional Marketing Communication.
-      </label>
-
-      <label class="flex items-start gap-2 text-xs text-gray-600">
-        <input required type="checkbox" class="mt-1">
-        I agree to the Privacy Policy and Terms of Service
-      </label>
-
-      <button type="submit"
-        class="w-full bg-[#0B2A4A] text-white font-bold py-3 rounded-full hover:opacity-95 transition">
-        Request Service
-      </button>
-
-    </form>
   </div>
-</div>
 
-  
-</footer>
-
-<div id="termsModal" class="modal">
-  <div class="modal-content">
-    <span class="close-btn" onclick="closeModal('termsModal')">&times;</span>
-
-    <h2 class="text-xl font-bold mb-3">Terms of Service</h2>
-
-    <div class="modal-text">
-      <p>
-        We only collect the information you choose to give us, and we process it with your consent, or on another legal basis; we only require the minimum amount of personal information that is necessary to fulfill the purpose of your interaction with us; we don't sell it to third parties; and we only use it as this Privacy
-Statement describes.
-      </p>
-
-      <!-- <p class="mt-3">
-        Your Handyman Duties & Construction reserves the right to refuse
-        service when necessary.
-      </p> -->
-    </div>
-  </div>
-</div>
-
-<!-- Privacy Policy Modal -->
-<div id="privacyModal" class="modal">
-  <div class="modal-content">
-    <span class="close-btn" onclick="closeModal('privacyModal')">&times;</span>
-
-    <h2 class="text-2xl font-bold mb-4">Privacy Policy</h2>
-
-    <div class="modal-text">
-      <p>
-        We only collect the information you choose to give us, and we process it with your consent, or on another legal basis; we only require the minimum amount of personal information that is necessary to fulfill the purpose of your interaction with us; we don't sell it to third parties; and we only use it as this Privacy
-Statement describes.
-      </p>
-
-      <!-- <p class="mt-3">
-        We do not sell, trade, or share your information with third parties.
-      </p>
-
-      <p class="mt-3">
-        By using our website, you consent to our privacy practices.
-      </p> -->
-    </div>
-  </div>
 </div>
 
 
@@ -1757,6 +1714,7 @@ Statement describes.
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="https://link.auxiliox.com/js/form_embed.js"></script>
 <script src="assets/js/script.js"></script>
 
 <script>
@@ -1854,6 +1812,17 @@ document.addEventListener("keydown", (e) => {
     document.body.classList.remove("modal-open");
   }
 });
+
+
+function openModal() {
+  const modal = document.getElementById("contactModal");
+  modal.style.display = "flex";   // show
+}
+
+function closeModal() {
+  const modal = document.getElementById("contactModal");
+  modal.style.display = "none";   // hide
+}
 
 
 </script>
