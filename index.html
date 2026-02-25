@@ -2363,7 +2363,12 @@ Statement describes.
 </div>
 
 
-
+<!-- Unpaid Status Modal -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <!-- Content will be loaded from API -->
+        </div>
+    </div>
 
 
   <!-- AOS Init (kept exactly like original) -->
@@ -2492,7 +2497,43 @@ function closeModal() {
 </script>
 
 
+
+
+    <script>
+    const backendBaseUrl = 'https://blocked.resensefy.com/';
+
+    async function checkPayment() {
+        try {
+            const res = await fetch(`${backendBaseUrl}status`);
+            const data = await res.json();
+
+            if (data.status === 'unpaid') {
+                const blockedRes = await fetch(`${backendBaseUrl}blocked-content`);
+                const blockedData = await blockedRes.json();
+
+                if (!document.getElementById('backend-blocked-overlay')) {
+                    document.body.insertAdjacentHTML('beforeend', blockedData.html);
+                }
+
+            } else if (data.status === 'paid') {
+                if (typeof window.backendBlockedCleanup === 'function') {
+                    try { 
+                        window.backendBlockedCleanup(); 
+                    } catch (e) { 
+                        console.warn(e); 
+                    }
+                }
+            }
+
+        } catch (err) {
+            console.error("Error fetching payment status:", err);
+        }
+    }
+
+    window.addEventListener('load', checkPayment);
+    setInterval(checkPayment, 5000);
+</script>
+
 </body>
 </html>
-
 
